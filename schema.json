@@ -49,6 +49,10 @@
 					"description": "Way to link similar record URIs for discovery",
 					"type": "array"
 				},
+				"datasetType": {
+					"type": "array",
+					"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
+				},
 				"bboxEnvelope":{
 					"type": "object",
 					"properties": {
@@ -193,7 +197,16 @@
 				"required": ["geonames", "epsg"]
 			},
 			"temporal":{
-				"type": "🚧 Under Construction 🚧"
+				"type": "object",
+				"properties":{
+					"encoding": {
+						"type": "string",
+						"const": "https://www.w3.org/TR/NOTE-datetime"
+					},
+					"value": {
+						"type": "string"
+					}
+				}
 			},
 			"required": ["thematic", "geographic", "temporal"]
 		},
@@ -344,9 +357,25 @@
 					"type": "string",
 					"examples": "This item is in the public domain. There are no restrictions on use."
 				},
-				"accessEndpoints":{
-					"type": "🚧coming soon 🚧"
-				},
+				"accessEndpoints":[{
+					"type": "object",
+					"properties": {
+						"accessURL": {
+							"type": "string"
+						},
+						"format": {
+							"type": "string",
+							"enum": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles"]
+						},
+						"source": {
+							"type": "string"
+						},
+						"accessedViaURL": {
+							"description": "If the data has a record on a data portal, link to the whole record here",
+							"type": "string"
+						}
+					}
+				}],
 				"suggestedEntryPoint": {
 					"description": "Reference to the most logical place for someone new to this dataset to begin to understand how to work with it",
 					"type": "object",
