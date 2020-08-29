@@ -128,16 +128,29 @@
 						},
 						"required": ["authority", "authorityURI", "language", "valueURI", "topicTag"]
 					}],
-					"freeTopicTags": [{
-						"description": "Place for topic tags that don't conform to authority",
+					"otherAuthority":[{
+						"description": "Place to tag based on authorities not formalized in this document",
 						"type": "object",
 						"properties": {
 							"authority": {
 								"type": "string"
 							},
 							"authorityURI": {
+								"type": "string",
+								"format": "uri"
+							},
+							"language":{
 								"type": "string"
 							},
+							"topicTag": {
+								"type": "string"
+							}
+						}
+					}],
+					"freeTopicTags": [{
+						"description": "Place for topic tags that don't conform to authority",
+						"type": "object",
+						"properties": {
 							"language": {
 								"type": "string"
 							},
