@@ -140,7 +140,7 @@
 					"lcsh": {
 						"type": "object",
 						"properties": {
-							"subject": {
+							"subjects": {
 								"type": "array",
 								"items": [{
 									"type": "object",
@@ -170,7 +170,7 @@
 					"ISO19115": {
 						"type": "object",
 						"properties": {
-							"subject": {
+							"subjects": {
 								"type": "array",
 								"items": [{
 									"type": "object",
@@ -288,7 +288,7 @@
 					"epsg": {
 						"type": "object",
 						"properties": {
-							"places": {
+							"crs": {
 								"type": "array",
 								"items": [{
 									"type": "object",
@@ -322,6 +322,10 @@
 						},
 						"value": {
 							"type": "string"
+						},
+						"temporalNotes":{
+							"type": "string",
+							"examples": ["Processing completed on the most recent data made available by MassGIS at the time this record was created, 2020-06-16"]
 						}
 					}
 				}
