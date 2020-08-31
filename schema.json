@@ -614,6 +614,19 @@
 							"type": "string",
 							"format": "date"
 						},
+						"metadataSchema": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string",
+									"const": "LMEC Data Description Schema"
+								},
+								"$id":{
+									"type": "string",
+									"const": "https://github.com/nblmc/Data-Context/blob/master/schema.json"
+								}
+							}
+						},
 						"missingInformation": {
 							"type": "object",
 							"properties": {
