@@ -37,21 +37,56 @@
 					"type": "string",
 					"enum": ["Dataset", "Project"]
 				},
-				"subComponentOf": {
-					"description": "If this record is for a dataset, populate this array with the URIs of larger data projects this dataset is included in. To be used within data discovery environments",
-					"type": "array"
-				},
-				"includesDatasets": {
-					"description": "If this record is for a project, populate this array with the URIs of the datasets that are components of the project. To be used within data discovery environments",
-					"type": "array"
-				},
-				"relatedTo": {
+				"subComponentOf": [{
+					"description": "If this record is for a dataset, populate with URIs of larger data projects this dataset is included in. To be used within data discovery environments",
+					"type": "object",
+					"properties": {
+						"largerRecipe":{
+							"description": "The URI for the recipe this is an ingredient in",
+							"type": "string",
+							"format": "uri"
+						},
+						"relationshipNotes": {
+							"description": "Clarifying information about this relationship/connection",
+							"type": "string"
+						}
+					}
+				}],
+				"includesDatasets": [{
+					"description": "If this record is for a project, populate this with the URIs of the subcomponents, if catalog records exist. To be used within data discovery environments",
+					"type": "object",
+					"properties": {
+						"ingredient": {
+							"description": "The URI for the dataset which is a subcomponent of this project",
+							"type": "string",
+							"format": "uri"
+						},
+						"relationshipNotes": {
+							"description": "Clarifying information about this relationship/connection",
+							"type": "string"
+						}						
+					}
+				}],
+				"relatedTo": [{
 					"description": "Way to link similar record URIs for discovery",
-					"type": "array"
-				},
+					"type": "object",
+					"properties": {
+						"$id": {
+							"type": "string",
+							"format": "uri"
+						},
+						"relationshipNotes":{
+							"description": "Qualifying information about the nature of the relationship",
+							"type": "string"
+						}
+					}
+				}],
 				"datasetType": {
 					"type": "array",
-					"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
+					"items": {
+						"type": "string",
+						"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
+					}
 				},
 				"bboxEnvelope":{
 					"type": "object",
@@ -63,12 +98,17 @@
 						},
 						"lowerCorner":{
 							"type": "array",
-							"examples": [-71.181891, 42.330256]
+							"items": {
+								"type": "number",
+								"examples": [-71.181891, 42.330256]
+							}
 						},
 						"upperCorner": {
 							"type": "array",
-							"examples": [-71.113451, 42.374819]
-
+							"items": {
+								"type": "number",
+								"examples": [-71.181891, 42.330256]
+							}
 						}
 					}
 				}
@@ -543,8 +583,12 @@
 									"type": "string"
 								},
 								"relationshipToData": {
-									"type": "🚧string? enum? array?🚧",
-									"examples": ["Collector", "Maintainer", "Archivist", "Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+									"type": "array",
+									"items": {
+										"type": "string",
+										"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+									},
+									"minItems": 1
 								}
 							}
 						},
@@ -556,8 +600,12 @@
 									"type": "string"
 								},
 								"relationshipToData": {
-									"type": "🚧string? enum? array?🚧",
-									"examples": ["Collector", "Maintainer", "Archivist", "Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+									"type": "array",
+									"items": {
+										"type": "string",
+										"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+									},
+									"minItems": 1
 								}
 							}
 						},
