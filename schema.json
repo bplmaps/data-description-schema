@@ -37,50 +37,76 @@
 					"type": "string",
 					"enum": ["Dataset", "Project"]
 				},
-				"subComponentOf": [{
-					"description": "If this record is for a dataset, populate with URIs of larger data projects this dataset is included in. To be used within data discovery environments",
+                "subComponentOf": {
+					"description": "If this metadata record describes a dataset, populate each project object in this section with URIs of larger data projects this dataset is included in, and notes about the relationship of this dataset to each project. To be used within data discovery environments",
+                    "type": "object",
+                    "properties": {
+                        "projects":{
+                            "type": "array",
+                            "items": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "projectID":{
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "relationshipNotes":{
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+
+                    }
+				},
+				"includesDatasets":{
+					"description": "If this metadata record describes a project, populate each project with the URI of the dataset subcomponents, and notes about the relationship between the project and each dataset. To be used within data discovery environments",
 					"type": "object",
 					"properties": {
-						"largerRecipe":{
-							"description": "The URI for the recipe this is an ingredient in",
-							"type": "string",
-							"format": "uri"
-						},
-						"relationshipNotes": {
-							"description": "Clarifying information about this relationship/connection",
-							"type": "string"
+						"datasets":{
+							"type": "array",
+							"items":[
+								{
+									"type": "object",
+									"properties": {
+										"datasetID": {
+											"type": "string",
+											"format": "uri"
+										},
+										"relationshipNotes":{
+											"type": "string"
+										}
+									}
+								}
+							]
 						}
 					}
-				}],
-				"includesDatasets": [{
-					"description": "If this record is for a project, populate this with the URIs of the subcomponents, if catalog records exist. To be used within data discovery environments",
+				},
+				"relatedTo":{
+					"description": "Place to link to similar record URIs for discovery.",
 					"type": "object",
-					"properties": {
-						"ingredient": {
-							"description": "The URI for the dataset which is a subcomponent of this project",
-							"type": "string",
-							"format": "uri"
-						},
-						"relationshipNotes": {
-							"description": "Clarifying information about this relationship/connection",
-							"type": "string"
-						}						
-					}
-				}],
-				"relatedTo": [{
-					"description": "Way to link similar record URIs for discovery",
-					"type": "object",
-					"properties": {
-						"$id": {
-							"type": "string",
-							"format": "uri"
-						},
-						"relationshipNotes":{
-							"description": "Qualifying information about the nature of the relationship",
-							"type": "string"
+					"properties":{
+						"records":{
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties":{
+										"recordID":{
+											"type": "string",
+											"format": "uri"
+										},
+										"relationshipNotes":{
+											"type": "string"
+										}
+									}
+								}
+							]
 						}
 					}
-				}],
+				},
 				"datasetType": {
 					"type": "array",
 					"items": {
@@ -120,144 +146,204 @@
 			"type": "object",
 			"properties": {
 				"thematic": {
-					"lcsh": [{
+					"lcsh":{
 						"type": "object",
-						"properties": {
-							"authority": {
-								"type": "string",
-								"const": "lcsh"
-							},
-							"authorityURI": {
-								"type": "string",
-								"const": "http://id.loc.gov/authorities/subjects.html"
-							},
-							"language": {
-								"type": "string",
-								"const": "eng"
-							},
-							"topicTag": {
-								"type": "string",
-								"examples": ["Administrative and political divisions", "National Highway System", "Census districts"]
-							}
-						},
-						"required": ["authority", "authorityURI", "language", "topicTag"]
-					}],
-					"ISO19115": [{
-						"type": "object",
-						"properties": {
-							"authority": {
-								"type": "string",
-								"const": "ISO19115TopicCategory"
-							},
-							"authorityURI": {
-								"type": "string",
-								"const": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_TopicCategoryCode"
-							},
-							"language": {
-								"type": "string",
-								"const": "eng"
-							},
-							"valueURI":{
-								"type": "string",
-								"examples": ["transportation", "boundaries"]
-							},
-							"topicTag": {
-								"type": "string",
-								"examples": ["Transportation", "Boundaries"]
-							}
-						},
-						"required": ["authority", "authorityURI", "language", "valueURI", "topicTag"]
-					}],
-					"otherAuthority":[{
-						"description": "Place to tag based on authorities not formalized in this document",
-						"type": "object",
-						"properties": {
-							"authority": {
-								"type": "string"
-							},
-							"authorityURI": {
-								"type": "string",
-								"format": "uri"
-							},
-							"language":{
-								"type": "string"
-							},
-							"topicTag": {
-								"type": "string"
+						"properties":{
+							"subject": {
+								"type": "array",
+								"items":[
+									{
+										"type": "object",
+										"properties": {
+											"authority": {
+												"type": "string",
+												"const": "lcsh"
+											},
+											"authorityID": {
+												"type": "string",
+												"const": "http://id.loc.gov/authorities/subjects.html"
+											},
+											"language": {
+												"type": "string",
+												"const": "eng"
+											},
+											"subjectTag": {
+												"type": "string",
+												"examples": ["Administrative and political divisions", "National Highway System", "Census districts"]
+											}
+										},
+										"required": ["authority", "authorityID", "language", "topicTag"]
+									}
+								]
 							}
 						}
-					}],
-					"freeTopicTags": [{
-						"description": "Place for topic tags that don't conform to authority",
+					},
+					"ISO19115":{
 						"type": "object",
-						"properties": {
-							"language": {
-								"type": "string"
-							},
-							"topicTag": {
-								"type": "string"
+						"properties":{
+							"subject":{
+								"type": "array",
+								"items":[
+									{
+										"type": "object",
+										"properties":{
+											"authority": {
+												"type": "string",
+												"const": "ISO19115TopicCategory"
+											},
+											"authorityID": {
+												"type": "string",
+												"const": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_TopicCategoryCode"
+											},
+											"language": {
+												"type": "string",
+												"const": "eng"
+											},
+											"valueID":{
+												"type": "string",
+												"examples": ["transportation", "boundaries"]
+											},
+											"subjectTag": {
+												"type": "string",
+												"examples": ["Transportation", "Boundaries"]
+											}
+										},
+										"required": ["authority", "authorityID", "language", "valueID", "topicTag"]
+									}
+								]
 							}
-						},
-						"required": ["topicTag"]
-					}]
+						}
+					},
+					"otherSubjectAuthorities":{
+						"description": "Place to tag subjects based on authorities not formalized in this document",
+						"type": "object",
+						"properties":{
+							"subjects":{
+								"type": "array",
+								"items":[
+									{
+										"type": "object",
+										"properties":{
+											"authorityName": {
+												"type": "string"
+											},
+											"authorityID": {
+												"type": "string",
+												"format": "uri"
+											},
+											"language":{
+												"type": "string"
+											},
+											"subjectTag": {
+												"type": "string"
+											}
+										}
+									}
+								]
+							}
+						}
+					},
+					"freeSubjectTags":{
+						"description": "Place for subject tags that don't conform to authority",
+						"type": "object",
+						"properties":{
+							"subjects":{
+								"type": "array",
+								"items":[
+									{
+										"type": "object",
+										"properties":{
+											"language": {
+												"type": "string"
+											},
+											"subjectTag": {
+												"type": "string"
+											}
+										},
+										"required": ["subjectTag"]
+									}
+								]
+							}
+						}
+					}
 				},
 				"geographic": {
-					"geoNames": [{
+					"geonames":{
 						"type": "object",
 						"properties": {
-							"authority": {
-								"type": "string",
-								"const": "geonames"
-							},
-							"authorityURI": {
-								"type": "string",
-								"const": "http://www.geonames.org/ontology#"
-							},
-							"language": {
-								"type": "string",
-								"const": "eng"
-							},
-							"valueURI":{
-								"type": "string",
-								"examples": "http://sws.geonames.org/4931353"
-							},
-							"placeTag": {
-								"type": "string",
-								"examples": "Brighton"
+							"places":{
+								"type": "array",
+								"items":[
+									{
+										"type": "object",
+										"properties":{
+											"authority": {
+												"type": "string",
+												"const": "geonames"
+											},
+											"authorityID": {
+												"type": "string",
+												"const": "http://www.geonames.org/ontology#"
+											},
+											"language": {
+												"type": "string",
+												"const": "eng"
+											},
+											"valueID":{
+												"type": "string",
+												"examples": "http://sws.geonames.org/4931353"
+											},
+											"placeTag": {
+												"type": "string",
+												"examples": "Brighton"
+											}
+										},
+										"required": ["authority", "authorityID", "language", "valueID", "placeTag"]
+									}
+								]
 							}
-						},
-						"required": ["authority", "authorityURI", "language", "valueURI", "placeTag"]
-					}],
-					"epsg": [{
-						"type": "object",
-						"properties": {
-							"authority": {
-								"type": "string",
-								"const": "EPSG"
-							},
-							"authorityURI": {
-								"type": "string",
-								"examples": "http://opengis.net/def/crs/EPSG/0/4326"
-							},
-							"epsgTag": {
-								"type": "string",
-								"examples": "EPSG:4326"
-							}
-						},
-						"required": ["authority", "authorityURI", "epsgTag"]
-					}]
-				},
-				"required": ["geonames", "epsg"]
-			},
-			"temporal":{
-				"type": "object",
-				"properties":{
-					"encoding": {
-						"type": "string",
-						"const": "https://www.w3.org/TR/NOTE-datetime"
+						}
 					},
-					"value": {
-						"type": "string"
+					"epsg":{
+						"type": "object",
+						"properties":{
+							"places":{
+								"type": "array",
+								"items": [
+									{
+										"type": "object",
+										"properties":{
+											"authority": {
+												"type": "string",
+												"const": "EPSG"
+											},
+											"authorityID": {
+												"type": "string",
+												"examples": "http://opengis.net/def/crs/EPSG/0/4326"
+											},
+											"epsgTag": {
+												"type": "string",
+												"examples": "EPSG:4326"
+											}
+										},
+										"required": ["authority", "authorityID", "epsgTag"]
+									}
+								]
+							}
+						}
+					},
+					"required": ["geonames", "epsg"]
+				},
+				"temporal":{
+					"type": "object",
+					"properties":{
+						"encoding": {
+							"type": "string",
+							"const": "https://www.w3.org/TR/NOTE-datetime"
+						},
+						"value": {
+							"type": "string"
+						}
 					}
 				}
 			},
@@ -308,8 +394,10 @@
 							"description": "If this data was masked or anonymized in any way, please describe that process here, including how measures of genuine privacy are being assured.",
 							"type": "string"
 						},
-						"privacyIssues": "Are there any known privacy issues or considerations related to this dataset?",
-						"type": "string"
+						"privacyIssues": {
+							"description": "Are there any known privacy issues or considerations related to this dataset?",
+							"type": "string"
+						}
 					}
 				},
 				"representation": {
@@ -372,22 +460,32 @@
 						}
 					}
 				},
-				"funding": [{
+				"funding":{
 					"type": "object",
-					"properties": {
-						"funder": {
-							"type": "string"
-						},
-						"fundingRequirements": {
-							"description": "Were there any requirements of funding that impacted this data at any point during the data information lifecycle?",
-							"type": "string"
-						},
-						"originalPurpose": {
-							"description": "What was the original, state purpose for this data upon conception and acquiring funding?",
-							"type": "string"
+					"properties":{
+						"funders":{
+							"type": "array",
+							"items":[
+								{
+									"type": "object",
+									"properties": {
+										"funder":{
+											"type": "string"
+										},
+										"fundingRequirements": {
+											"description": "Were there any requirements of funding that impacted this data at any point during the data information lifecycle?",
+											"type": "string"
+										},
+										"originalPurpose": {
+											"description": "What was the original, state purpose for this data upon conception and acquiring funding?",
+											"type": "string"
+										}
+									}
+								}
+							]
 						}
 					}
-				}],
+				},
 				"potentialBenefit": {
 					"description": "If there are people who potentially benefit from this data, or have some stake in its quality, use this space to comment on who, how, and why.",
 					"type": "string"
@@ -408,163 +506,233 @@
 			"properties": {
 				"accessCondition":{
 					"type": "string",
-					"examples": "This item is in the public domain. There are no restrictions on use."
+					"examples": ["This item is in the public domain. There are no restrictions on use.", "Access restriction details"]
 				},
-				"accessEndpoints":[{
+				"accessEndpoints":{
 					"type": "object",
-					"properties": {
-						"accessURL": {
-							"type": "string"
-						},
-						"format": {
-							"type": "string",
-							"enum": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles"]
-						},
-						"source": {
-							"type": "string"
-						},
-						"accessedViaURL": {
-							"description": "If the data has a record on a data portal, link to the whole record here",
-							"type": "string"
+					"properties":{
+						"endpoints":{
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties":{
+										"accessURL": {
+											"type": "string"
+										},
+										"format": {
+											"type": "string",
+											"enum": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles"]
+										},
+										"source": {
+											"type": "string"
+										},
+										"accessedViaURL": {
+											"description": "If the data has a record on a data portal, link to the whole record here",
+											"type": "string"
+										}
+									}
+								}
+							]
 						}
 					}
-				}],
-				"suggestedEntryPoint": {
+				},
+				"suggestedEntryPoints":{
 					"description": "Reference to the most logical place for someone new to this dataset to begin to understand how to work with it",
 					"type": "object",
-					"properties": {
-						"$id": {
-							"type:": "string",
-							"format": "uri"
-						},
-						"title": {
-							"type": "string"
-						},
-						"notes": {
-							"type": "string"
+					"properties":{
+						"entryPoints":{
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties": {
+										"$id": {
+											"type:": "string",
+											"format": "uri"
+										},
+										"title": {
+											"type": "string"
+										},
+										"notes": {
+											"type": "string"
+										}
+									},
+									"required": ["$id", "title"]
+								}
+							]
 						}
-					},
-					"required": ["$id", "title"]
+					}
 				},
-				"codebooks": [{
+				"codebooks":{
 					"description": "Reference to any codebooks or data dictionaries intended to aid interpretation of the data's attributes or field names",
 					"type": "object",
-					"properties": {
-						"$id": {
-							"type:": "string",
-							"format": "uri"
-						},
-						"title": {
-							"type": "string"
-						},
-						"maintainedBy": {
-							"type": "string"
-						},
-						"notes": {
-							"type": "string"
+					"properties":{
+						"codebooks":{
+							"type": "array",
+							"items":[
+								{
+									"type": "object",
+									"properties":{
+										"$id": {
+											"type:": "string",
+											"format": "uri"
+										},
+										"title": {
+											"type": "string"
+										},
+										"maintainedBy": {
+											"type": "string"
+										},
+										"notes": {
+											"type": "string"
+										}
+									},
+									"required": ["$id", "title", "maintainedBy"]
+								}
+							]
 						}
-					},
-					"required": ["$id", "title", "maintainedBy"]
-				}],
-				"analyses": [{
+					}
+				},
+				"analysesOrPublications":{
 					"description": "Reference to related analyses or prominent publications using the data",
 					"type": "object",
-					"properties": {
-						"$id": {
-							"type:": "string",
-							"format": "uri"
-						},
-						"title": {
-							"type": "string"
-						},
-						"author": {
-							"type": "string"
-						},
-						"publisher": {
-							"type": "string"
-						},
-						"datePublished": {
-							"type": "string",
-							"format": "date"
-						},
-						"notes": {
-							"type": "string"
+					"properties":{
+						"works": {
+							"type": "array",
+							"items":[
+								{
+									"type": "object",
+									"properties":{
+										"$id": {
+											"type:": "string",
+											"format": "uri"
+										},
+										"title": {
+											"type": "string"
+										},
+										"author": {
+											"type": "string"
+										},
+										"publisher": {
+											"type": "string"
+										},
+										"datePublished": {
+											"type": "string",
+											"format": "date"
+										},
+										"notes": {
+											"type": "string"
+										}
+									},
+									"required": ["$id", "title"]
+								}
+							]
 						}
-					},
-					"required": ["$id", "title"]
-				}],
-				"tutorials": [{
+					}
+				},
+				"tutorials":{
 					"description": "Reference to guides, tutorials, Jupyter notebooks, or any resource with people-centered instructions on how to work with, use and understand this data",
 					"type": "object",
-					"properties": {
-						"$id": {
-							"type:": "string",
-							"format": "uri"
-						},
-						"title": {
-							"type": "string"
-						},
-						"author": {
-							"type": "string"
-						},
-						"datePublished": {
-							"type": "string",
-							"format": "date"
-						},
-						"notes": {
-							"type": "string"
+					"properties":{
+						"tutorials":{
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties":{
+										"$id": {
+											"type:": "string",
+											"format": "uri"
+										},
+										"title": {
+											"type": "string"
+										},
+										"author": {
+											"type": "string"
+										},
+										"datePublished": {
+											"type": "string",
+											"format": "date"
+										},
+										"notes": {
+											"type": "string"
+										}
+									},
+									"required": ["$id", "title"]
+								}
+							]
 						}
-					},
-					"required": ["$id", "title"]
-				}],
-				"audioProvidingContext": [{
+					}
+				},
+				"audioProvidingContext":{
 					"description": "If audio narratives describing information about this dataset is easier to capture than text, this field points to those audio files and provides context about them",
 					"type": "object",
-					"properties": {
-						"$id": {
-							"type:": "string",
-							"format": "uri"
-						},
-						"title": {
-							"type": "string"
-						},
-						"audioContextProvider": {
-							"type": "string"
-						},
-						"dateRecorded": {
-							"type": "string",
-							"format": "date"
-						},
-						"datePublished": {
-							"type": "string",
-							"format": "date"
-						},
-						"language": {
-							"type": "string"
+					"properties":{
+						"audioFiles":{
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties":{
+										"$id": {
+											"type:": "string",
+											"format": "uri"
+										},
+										"title": {
+											"type": "string"
+										},
+										"audioContextProvider": {
+											"type": "string"
+										},
+										"dateRecorded": {
+											"type": "string",
+											"format": "date"
+										},
+										"datePublished": {
+											"type": "string",
+											"format": "date"
+										},
+										"language": {
+											"type": "string"
+										}
+									},
+									"required": ["$id", "audioContextProvider"]
+								}
+							]
 						}
-					},
-					"required": ["$id", "audioContextProvider"]
-				}],
-				"imagesProvidingContext": [{
+					}
+				},
+				"imagesProvidingContext":{
 					"description": "References to screenshots or photos that lend additional context about the dataset or steps taken to process the data",
 					"type": "object",
-					"properties": {
-						"$id": {
-							"type:": "string",
-							"format": "uri"
-						},
-						"title": {
-							"type": "string"
-						},
-						"caption": {
-							"type": "string"
-						},
-						"imageContextProvider": {
-							"type": "string"
+					"properties":{
+						"imageFiles":{
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties": {
+										"$id": {
+											"type:": "string",
+											"format": "uri"
+										},
+										"title": {
+											"type": "string"
+										},
+										"caption": {
+											"type": "string"
+										},
+										"imageContextProvider": {
+											"type": "string"
+										}
+									},
+									"required": ["$id", "title", "caption", "imageContextProvider"]
+								}
+							]
 						}
-					},
-					"required": ["$id", "title", "caption", "imageContextProvider"]
-				}]
+					}
+				}
 			},
 			"required": ["accessConditions", "accessEndpoints", "suggestedEntryPoint"]
 		},
@@ -682,7 +850,7 @@
 						},
 						"lmecRecordLocation": {
 							"type": "string",
-							"examples": "datacatalog.leventhalmap.org.purl:123456789"
+							"examples": ["datacatalog.leventhalmap.org.purl:123456789"]
 						},
 						"preferredCitation": {
 							"type": "string"
@@ -697,30 +865,40 @@
 							"description": "A clear, sequential overview of all steps taken and the reasons for making changes or carrying out processing should be provided here.",
 							"type:": "string"
 						},
-						"steps": [{
+						"steps":{
 							"description": "Detailed information about each step in the processing sequence, explained in a way that someone else working with the starting data could perform the exact same steps and arrive at a similar result. This section is not tightly required, but is strongly suggested.",
 							"type": "object",
-							"properties": {
-								"stepNumber": {
-									"type": "integer"
-								},
-								"stepDescription": {
-									"type": "string"
-								},
-								"stepActor": {
-									"description": "Who performed this step.",
-									"type": "string"
-								},
-								"stepDescriber": {
-									"description": "If other than actor.",
-									"type": "string"
-								},
-								"stepMotivation": {
-									"description": "Explanation of why this step advanced the overall goals of improving the dataset for use, why was it necessary?",
-									"type": "string"
+							"properties":{
+								"steps":{
+									"type": "array",
+									"items": [
+										{
+											"type": "object",
+											"properties":{
+												"stepNumber": {
+													"type": "integer"
+												},
+												"stepDescription": {
+													"type": "string"
+												},
+												"stepActor": {
+													"description": "Who performed this step.",
+													"type": "string"
+												},
+												"stepDescriber": {
+													"description": "If other than actor.",
+													"type": "string"
+												},
+												"stepMotivation": {
+													"description": "Explanation of why this step advanced the overall goals of improving the dataset for use, why was it necessary?",
+													"type": "string"
+												}
+											}
+										}
+									]
 								}
 							}
-						}],
+						},
 						"droppedFields": {
 							"description": "General explanation if fields were dropped from the source data.",
 							"type": "string"
@@ -750,8 +928,6 @@
 				}
 			},
 			"required": ["description", "archivingAndMaintenance", "cleaningAndAnalysis"]
-		},
-		"required": ["coreCitation", "subjectTagging", "resourceConstellation", "dataLifecycle"]
+		}
 	}
-
 }
