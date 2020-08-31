@@ -24,7 +24,7 @@
 					"type": "object",
 					"properties": {
 						"authority":{
-							"type": "string",
+							"type": "string",							
 							"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
 						},
 						"value": {
@@ -113,7 +113,7 @@
 					}
 				}
 			},
-			"required": ["$id", "title", "shortDescription", "language", "language", "entryType", "bboxEnvelope"]
+			"required": ["$id", "title", "shortDescription", "language", "entryType", "bboxEnvelope"]
 		},
 		"subjectTagging": {
 			"description": "Topic tags to facilitate search and filtering",
