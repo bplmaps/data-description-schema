@@ -1,0 +1,136 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://github.com/nblmc/Data-Context/blob/master/schema.json",
+	"title": "LMEC Data Description Schema",
+	"type": "object",
+	"properties": {
+		"coreCitation": {
+			"description": "Basic facts about the dataset or project",
+			"type": "object",
+			"properties": {
+				"$id": {
+					"type": "string",
+					"format": "uri"
+				},
+				"title": {
+					"description": "Full name of the dataset or project",
+					"type": "string"
+				},
+				"shortDescription": {
+					"description": "Short description of the dataset or project",
+					"type": "string"
+				},
+				"language": {
+					"type": "object",
+					"properties": {
+						"authority": {
+							"type": "string",
+							"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
+						},
+						"value": {
+							"type": "string"
+						}
+					}
+				},
+				"entryType": {
+					"description": "Provides flexibility on how context information is displayed, depending on whether it is describing a unique datasets, or a collection of datasets that have been somehow processed together into a data 'recipe' or project, for the purposes of analysis and visualization.",
+					"type": "string",
+					"enum": ["Dataset", "Project"]
+                },
+                "datasetType": {
+					"type": "string",
+					"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
+				},
+				"subComponentOf": {
+					"description": "If this metadata record describes a dataset, populate each project object in this section with URIs of larger data projects this dataset is included in, and notes about the relationship of this dataset to each project. To be used within data discovery environments",
+					"type": "object",
+					"properties": {
+						"projects": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"projectID": {
+										"type": "string",
+										"format": "uri"
+									},
+									"relationshipNotes": {
+										"type": "string"
+									}
+								}
+							}]
+						}
+
+					}
+				},
+				"includesDatasets": {
+					"description": "If this metadata record describes a project, populate each project with the URI of the dataset subcomponents, and notes about the relationship between the project and each dataset. To be used within data discovery environments",
+					"type": "object",
+					"properties": {
+						"datasets": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"datasetID": {
+										"type": "string",
+										"format": "uri"
+									},
+									"relationshipNotes": {
+										"type": "string"
+									}
+								}
+							}]
+						}
+					}
+				},
+				"relatedTo": {
+					"description": "Place to link to similar record URIs for discovery.",
+					"type": "object",
+					"properties": {
+						"records": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"recordID": {
+										"type": "string",
+										"format": "uri"
+									},
+									"relationshipNotes": {
+										"type": "string"
+									}
+								}
+							}]
+						}
+					}
+				},
+				"bboxEnvelope": {
+					"type": "object",
+					"properties": {
+						"srs": {
+							"description": "SRS provided in EPSG",
+							"type": "string",
+							"examples": "EPSG:4326"
+						},
+						"lowerCorner": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"examples": [-71.181891, 42.330256]
+							}
+						},
+						"upperCorner": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"examples": [-71.181891, 42.330256]
+							}
+						}
+					}
+				}
+			},
+			"required": ["$id", "title", "shortDescription", "language", "entryType", "bboxEnvelope"]
+		}
+	}
+}

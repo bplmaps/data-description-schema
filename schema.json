@@ -37,6 +37,10 @@
 					"type": "string",
 					"enum": ["Dataset", "Project"]
 				},
+				"datasetType": {
+					"type": "string",
+					"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
+				},
 				"subComponentOf": {
 					"description": "If this metadata record describes a dataset, populate each project object in this section with URIs of larger data projects this dataset is included in, and notes about the relationship of this dataset to each project. To be used within data discovery environments",
 					"type": "object",
@@ -99,13 +103,6 @@
 								}
 							}]
 						}
-					}
-				},
-				"datasetType": {
-					"type": "array",
-					"items": {
-						"type": "string",
-						"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
 					}
 				},
 				"bboxEnvelope": {
