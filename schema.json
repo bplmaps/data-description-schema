@@ -5,7 +5,7 @@
 	"type": "object",
 	"properties": {
 		"coreCitation": {
-			"description": "Basic facts about the dataset or project",
+			"description": "Basic facts about the collection or dataset",
 			"type": "object",
 			"properties": {
 				"$id": {
@@ -16,94 +16,17 @@
 					"description": "Full name of the dataset or project",
 					"type": "string"
 				},
-				"shortDescription": {
+				"shortDataDescription": {
 					"description": "Short description of the dataset or project",
 					"type": "string"
-				},
-				"language": {
-					"type": "object",
-					"properties": {
-						"authority": {
-							"type": "string",
-							"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
-						},
-						"value": {
-							"type": "string"
-						}
-					}
-				},
-				"entryType": {
-					"description": "Provides flexibility on how context information is displayed, depending on whether it is describing a unique datasets, or a collection of datasets that have been somehow processed together into a data 'recipe' or project, for the purposes of analysis and visualization.",
-					"type": "string",
-					"enum": ["Dataset", "Project"]
 				},
 				"datasetType": {
 					"type": "string",
 					"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
 				},
-				"subComponentOf": {
-					"description": "If this metadata record describes a dataset, populate each project object in this section with URIs of larger data projects this dataset is included in, and notes about the relationship of this dataset to each project. To be used within data discovery environments",
-					"type": "object",
-					"properties": {
-						"projects": {
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"projectID": {
-										"type": "string",
-										"format": "uri"
-									},
-									"relationshipNotes": {
-										"type": "string"
-									}
-								}
-							}]
-						}
-
-					}
-				},
-				"includesDatasets": {
-					"description": "If this metadata record describes a project, populate each project with the URI of the dataset subcomponents, and notes about the relationship between the project and each dataset. To be used within data discovery environments",
-					"type": "object",
-					"properties": {
-						"datasets": {
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"datasetID": {
-										"type": "string",
-										"format": "uri"
-									},
-									"relationshipNotes": {
-										"type": "string"
-									}
-								}
-							}]
-						}
-					}
-				},
-				"relatedTo": {
-					"description": "Place to link to similar record URIs for discovery.",
-					"type": "object",
-					"properties": {
-						"records": {
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"recordID": {
-										"type": "string",
-										"format": "uri"
-									},
-									"relationshipNotes": {
-										"type": "string"
-									}
-								}
-							}]
-						}
-					}
+				"hostedBy": {
+					"type": "string",
+					"enum": ["Internal", "External"]
 				},
 				"bboxEnvelope": {
 					"type": "object",
@@ -128,9 +51,49 @@
 							}
 						}
 					}
+				},
+				"accessCondition": {
+					"type": "string",
+					"examples": ["This item is in the public domain. There are no restrictions on use.", "Access restriction details"]
+				},
+				"accessEndpoints": {
+					"type": "object",
+					"properties": {
+						"endpoints": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"accessURL": {
+										"type": "string"
+									},
+									"format": {
+										"type": "string",
+										"enum": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles"]
+									},
+									"source": {
+										"type": "string"
+									},
+									"accessedViaURL": {
+										"description": "If the data has a record on a data portal, link to the whole record here",
+										"type": "string"
+									}
+								}
+							}]
+						}
+					}
+				},
+				"recordType": {
+					"description": "Used to distinguish between records describing collections, and records describing singular datasets",
+					"type": "string",
+					"enum": ["Collection", "Dataset"]
+				},
+				"shortGenealogyDescription": {
+					"description": "Used to note how the dataset described came to be, if it was inferred from or combined from other datasets",
+					"type": "string"
 				}
 			},
-			"required": ["$id", "title", "shortDescription", "language", "entryType", "bboxEnvelope"]
+			"required": ["$id", "title", "shortDescription", "hostedBy", "accessCondition", "accessEndpoints", "recordType"]
 		},
 		"subjectTagging": {
 			"description": "Topic tags to facilitate search and filtering",
@@ -323,7 +286,7 @@
 						"value": {
 							"type": "string"
 						},
-						"temporalNotes":{
+						"temporalNotes": {
 							"type": "string",
 							"examples": ["Processing completed on the most recent data made available by MassGIS at the time this record was created, 2020-06-16"]
 						}
@@ -485,37 +448,6 @@
 			"description": "Datasets or data projects are often not useful on their own. Often, we need an entire constellation of supporting resources to make sense of the data we find. The information in this section can be added to as more learning materials become available. ",
 			"type": "object",
 			"properties": {
-				"accessCondition": {
-					"type": "string",
-					"examples": ["This item is in the public domain. There are no restrictions on use.", "Access restriction details"]
-				},
-				"accessEndpoints": {
-					"type": "object",
-					"properties": {
-						"endpoints": {
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"accessURL": {
-										"type": "string"
-									},
-									"format": {
-										"type": "string",
-										"enum": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles"]
-									},
-									"source": {
-										"type": "string"
-									},
-									"accessedViaURL": {
-										"description": "If the data has a record on a data portal, link to the whole record here",
-										"type": "string"
-									}
-								}
-							}]
-						}
-					}
-				},
 				"suggestedEntryPoints": {
 					"description": "Reference to the most logical place for someone new to this dataset to begin to understand how to work with it",
 					"type": "object",
@@ -569,7 +501,7 @@
 						}
 					}
 				},
-				"analysesOrPublications": {
+				"publications": {
 					"description": "Reference to related analyses or prominent publications using the data",
 					"type": "object",
 					"properties": {
@@ -635,234 +567,160 @@
 							}]
 						}
 					}
-				},
-				"audioProvidingContext": {
-					"description": "If audio narratives describing information about this dataset is easier to capture than text, this field points to those audio files and provides context about them",
-					"type": "object",
-					"properties": {
-						"audioFiles": {
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"type:": "string",
-										"format": "uri"
-									},
-									"title": {
-										"type": "string"
-									},
-									"audioContextProvider": {
-										"type": "string"
-									},
-									"dateRecorded": {
-										"type": "string",
-										"format": "date"
-									},
-									"datePublished": {
-										"type": "string",
-										"format": "date"
-									},
-									"language": {
-										"type": "string"
-									}
-								},
-								"required": ["$id", "audioContextProvider"]
-							}]
-						}
-					}
-				},
-				"imagesProvidingContext": {
-					"description": "References to screenshots or photos that lend additional context about the dataset or steps taken to process the data",
-					"type": "object",
-					"properties": {
-						"imageFiles": {
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"type:": "string",
-										"format": "uri"
-									},
-									"title": {
-										"type": "string"
-									},
-									"caption": {
-										"type": "string"
-									},
-									"imageContextProvider": {
-										"type": "string"
-									}
-								},
-								"required": ["$id", "title", "caption", "imageContextProvider"]
-							}]
-						}
-					}
 				}
 			},
-			"required": ["accessConditions", "accessEndpoints", "suggestedEntryPoint"]
+			"required": ["suggestedEntryPoint"]
 		},
 		"dataLifecycle": {
 			"description": "Human beings often make many changes to data during the process of trying to work with it and make sense of it. This section is aimed at painting a fuller picture of the actions other humans have performed on or about this data, to help you understand how you might want to use it. ",
 			"type": "object",
 			"properties": {
-				"description": {
+				"acquisition": {
+					"description": "Used to describe where the data came from, if created from other data sources",
 					"type": "object",
 					"properties": {
-						"contextProvider": {
-							"description": "Person describing this dataset or project",
-							"type": "object",
-							"properties": {
-								"name": {
-									"type": "string"
-								},
-								"relationshipToData": {
-									"type": "array",
-									"items": {
+						"ingredients": {
+							"description": "Used to provide relational links and notes about relationship quality regarding the 'ingredient' datasets this dataset was created from.",
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"$id": {
 										"type": "string",
-										"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+										"format": "uri"
 									},
-									"minItems": 1
-								}
-							}
-						},
-						"contextOnBehalfOf": {
-							"description": "If the person filling out the context is different than the person responsbile for the creation or processing of the dataset or project, note that here",
-							"type": "object",
-							"properties": {
-								"name": {
-									"type": "string"
-								},
-								"relationshipToData": {
-									"type": "array",
-									"items": {
+									"type": {
+										"description": "Was this ingredient alone improved upon to make the new dataset? (linearPredecessor) or was it combined with other datasets to make the new dataset? (compositeIngredient)",
 										"type": "string",
-										"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+										"enum": ["linearPredecessor", "compositeIngredient"]
 									},
-									"minItems": 1
+									"notes": {
+										"type": "string"
+									}
 								}
-							}
-						},
-						"contextPublicationDate": {
-							"description": "Date this context was first made available",
-							"type": "string",
-							"format": "date"
-						},
-						"metadataSchema": {
-							"type": "object",
-							"properties": {
-								"name": {
-									"type": "string",
-									"const": "LMEC Data Description Schema"
-								},
-								"$id": {
-									"type": "string",
-									"const": "https://github.com/nblmc/Data-Context/blob/master/schema.json"
-								}
-							}
-						},
-						"missingInformation": {
-							"type": "object",
-							"properties": {
-								"missingValuesNotes": {
-									"description": "In cases where fields were left blank because the contect contributr did not know the answer, this is a place for the contributor to name that, and possibly provide some information on why they think this information is not available. ",
-									"type": "string"
-								},
-								"missingGeneral": {
-									"description": "Are there any major issues with missing values in the data, and could you please comment on what and why",
-									"type": "string"
-								}
+							}]
+						}
+					}
+				},
+				"description": {
+					"language": {
+						"type": "object",
+						"properties": {
+							"authority": {
+								"type": "string",
+								"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
 							},
-							"required": ["missingValuesNotes", "missingGeneral"]
-						},
-						"criticalContext": {
-							"type": "object",
-							"properties": {
-								"selectedFields": {
-									"description": "Array of metadata field names where the value provided in this context document should be elevated to high prominence in the discovery environment, to avoid important information being buried. Will vary dataset to dataset / project to project.",
-									"type": "array",
-									"examples": ["fundingRequirements", "audioNarrativesProvidingContext"]
-								},
-								"explanation": {
-									"description": "If you would like to, here is a place to provide an explanation of why you selected the fields you selected.",
-									"type": "string"
-								}
-							},
-							"required": ["selectedFields"]
+							"value": {
+								"type": "string"
+							}
 						}
 					},
-					"required": ["contextProvider", "contextPublicationDate", "missingInformation", "criticalContext"]
+					"contextProvider": {
+						"description": "Person describing this dataset or project",
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"relationshipToData": {
+								"type": "array",
+								"items": {
+									"type": "string",
+									"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+								},
+								"minItems": 1
+							}
+						}
+					},
+					"contextOnBehalfOf": {
+						"description": "If the person filling out the context is different than the person responsbile for the creation or processing of the dataset or project, note that here",
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"relationshipToData": {
+								"type": "array",
+								"items": {
+									"type": "string",
+									"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+								},
+								"minItems": 1
+							}
+						}
+					},
+					"contextPublicationDate": {
+						"description": "Date this context was first made available",
+						"type": "string",
+						"format": "date"
+					},
+					"metadataSchema": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string",
+								"const": "LMEC Data Description Schema"
+							},
+							"$id": {
+								"type": "string",
+								"const": "https://github.com/nblmc/Data-Context/blob/master/schema.json"
+							}
+						}
+					},
+					"missingInformation": {
+						"type": "object",
+						"properties": {
+							"missingValuesNotes": {
+								"description": "In cases where fields were left blank because the contect contributr did not know the answer, this is a place for the contributor to name that, and possibly provide some information on why they think this information is not available. ",
+								"type": "string"
+							},
+							"missingGeneral": {
+								"description": "Are there any major issues with missing values in the data, and could you please comment on what and why",
+								"type": "string"
+							}
+						},
+						"required": ["missingValuesNotes", "missingGeneral"]
+					},
+					"criticalContext": {
+						"type": "object",
+						"properties": {
+							"selectedFields": {
+								"description": "Array of metadata field names where the value provided in this context document should be elevated to high prominence in the discovery environment, to avoid important information being buried. Will vary dataset to dataset / project to project.",
+								"type": "array",
+								"examples": ["fundingRequirements", "audioNarrativesProvidingContext"]
+							},
+							"explanation": {
+								"description": "If you would like to, here is a place to provide an explanation of why you selected the fields you selected.",
+								"type": "string"
+							}
+						},
+						"required": ["selectedFields"]
+					},
+					"required": ["language", "contextProvider", "contextPublicationDate", "missingInformation", "criticalContext"]
 				},
-				"archivingAndMaintenance": {
+				"maintenance": {
 					"type": "object",
 					"properties": {
-						"officialMaintenance": {
-							"description": "If another organization is responsible for the hosting and upkeep of this source data, use this field to describe that information.",
-							"type": "object",
-							"properties": {
-								"officialMaintainer": {
-									"type": "string"
-								},
-								"maintenanceFrequency": {
-									"description": "Example answers - 'None', 'Every Monday at Midnight', 'Annually', 'Unknown'",
-									"type": "string"
-								},
-								"typicalUpdates": {
-									"description": "If this data is regularly updated, describe the typical nature of the changes",
-									"type": "string"
-								}
-							},
-							"required": ["officialMaintainer", "maintenanceFrequency"]
+						"officialMaintainer": {
+							"type": "string"
 						},
-						"lmecRecordLocation": {
-							"type": "string",
-							"examples": ["datacatalog.leventhalmap.org.purl:123456789"]
+						"maintenanceFrequency": {
+							"description": "Example answers - 'None', 'Every Monday at Midnight', 'Annually', 'Unknown'",
+							"type": "string"
 						},
-						"preferredCitation": {
+						"typicalUpdates": {
+							"description": "If this data is regularly updated, describe the typical nature of the changes",
 							"type": "string"
 						}
-					},
-					"required": ["officialMaintenance", "lmecRecordLocation"]
+					}
 				},
-				"cleaningAndAnalysis": {
+				"manipulation": {
+					"description": "Used to describe as clearly as possible the human choices involved in processing this dataset. The goal of the style of description should be that someone who has never encountered this type of data before could replicate all of the processing steps, start to finish. Steps can be entered chronologically, and paired with audio or image supplements to provide additional clarity.",
 					"type": "object",
 					"properties": {
-						"overview": {
+						"shortDescription": {
 							"description": "A clear, sequential overview of all steps taken and the reasons for making changes or carrying out processing should be provided here.",
-							"type:": "string"
-						},
-						"steps": {
-							"description": "Detailed information about each step in the processing sequence, explained in a way that someone else working with the starting data could perform the exact same steps and arrive at a similar result. This section is not tightly required, but is strongly suggested.",
-							"type": "object",
-							"properties": {
-								"steps": {
-									"type": "array",
-									"items": [{
-										"type": "object",
-										"properties": {
-											"stepNumber": {
-												"type": "integer"
-											},
-											"stepDescription": {
-												"type": "string"
-											},
-											"stepActor": {
-												"description": "Who performed this step.",
-												"type": "string"
-											},
-											"stepDescriber": {
-												"description": "If other than actor.",
-												"type": "string"
-											},
-											"stepMotivation": {
-												"description": "Explanation of why this step advanced the overall goals of improving the dataset for use, why was it necessary?",
-												"type": "string"
-											}
-										}
-									}]
-								}
-							}
+							"type": "string"
 						},
 						"droppedFields": {
 							"description": "General explanation if fields were dropped from the source data.",
@@ -884,15 +742,122 @@
 							"description": "Forewarnings or words-to-the wise for someone else wanting to work with this data or project",
 							"type": "string"
 						},
-						"gapsInProcessingInformation": {
+						"missingProcessingInformation": {
 							"description": "What is unknown about the process for cleaning, joining, analyzing, visualizing within this project that leaves meaningful gaps in understanding how to interpret or use it again",
 							"type": "string"
+						},
+						"steps": {
+							"description": "Detailed information about each step in the processing sequence, explained in a way that someone else working with the starting data could perform the exact same steps and arrive at a similar result. This section is not tightly required, but is strongly suggested.",
+							"type": "object",
+							"properties": {
+								"steps": {
+									"type": "array",
+									"items": [{
+										"type": "object",
+										"properties": {
+											"stepTitle": {
+												"type": "string"
+											},
+											"lifecyclePhase": {
+												"type": "string",
+												"enum": ["Cleaning", "Analysis", "Visualization"]
+											},
+											"stepDescription": {
+												"type": "string"
+											},
+											"stepActor": {
+												"description": "Who performed this step.",
+												"type": "string"
+											},
+											"stepDescriber": {
+												"description": "If other than actor.",
+												"type": "string"
+											},
+											"stepMotivation": {
+												"description": "Explanation of why this step advanced the overall goals of improving the dataset for use, why was it necessary?",
+												"type": "string"
+											},
+											"audioProvidingContext": {
+												"description": "If audio narratives describing information about this dataset is easier to capture than text, this field points to those audio files and provides context about them",
+												"type": "object",
+												"properties": {
+													"audioFiles": {
+														"type": "array",
+														"items": [{
+															"type": "object",
+															"properties": {
+																"$id": {
+																	"type:": "string",
+																	"format": "uri"
+																},
+																"title": {
+																	"type": "string"
+																},
+																"audioContextProvider": {
+																	"type": "string"
+																},
+																"dateRecorded": {
+																	"type": "string",
+																	"format": "date"
+																},
+																"datePublished": {
+																	"type": "string",
+																	"format": "date"
+																},
+																"language": {
+																	"type": "string"
+																}
+															},
+															"required": ["$id", "audioContextProvider"]
+														}]
+													}
+												}
+											},
+											"imagesProvidingContext": {
+												"description": "References to screenshots or photos that lend additional context about the dataset or steps taken to process the data",
+												"type": "object",
+												"properties": {
+													"imageFiles": {
+														"type": "array",
+														"items": [{
+															"type": "object",
+															"properties": {
+																"$id": {
+																	"type:": "string",
+																	"format": "uri"
+																},
+																"title": {
+																	"type": "string"
+																},
+																"caption": {
+																	"type": "string"
+																},
+																"imageContextProvider": {
+																	"type": "string"
+																}
+															},
+															"required": ["$id", "title", "caption", "imageContextProvider"]
+														}]
+													}
+												}
+											}
+										}
+									}]
+								}
+							}
 						}
-					},
-					"required": ["overview", "gapsInProcessingInformation"]
+					}
+				},
+				"dissemination": {
+					"type": "object",
+					"properties": {
+						"preferredCitation": {
+							"type": "string"
+						}
+					}
 				}
 			},
-			"required": ["description", "archivingAndMaintenance", "cleaningAndAnalysis"]
+			"required": ["description", "maintentance", "dissemination"]
 		}
 	}
 }
