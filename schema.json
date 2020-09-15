@@ -16,17 +16,26 @@
 					"description": "Full name of the dataset or project",
 					"type": "string"
 				},
+				"recordType": {
+					"description": "Used to distinguish between records describing collections, and records describing singular datasets",
+					"type": "string",
+					"enum": ["Collection", "Dataset"]
+				},
+				"hostedBy": {
+					"type": "string",
+					"enum": ["Internal", "External"]
+				},
 				"shortDataDescription": {
 					"description": "Short description of the dataset or project",
+					"type": "string"
+				},
+				"shortGenealogyDescription": {
+					"description": "Used to note how the dataset described came to be, if it was inferred from or combined from other datasets",
 					"type": "string"
 				},
 				"datasetType": {
 					"type": "string",
 					"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
-				},
-				"hostedBy": {
-					"type": "string",
-					"enum": ["Internal", "External"]
 				},
 				"bboxEnvelope": {
 					"type": "object",
@@ -82,18 +91,9 @@
 							}]
 						}
 					}
-				},
-				"recordType": {
-					"description": "Used to distinguish between records describing collections, and records describing singular datasets",
-					"type": "string",
-					"enum": ["Collection", "Dataset"]
-				},
-				"shortGenealogyDescription": {
-					"description": "Used to note how the dataset described came to be, if it was inferred from or combined from other datasets",
-					"type": "string"
 				}
 			},
-			"required": ["$id", "title", "shortDescription", "hostedBy", "accessCondition", "accessEndpoints", "recordType"]
+			"required": ["$id", "title", "recordType", "hostedBy", "shortDataDescription", "accessCondition", "accessEndpoints"]
 		},
 		"subjectTagging": {
 			"description": "Topic tags to facilitate search and filtering",
