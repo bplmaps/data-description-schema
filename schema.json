@@ -37,13 +37,12 @@
 					"type": "string",
 					"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
 				},
-				"bboxEnvelope": {
+				"bboxPreview": {
 					"type": "object",
 					"properties": {
-						"srs": {
-							"description": "SRS provided in EPSG",
+						"previewSRS": {
 							"type": "string",
-							"examples": "EPSG:4326"
+							"const": "EPSG:4326"
 						},
 						"lowerCorner": {
 							"type": "array",
@@ -91,9 +90,16 @@
 							}]
 						}
 					}
+				},
+				"collectionItems": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"format": "uri"
+					}
 				}
 			},
-			"required": ["$id", "title", "recordType", "hostedBy", "shortDataDescription", "accessCondition", "accessEndpoints"]
+			"required": ["$id", "title", "recordType", "hostedBy", "shortDataDescription", "accessCondition"]
 		},
 		"subjectTagging": {
 			"description": "Topic tags to facilitate search and filtering",
@@ -279,16 +285,70 @@
 				"temporal": {
 					"type": "object",
 					"properties": {
-						"encoding": {
+						"temporalType": {
+							"description": "This field indicates whether the temporal extent of this dataset is expressed as a singular date, or as a range.",
 							"type": "string",
-							"const": "https://www.w3.org/TR/NOTE-datetime"
-						},
-						"value": {
-							"type": "string"
+							"enum": ["singularExpression", "temporalRange"]
 						},
 						"temporalNotes": {
-							"type": "string",
-							"examples": ["Processing completed on the most recent data made available by MassGIS at the time this record was created, 2020-06-16"]
+							"description": "Used to provide clarity about the temporal details of the dataset.",
+							"type": "string"
+						},
+						"temporalRepresentaion": {
+							"type": "object",
+							"properties": {
+								"encoding": {
+									"type": "string",
+									"const": "https://www.w3.org/TR/NOTE-datetime"
+								},
+								"value": {
+									"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the data depicts the state of the historic shoreline in 1916, but was created and published in 2019, the value of this field should be 1916. The 'datePublished' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
+									"type": "string"
+								}
+							}
+						},
+						"temporalRepresentationRange": {
+							"type": "object",
+							"properties": {
+								"startRange": {
+									"type": "object",
+									"properties": {
+										"encoding": {
+											"type": "string",
+											"const": "https://www.w3.org/TR/NOTE-datetime"
+										},
+										"value": {
+											"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the collection is comprised of data depicting the various states of the historic shoreline between 1630 and 1995, but was created and published in 2019, the value of this field should be 1630. The 'datePublished' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
+											"type": "string"
+										}
+									}
+								},
+								"endRange": {
+									"type": "object",
+									"properties": {
+										"encoding": {
+											"type": "string",
+											"const": "https://www.w3.org/TR/NOTE-datetime"
+										},
+										"value": {
+											"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the collection is comprised of data depicting the various states of the historic shoreline between 1630 and 1995, but was created and published in 2019, the value of this field should be 1995. The 'datePublished' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"datePublished": {
+							"type": "object",
+							"properties": {
+								"encoding": {
+									"type": "string",
+									"const": "https://www.w3.org/TR/NOTE-datetime"
+								},
+								"value": {
+									"type": "string"
+								}
+							}
 						}
 					}
 				}
