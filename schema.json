@@ -363,126 +363,70 @@
 					"type": "object",
 					"properties": {
 						"universe": {
-							"type": "string"
-						},
-						"sampleSize": {
-							"type": "string"
-						},
-						"sampleSizeReasons": {
-							"description": "Explanation for this choice of sample size",
-							"type": "string"
-						},
-						"knownProblems": {
-							"description": "Place to mention known problems or considerations related to sample size and method.",
-							"type": "string"
-						},
-						"marginOfError": {
-							"description": "Place to knote considerations related to margins of error.",
-							"type": "string"
-						}
-					}
-				},
-				"privacy": {
-					"type": "object",
-					"properties": {
-						"unitOfAggregation": {
-							"type": "string"
-						},
-						"aggregationProblems": {
-							"description": "If there are known issues or considerations related to the way the data is aggregated, describe them here.",
-							"type": "string"
-						},
-						"consent": {
-							"description": "Describe the degree to which the people included in this dataset knew about, agreed, and understood how their data would be used.",
-							"type": "string"
-						},
-						"anonymization": {
-							"description": "If this data was masked or anonymized in any way, please describe that process here, including how measures of genuine privacy are being assured.",
-							"type": "string"
-						},
-						"privacyIssues": {
-							"description": "Are there any known privacy issues or considerations related to this dataset?",
-							"type": "string"
-						}
-					}
-				},
-				"representation": {
-					"type": "object",
-					"properties": {
-						"whoIncluded": {
-							"description": "Explanation of who was included in this dataset",
-							"type": "string"
-						},
-						"whoLeftOut": {
-							"description": "Explanation of who was not included in this dataset",
-							"type": "string"
-						}
-					}
-				},
-				"dataCollection": {
-					"type": "object",
-					"properties": {
-						"whoCollected": {
-							"description": "Who was involved in collecting this data?",
-							"type": "string"
-						},
-						"startDate": {
-							"description": "When did data collection begin?",
-							"type": "string",
-							"format": "date"
-						},
-						"endDate": {
-							"description": "When did data collection wrap up?",
-							"type": "string",
-							"format": "date"
-						},
-						"whoConceived": {
-							"description": "Who is responsible for the conception of the collection project?",
-							"type": "string"
-						},
-						"whoDesigned": {
-							"description": "Who designed the survey or data model?",
-							"type": "string"
-						},
-						"whoExcluded": {
-							"description": "Who was excluded from the conception and design of the survey or data model?",
-							"type": "string"
-						},
-						"representation": {
-							"description": "Were the communities who this data about included in the conception or collection process? If yes, please describe this process. If no, please explain why.",
-							"type": "string"
-						},
-						"collectionConditions": {
-							"description": "Are there any known conditions surrounding the collection process which could have impacted results? For example, global pandemic, housing insecurity, documentation status, and so on.",
-							"type": "string"
-						},
-						"collectorsLocations": {
-							"description": "Were the data collectors from the communities in which the data is being collected about?",
-							"type": "string"
-						},
-						"collectionMethods": {
-							"description": "By which methods were the data collected?",
-							"type": "string"
-						}
-					}
-				},
-				"funding": {
-					"type": "object",
-					"properties": {
-						"funders": {
 							"type": "array",
 							"items": [{
 								"type": "object",
 								"properties": {
-									"funder": {
+									"notes": {
 										"type": "string"
 									},
-									"fundingRequirements": {
-										"description": "Were there any requirements of funding that impacted this data at any point during the data information lifecycle?",
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"sampleSize": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
 										"type": "string"
 									},
-									"originalPurpose": {
-										"description": "What was the original, state purpose for this data upon conception and acquiring funding?",
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"sampleSizeReasons": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"knownSampleSizeProblems": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"marginOfError": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
 										"type": "string"
 									}
 								}
@@ -490,17 +434,330 @@
 						}
 					}
 				},
+				"privacy": {
+					"type": "object",
+					"properties": {
+						"unitOfAggregation": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"aggregationProblems": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"consent": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"anonymization": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"privacyIssues": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						}
+					}
+				},
+				"representation": {
+					"type": "object",
+					"properties": {
+						"whoIncluded": {
+							"type": "array",
+							"description": "Explanation of who was included in this dataset",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"whoLeftOut": {
+							"type": "array",
+							"description": "Explanation of who was not included in this dataset",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						}
+					}
+				},
+				"dataCollection": {
+					"type": "object",
+					"properties": {
+						"whoCollected": {
+							"type": "array",
+							"description": "Who was involved in collecting this data?",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"startDate": {
+							"type": "array",
+							"description": "When did data collection begin?",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"endDate": {
+							"type": "array",
+							"description": "When did data collection wrap up?",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"whoConceived": {
+							"type": "array",
+							"description": "Who is responsible for the conception of the collection project?",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"whoDesigned": {
+							"type": "array",
+							"description": "Who designed the survey or data model?",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"whoExcluded": {
+							"type": "array",
+							"description": "Who was excluded from the conception and design of the survey or data model?",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"representation": {
+							"type": "array",
+							"description": "Were the communities who this data about included in the conception or collection process? If yes, please describe this process. If no, please explain why.",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"collectionConditions": {
+							"type": "array",
+							"description": "Are there any known conditions surrounding the collection process which could have impacted results? For example, global pandemic, housing insecurity, documentation status, and so on.",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"collectorsLocations": {
+							"type": "array",
+							"description": "Were the data collectors from the communities in which the data is being collected about?",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"collectionMethods": {
+							"type": "array",
+							"description": "By which methods were the data collected?",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						}
+					}
+				},
+				"funding": {
+					"type": "array",
+					"description": "Place to describe or point to how this data were funded, who the funders were, what the funding requirements or stipulations were, and what the original purpose of the data was for. ",
+					"items": [{
+						"type": "object",
+						"properties": {
+							"notes": {
+								"type": "string"
+							},
+							"resource": {
+								"type": "string"
+							}
+						}
+					}]
+				},
 				"potentialBenefit": {
+					"type": "array",
 					"description": "If there are people who potentially benefit from this data, or have some stake in its quality, use this space to comment on who, how, and why.",
-					"type": "string"
+					"items": [{
+						"type": "object",
+						"properties": {
+							"notes": {
+								"type": "string"
+							},
+							"resource": {
+								"type": "string"
+							}
+						}
+					}]
 				},
 				"potentialHarm": {
+					"type": "array",
 					"description": "If there are people who potentially be harmed by this data, or have some stake in its quality, use this space to comment on who, how, and why.",
-					"type": "string"
+					"items": [{
+						"type": "object",
+						"properties": {
+							"notes": {
+								"type": "string"
+							},
+							"resource": {
+								"type": "string"
+							}
+						}
+					}]
 				},
 				"vulnerability": {
+					"type": "array",
 					"description": "If the populations included are typically undercounted or overcounted, please comment on how the data being publicly available could have an impact on them.",
-					"type": "string"
+					"items": [{
+						"type": "object",
+						"properties": {
+							"notes": {
+								"type": "string"
+							},
+							"resource": {
+								"type": "string"
+							}
+						}
+					}]
 				}
 			}
 		},
