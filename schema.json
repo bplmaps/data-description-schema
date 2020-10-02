@@ -703,6 +703,10 @@
 									}
 								}
 							}]
+						},
+						"missingData": {
+							"description": "Are there any major issues with missing values in the data, and could you please comment on what and why",
+							"type": "string"
 						}
 					}
 				},
@@ -776,7 +780,7 @@
 					"description": "Reference to the most logical place for someone new to this dataset to begin to understand how to work with it",
 					"type": "object",
 					"properties": {
-						"entryPoints": {
+						"entryPoint": {
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -801,7 +805,7 @@
 					"description": "Reference to any codebooks or data dictionaries intended to aid interpretation of the data's attributes or field names",
 					"type": "object",
 					"properties": {
-						"codebooks": {
+						"codebook": {
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -893,7 +897,7 @@
 					}
 				}
 			},
-			"required": ["suggestedEntryPoint"]
+			"required": ["suggestedEntryPoints"]
 		},
 		"dataLifecycle": {
 			"description": "Human beings often make many changes to data during the process of trying to work with it and make sense of it. This section is aimed at painting a fuller picture of the actions other humans have performed on or about this data, to help you understand how you might want to use it. ",
@@ -950,7 +954,7 @@
 								"type": "array",
 								"items": {
 									"type": "string",
-									"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+									"enum": ["Collector", "Maintainer", "Archivist", "Processor/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
 								},
 								"minItems": 1
 							}
@@ -991,36 +995,16 @@
 							}
 						}
 					},
-					"missingInformation": {
-						"type": "object",
-						"properties": {
-							"missingValuesNotes": {
-								"description": "In cases where fields were left blank because the contect contributr did not know the answer, this is a place for the contributor to name that, and possibly provide some information on why they think this information is not available. ",
-								"type": "string"
-							},
-							"missingGeneral": {
-								"description": "Are there any major issues with missing values in the data, and could you please comment on what and why",
-								"type": "string"
-							}
-						},
-						"required": ["missingValuesNotes", "missingGeneral"]
+					"missingContext": {
+						"description": "In cases where fields were left blank because the context contributor did not know the answer, this is a place for the contributor to name that, and possibly provide some information on why they think this information is not available.",
+						"type": "string"
 					},
 					"criticalContext": {
-						"type": "object",
-						"properties": {
-							"selectedFields": {
-								"description": "Array of metadata field names where the value provided in this context document should be elevated to high prominence in the discovery environment, to avoid important information being buried. Will vary dataset to dataset / project to project.",
-								"type": "array",
-								"examples": ["fundingRequirements", "audioNarrativesProvidingContext"]
-							},
-							"explanation": {
-								"description": "If you would like to, here is a place to provide an explanation of why you selected the fields you selected.",
-								"type": "string"
-							}
-						},
-						"required": ["selectedFields"]
+						"description": "Array of metadata field names where the value provided in this context document should be elevated to high prominence in the discovery environment, to avoid important information being buried. Will vary dataset to dataset / project to project.",
+						"type": "array",
+						"examples": ["fundingRequirements", "audioNarrativesProvidingContext"]
 					},
-					"required": ["language", "contextProvider", "contextPublicationDate", "missingInformation", "criticalContext"]
+					"required": ["language", "contextProvider", "contextPublicationDate", "missingContext", "criticalContext"]
 				},
 				"maintenance": {
 					"type": "object",
@@ -1052,6 +1036,10 @@
 						},
 						"addedFields": {
 							"description": "General explanation if fields were added or inferred to the source data as part of these processing steps",
+							"type": "string"
+						},
+						"renamedFields": {
+							"description": "General explanation if fields were renamed from the source data as part of these processing steps",
 							"type": "string"
 						},
 						"successes": {
