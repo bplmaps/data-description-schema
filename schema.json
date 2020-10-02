@@ -391,6 +391,7 @@
 							}]
 						},
 						"sampleSizeReasons": {
+							"description": "Explanation for this choice of sample size",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -405,6 +406,7 @@
 							}]
 						},
 						"knownSampleSizeProblems": {
+							"description": "Place to mention known problems or considerations related to sample size and method.",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -419,6 +421,7 @@
 							}]
 						},
 						"marginOfError": {
+							"description": "Place to note considerations related to margins of error.",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -452,6 +455,7 @@
 							}]
 						},
 						"aggregationProblems": {
+							"description": "If there are known issues or considerations related to the way the data is aggregated, describe them here.",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -466,6 +470,7 @@
 							}]
 						},
 						"consent": {
+							"description": "Describe the degree to which the people included in this dataset knew about, agreed, and understood how their data would be used.",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -480,6 +485,7 @@
 							}]
 						},
 						"anonymization": {
+							"description": "If this data was masked or anonymized in any way, please describe that process here, including how measures of genuine privacy are being assured.",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -494,6 +500,7 @@
 							}]
 						},
 						"privacyIssues": {
+							"description": "Are there any known privacy issues or considerations related to this dataset?",
 							"type": "array",
 							"items": [{
 								"type": "object",
