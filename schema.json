@@ -833,7 +833,7 @@
 					"description": "Reference to related analyses or prominent publications using the data",
 					"type": "object",
 					"properties": {
-						"works": {
+						"work": {
 							"type": "array",
 							"items": [{
 								"type": "object",
