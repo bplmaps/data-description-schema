@@ -1072,7 +1072,7 @@
 											},
 											"lifecyclePhase": {
 												"type": "string",
-												"enum": ["Cleaning", "Analysis", "Visualization"]
+												"enum": ["Acquisition", "Cleaning", "Analysis", "Visualization"]
 											},
 											"stepDescription": {
 												"type": "string"
@@ -1169,7 +1169,7 @@
 					}
 				}
 			},
-			"required": ["description", "maintentance", "dissemination"]
+			"required": ["description", "maintenance", "dissemination"]
 		}
 	}
 }
