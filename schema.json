@@ -4,6 +4,33 @@
 	"title": "LMEC Data Description Schema",
 	"type": "object",
 	"properties": {
+		"directAccessURLs": {
+			"type": "object",
+			"properties": {
+				"endpoints": {
+					"type": "array",
+					"items": [{
+						"type": "object",
+						"properties": {
+							"accessURL": {
+								"type": "string"
+							},
+							"format": {
+								"type": "string",
+								"enum": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles"]
+							},
+							"source": {
+								"type": "string"
+							},
+							"accessedViaURL": {
+								"description": "If the data has a record on a data portal, link to the whole record here",
+								"type": "string"
+							}
+						}
+					}]
+				}
+			}
+		},
 		"coreCitation": {
 			"description": "Basic facts about the collection or dataset",
 			"type": "object",
@@ -63,33 +90,6 @@
 				"accessCondition": {
 					"type": "string",
 					"examples": ["This item is in the public domain. There are no restrictions on use.", "Access restriction details"]
-				},
-				"accessEndpoints": {
-					"type": "object",
-					"properties": {
-						"endpoints": {
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"accessURL": {
-										"type": "string"
-									},
-									"format": {
-										"type": "string",
-										"enum": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles"]
-									},
-									"source": {
-										"type": "string"
-									},
-									"accessedViaURL": {
-										"description": "If the data has a record on a data portal, link to the whole record here",
-										"type": "string"
-									}
-								}
-							}]
-						}
-					}
 				},
 				"collectionItems": {
 					"type": "array",
@@ -285,11 +285,6 @@
 				"temporal": {
 					"type": "object",
 					"properties": {
-						"temporalType": {
-							"description": "This field indicates whether the temporal extent of this dataset is expressed as a singular date, or as a range.",
-							"type": "string",
-							"enum": ["singularExpression", "temporalRange"]
-						},
 						"temporalNotes": {
 							"description": "Used to provide clarity about the temporal details of the dataset.",
 							"type": "string"
@@ -301,16 +296,16 @@
 									"type": "string",
 									"const": "https://www.w3.org/TR/NOTE-datetime"
 								},
-								"value": {
-									"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the data depicts the state of the historic shoreline in 1916, but was created and published in 2019, the value of this field should be 1916. The 'datePublished' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
+								"temporalType": {
+									"description": "This field indicates whether the temporal extent of this dataset is expressed as a singular date, or as a range.",
+									"type": "string",
+									"enum": ["singularExpression", "temporalRange"]
+								},
+								"singleExpressionValue": {
+									"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the data depicts the state of the historic shoreline in 1916, but was created and published in 2019, the value of this field should be 1916. The 'temporalPublication' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
 									"type": "string"
-								}
-							}
-						},
-						"temporalRepresentationRange": {
-							"type": "object",
-							"properties": {
-								"startRange": {
+								},
+								"startRangeValue": {
 									"type": "object",
 									"properties": {
 										"encoding": {
@@ -323,7 +318,7 @@
 										}
 									}
 								},
-								"endRange": {
+								"endRangeValue": {
 									"type": "object",
 									"properties": {
 										"encoding": {
@@ -338,15 +333,47 @@
 								}
 							}
 						},
-						"datePublished": {
+						"temporalPublication": {
 							"type": "object",
 							"properties": {
 								"encoding": {
 									"type": "string",
 									"const": "https://www.w3.org/TR/NOTE-datetime"
 								},
-								"value": {
+								"temporalType": {
+									"description": "This field indicates whether the temporal extent of this dataset is expressed as a singular date, or as a range.",
+									"type": "string",
+									"enum": ["singularExpression", "temporalRange"]
+								},
+								"singleExpressionValue": {
+									"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the data depicts the state of the historic shoreline in 1916, but was created and published in 2019, the value of this field should be 1916. The 'temporalPublication' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
 									"type": "string"
+								},
+								"startRangeValue": {
+									"type": "object",
+									"properties": {
+										"encoding": {
+											"type": "string",
+											"const": "https://www.w3.org/TR/NOTE-datetime"
+										},
+										"value": {
+											"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the collection is comprised of data depicting the various states of the historic shoreline between 1630 and 1995, but was created and published in 2019, the value of this field should be 1630. The 'datePublished' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
+											"type": "string"
+										}
+									}
+								},
+								"endRangeValue": {
+									"type": "object",
+									"properties": {
+										"encoding": {
+											"type": "string",
+											"const": "https://www.w3.org/TR/NOTE-datetime"
+										},
+										"value": {
+											"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the collection is comprised of data depicting the various states of the historic shoreline between 1630 and 1995, but was created and published in 2019, the value of this field should be 1995. The 'datePublished' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
+											"type": "string"
+										}
+									}
 								}
 							}
 						}
@@ -755,7 +782,7 @@
 						}
 					}]
 				},
-				"vulnerability": {
+				"miscountRisk": {
 					"type": "array",
 					"description": "If the populations included are typically undercounted or overcounted, please comment on how the data being publicly available could have an impact on them.",
 					"items": [{
@@ -1160,7 +1187,7 @@
 						}
 					}
 				},
-				"dissemination": {
+				"distribution": {
 					"type": "object",
 					"properties": {
 						"preferredCitation": {
@@ -1169,7 +1196,7 @@
 					}
 				}
 			},
-			"required": ["description", "maintenance", "dissemination"]
+			"required": ["description", "maintenance", "distribution"]
 		}
 	}
 }
