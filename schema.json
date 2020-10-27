@@ -341,12 +341,10 @@
 									"const": "https://www.w3.org/TR/NOTE-datetime"
 								},
 								"temporalType": {
-									"description": "This field indicates whether the temporal extent of this dataset is expressed as a singular date, or as a range.",
 									"type": "string",
 									"enum": ["singularExpression", "temporalRange"]
 								},
 								"singleExpressionValue": {
-									"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the data depicts the state of the historic shoreline in 1916, but was created and published in 2019, the value of this field should be 1916. The 'temporalPublication' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
 									"type": "string"
 								},
 								"startRangeValue": {
@@ -357,7 +355,6 @@
 											"const": "https://www.w3.org/TR/NOTE-datetime"
 										},
 										"value": {
-											"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the collection is comprised of data depicting the various states of the historic shoreline between 1630 and 1995, but was created and published in 2019, the value of this field should be 1630. The 'datePublished' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
 											"type": "string"
 										}
 									}
@@ -370,7 +367,6 @@
 											"const": "https://www.w3.org/TR/NOTE-datetime"
 										},
 										"value": {
-											"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the collection is comprised of data depicting the various states of the historic shoreline between 1630 and 1995, but was created and published in 2019, the value of this field should be 1995. The 'datePublished' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
 											"type": "string"
 										}
 									}
