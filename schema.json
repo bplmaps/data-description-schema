@@ -301,7 +301,7 @@
 									"type": "string",
 									"enum": ["singularExpression", "temporalRange"]
 								},
-								"singleExpressionValue": {
+								"singularExpressionValue": {
 									"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the data depicts the state of the historic shoreline in 1916, but was created and published in 2019, the value of this field should be 1916. The 'temporalPublication' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
 									"type": "string"
 								},
