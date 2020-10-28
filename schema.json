@@ -1088,7 +1088,6 @@
 								},
 								"procesorRelationshipToHost":{
 									"type": "string",
-									"description": "Name of person who processed this data"
 								},
 								"processDescriberName": {
 									"type": "string",
