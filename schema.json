@@ -727,6 +727,21 @@
 								}
 							}]
 						},
+						"miscountRisk": {
+							"type": "array",
+							"description": "If the populations included are typically undercounted or overcounted, please comment on how the data being publicly available could have an impact on them.",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"notes": {
+										"type": "string"
+									},
+									"resource": {
+										"type": "string"
+									}
+								}
+							}]
+						},
 						"missingData": {
 							"description": "Are there any major issues with missing values in the data, and could you please comment on what and why",
 							"type": "string"
@@ -765,22 +780,7 @@
 				},
 				"potentialHarm": {
 					"type": "array",
-					"description": "If there are people who potentially be harmed by this data, or have some stake in its quality, use this space to comment on who, how, and why.",
-					"items": [{
-						"type": "object",
-						"properties": {
-							"notes": {
-								"type": "string"
-							},
-							"resource": {
-								"type": "string"
-							}
-						}
-					}]
-				},
-				"miscountRisk": {
-					"type": "array",
-					"description": "If the populations included are typically undercounted or overcounted, please comment on how the data being publicly available could have an impact on them.",
+					"description": "If there are people who could potentially be harmed by this data, or have some stake in its quality, use this space to comment on who, how, and why.",
 					"items": [{
 						"type": "object",
 						"properties": {
@@ -1182,17 +1182,9 @@
 							}
 						}
 					}
-				},
-				"distribution": {
-					"type": "object",
-					"properties": {
-						"preferredCitation": {
-							"type": "string"
-						}
-					}
 				}
 			},
-			"required": ["description", "maintenance", "distribution"]
+			"required": ["description", "maintenance"]
 		}
 	}
 }
