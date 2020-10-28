@@ -803,7 +803,7 @@
 					"description": "Reference to the most logical place for someone new to this dataset to begin to understand how to work with it",
 					"type": "object",
 					"properties": {
-						"entryPoint": {
+						"entryPoints": {
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -828,7 +828,7 @@
 					"description": "Reference to any codebooks or data dictionaries intended to aid interpretation of the data's attributes or field names",
 					"type": "object",
 					"properties": {
-						"codebook": {
+						"codebooks": {
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -852,11 +852,11 @@
 						}
 					}
 				},
-				"publications": {
-					"description": "Reference to related analyses or prominent publications using the data",
+				"publishedWorks": {
+					"description": "Reference to related blogs, articles, books, data visualizations or other published research based on this data.",
 					"type": "object",
 					"properties": {
-						"work": {
+						"works": {
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -1046,138 +1046,82 @@
 					}
 				},
 				"manipulation": {
-					"description": "Used to describe as clearly as possible the human choices involved in processing this dataset. The goal of the style of description should be that someone who has never encountered this type of data before could replicate all of the processing steps, start to finish. Steps can be entered chronologically, and paired with audio or image supplements to provide additional clarity.",
+					"description": "Used to refer to descriptions written as clearly as possible the human choices involved in processing this dataset. The goal of the style of description should be that someone who has never encountered this type of data before could replicate all of the processing steps, start to finish. Steps can be entered chronologically, and paired with audio or image supplements to provide additional clarity.",
 					"type": "object",
 					"properties": {
-						"shortDescription": {
-							"description": "A clear, sequential overview of all steps taken and the reasons for making changes or carrying out processing should be provided here.",
-							"type": "string"
-						},
-						"droppedFields": {
-							"description": "General explanation if fields were dropped from the source data.",
-							"type": "string"
-						},
-						"addedFields": {
-							"description": "General explanation if fields were added or inferred to the source data as part of these processing steps",
-							"type": "string"
-						},
-						"renamedFields": {
-							"description": "General explanation if fields were renamed from the source data as part of these processing steps",
-							"type": "string"
-						},
-						"successes": {
-							"description": "General explanation of how steps taken were beneficial to the improvement of this data for public use.",
-							"type": "string"
-						},
-						"challenges": {
-							"description": "What was difficult about this project, known hangups, missing information, assumptions made, guesses, practical but questionable steps taken",
-							"type": "string"
-						},
-						"sandtraps": {
-							"description": "Forewarnings or words-to-the wise for someone else wanting to work with this data or project",
-							"type": "string"
-						},
-						"missingProcessingInformation": {
-							"description": "What is unknown about the process for cleaning, joining, analyzing, visualizing within this project that leaves meaningful gaps in understanding how to interpret or use it again",
-							"type": "string"
-						},
-						"steps": {
-							"description": "Detailed information about each step in the processing sequence, explained in a way that someone else working with the starting data could perform the exact same steps and arrive at a similar result. This section is not tightly required, but is strongly suggested.",
+						"directAccess": {
 							"type": "object",
 							"properties": {
-								"steps": {
+								"processingWorkflow": {
 									"type": "array",
 									"items": [{
 										"type": "object",
 										"properties": {
-											"stepTitle": {
+											"accessURL": {
 												"type": "string"
 											},
-											"lifecyclePhase": {
+											"format": {
 												"type": "string",
-												"enum": ["Acquisition", "Cleaning", "Analysis", "Visualization"]
+												"enum": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
 											},
-											"stepDescription": {
+											"author": {
 												"type": "string"
 											},
-											"stepActor": {
-												"description": "Who performed this step.",
+											"authorRelationshipToHost": {
 												"type": "string"
 											},
-											"stepDescriber": {
-												"description": "If other than actor.",
-												"type": "string"
-											},
-											"stepMotivation": {
-												"description": "Explanation of why this step advanced the overall goals of improving the dataset for use, why was it necessary?",
-												"type": "string"
-											},
-											"audioProvidingContext": {
-												"description": "If audio narratives describing information about this dataset is easier to capture than text, this field points to those audio files and provides context about them",
-												"type": "object",
-												"properties": {
-													"audioFiles": {
-														"type": "array",
-														"items": [{
-															"type": "object",
-															"properties": {
-																"$id": {
-																	"type:": "string",
-																	"format": "uri"
-																},
-																"title": {
-																	"type": "string"
-																},
-																"audioContextProvider": {
-																	"type": "string"
-																},
-																"dateRecorded": {
-																	"type": "string",
-																	"format": "date"
-																},
-																"datePublished": {
-																	"type": "string",
-																	"format": "date"
-																},
-																"language": {
-																	"type": "string"
-																}
-															},
-															"required": ["$id", "audioContextProvider"]
-														}]
-													}
-												}
-											},
-											"imagesProvidingContext": {
-												"description": "References to screenshots or photos that lend additional context about the dataset or steps taken to process the data",
-												"type": "object",
-												"properties": {
-													"imageFiles": {
-														"type": "array",
-														"items": [{
-															"type": "object",
-															"properties": {
-																"$id": {
-																	"type:": "string",
-																	"format": "uri"
-																},
-																"title": {
-																	"type": "string"
-																},
-																"caption": {
-																	"type": "string"
-																},
-																"imageContextProvider": {
-																	"type": "string"
-																}
-															},
-															"required": ["$id", "title", "caption", "imageContextProvider"]
-														}]
-													}
-												}
+											"documentRelationshipToHost":{
+												"type": "string",
+												"enum": ["Internal", "External"]		
 											}
 										}
 									}]
+								}
+							}
+						},
+						"knowledgeSharing":{
+							"type": "object",
+							"properties":{
+								"procesorName":{
+									"type": "string",
+									"description": "Name of person who processed this data"
+								},
+								"procesorRelationshipToHost":{
+									"type": "string",
+									"description": "Name of person who processed this data"
+								},
+								"processDescriberName": {
+									"type": "string",
+									"description": "Name of person describing the processing workflow"
+								},
+								"processDescriberRelationship":{
+									"type": "string",
+									"examples": ["Processor", "Archivist"]
+								},
+								"missingProcessingInformation": {
+									"description": "What is unknown about the process for cleaning, joining, analyzing, visualizing within this project that leaves meaningful gaps in understanding how to interpret or use it again",
+									"type": "string"
+								}
+							}
+						},
+						"process":{
+							"type": "object",
+							"properties":{
+								"shortDescription": {
+									"description": "A clear, sequential overview of all steps taken and the reasons for making changes or carrying out processing should be provided here.",
+									"type": "string"
+								},
+								"successes": {
+									"description": "General explanation of how steps taken were beneficial to the improvement of this data for public use.",
+									"type": "string"
+								},
+								"challenges": {
+									"description": "What was difficult about this project, known hangups, missing information, assumptions made, guesses, practical but questionable steps taken",
+									"type": "string"
+								},
+								"sandtraps": {
+									"description": "Forewarnings or words-to-the wise for someone else wanting to work with this data or project",
+									"type": "string"
 								}
 							}
 						}
