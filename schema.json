@@ -1049,10 +1049,10 @@
 					"description": "Used to refer to descriptions written as clearly as possible the human choices involved in processing this dataset. The goal of the style of description should be that someone who has never encountered this type of data before could replicate all of the processing steps, start to finish. Steps can be entered chronologically, and paired with audio or image supplements to provide additional clarity.",
 					"type": "object",
 					"properties": {
-						"directAccess": {
+						"details": {
 							"type": "object",
 							"properties": {
-								"processingWorkflow": {
+								"records": {
 									"type": "array",
 									"items": [{
 										"type": "object",
@@ -1079,7 +1079,7 @@
 								}
 							}
 						},
-						"knowledgeSharing":{
+						"actors":{
 							"type": "object",
 							"properties":{
 								"procesorName":{
