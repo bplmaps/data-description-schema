@@ -1067,12 +1067,12 @@
 											"author": {
 												"type": "string"
 											},
-											"authorRelationshipToHost": {
+											"authorRelationshipToHostingOrg": {
 												"type": "string"
 											},
-											"documentRelationshipToHost":{
+											"documentRelationshipToHostingOrg":{
 												"type": "string",
-												"enum": ["Internal", "External"]		
+												"enum": ["Published by hosting organization", "Published by contributors"]		
 											}
 										}
 									}]
