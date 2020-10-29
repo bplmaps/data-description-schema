@@ -1067,10 +1067,10 @@
 											"author": {
 												"type": "string"
 											},
-											"authorRelationshipToHostingOrg": {
+											"authorRelationshipToHost": {
 												"type": "string"
 											},
-											"documentRelationshipToHostingOrg":{
+											"documentRelationshipToHost":{
 												"type": "string",
 												"enum": ["Published by hosting organization", "Published by contributors"]		
 											}
@@ -1089,11 +1089,11 @@
 								"procesorRelationshipToHost":{
 									"type": "string",
 								},
-								"processDescriberName": {
+								"processContextProvider": {
 									"type": "string",
 									"description": "Name of person describing the processing workflow"
 								},
-								"processDescriberRelationship":{
+								"contextProviderRole":{
 									"type": "string",
 									"examples": ["Processor", "Archivist"]
 								},
