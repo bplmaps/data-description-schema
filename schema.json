@@ -1089,11 +1089,11 @@
 								"relationshipToHost":{
 									"type": "string",
 								},
-								"contextProvider": {
+								"processDescriber": {
 									"type": "string",
 									"description": "Name of person describing the processing workflow"
 								},
-								"contextProviderRole":{
+								"processDescriberRole":{
 									"type": "string",
 									"examples": ["Processor", "Archivist"]
 								},
