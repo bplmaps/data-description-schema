@@ -1082,14 +1082,14 @@
 						"actors":{
 							"type": "object",
 							"properties":{
-								"procesorName":{
+								"name":{
 									"type": "string",
 									"description": "Name of person who processed this data"
 								},
-								"procesorRelationshipToHost":{
+								"relationshipToHost":{
 									"type": "string",
 								},
-								"processContextProvider": {
+								"contextProvider": {
 									"type": "string",
 									"description": "Name of person describing the processing workflow"
 								},
