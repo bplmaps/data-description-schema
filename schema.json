@@ -842,8 +842,7 @@
 							"notes": {
 								"type": "string"
 							}
-						},
-						"required": ["$id", "title"]
+						}
 					}]
 				},
 				"tutorials": {
@@ -981,7 +980,7 @@
 						"type": "array",
 						"examples": ["fundingRequirements", "audioNarrativesProvidingContext"]
 					},
-					"required": ["language", "contextProvider", "contextPublicationDate", "missingContext", "criticalContext"]
+					"required": ["language", "contextProvider", "contextPublicationDate", "missingContext"]
 				},
 				"maintenance": {
 					"type": "object",
@@ -1022,22 +1021,25 @@
 							}]
 						},
 						"actors": {
-							"type": "object",
-							"properties": {
-								"name": {
-									"type": "string",
-									"description": "Name of person who processed this data"
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string",
+										"description": "Name of person who processed this data"
+									},
+									"notes": {
+										"type": "string",
+										"description": "Notes about the relationship of the processor to the data repository hosting the data, and information about how the records available about processing were procured."
+									},
+									"missingProcessingInformation": {
+										"description": "What is unknown about the process for cleaning, joining, analyzing, visualizing within this project that leaves meaningful gaps in understanding how to interpret or use it again",
+										"type": "string"
+									}
 								},
-								"notes": {
-									"type": "string",
-									"description": "Notes about the relationship of the processor to the data repository hosting the data, and information about how the records available about processing were procured."
-								},
-								"missingProcessingInformation": {
-									"description": "What is unknown about the process for cleaning, joining, analyzing, visualizing within this project that leaves meaningful gaps in understanding how to interpret or use it again",
-									"type": "string"
-								}
-							},
-							"required": ["notes", "missingProcessingInformation"]
+								"required": ["notes", "missingProcessingInformation"]
+							}]
 						},
 						"process": {
 							"type": "object",
@@ -1065,5 +1067,6 @@
 			},
 			"required": ["description", "maintenance", "manipulation"]
 		}
-	}
+	},
+	"required": ["coreCitation", "subjectTagging", "resourceConstellation", "dataLifecycle"]
 }
