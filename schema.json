@@ -4,33 +4,6 @@
 	"title": "LMEC Data Description Schema",
 	"type": "object",
 	"properties": {
-		"directAccessURLs": {
-			"type": "object",
-			"properties": {
-				"endpoints": {
-					"type": "array",
-					"items": [{
-						"type": "object",
-						"properties": {
-							"accessURL": {
-								"type": "string"
-							},
-							"format": {
-								"type": "string",
-								"enum": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles"]
-							},
-							"source": {
-								"type": "string"
-							},
-							"accessedViaURL": {
-								"description": "If the data has a record on a data portal, link to the whole record here",
-								"type": "string"
-							}
-						}
-					}]
-				}
-			}
-		},
 		"coreCitation": {
 			"description": "Basic facts about the collection or dataset",
 			"type": "object",
@@ -60,9 +33,13 @@
 					"description": "Used to note how the dataset described came to be, if it was inferred from or combined from other datasets",
 					"type": "string"
 				},
-				"datasetType": {
-					"type": "string",
-					"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
+				"includesDataTypes": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"minItems": 1,
+						"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
+					}
 				},
 				"bboxPreview": {
 					"type": "object",
@@ -101,184 +78,181 @@
 			},
 			"required": ["$id", "title", "recordType", "hostedBy", "shortDataDescription", "accessCondition"]
 		},
+		"dataEndpoints": {
+			"type": "array",
+			"items": [{
+				"type": "object",
+				"properties": {
+					"$id": {
+						"type": "string",
+						"format": "uri"
+					},
+					"accessURL": {
+						"type": "string"
+					},
+					"format": {
+						"type": "string",
+						"example": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles", "Web Service"]
+					},
+					"source": {
+						"type": "string"
+					},
+					"accessedViaURL": {
+						"description": "If the data has a record on a data portal, link to the whole record here",
+						"type": "string"
+					}
+				}
+			}],
+			"required": ["$id", "accessURL", "format", "source"]
+		},
 		"subjectTagging": {
 			"description": "Topic tags to facilitate search and filtering",
 			"type": "object",
 			"properties": {
 				"thematic": {
 					"lcsh": {
-						"type": "object",
-						"properties": {
-							"subjects": {
-								"type": "array",
-								"items": [{
-									"type": "object",
-									"properties": {
-										"authority": {
-											"type": "string",
-											"const": "lcsh"
-										},
-										"authorityID": {
-											"type": "string",
-											"const": "http://id.loc.gov/authorities/subjects.html"
-										},
-										"language": {
-											"type": "string",
-											"const": "eng"
-										},
-										"subjectTag": {
-											"type": "string",
-											"examples": ["Administrative and political divisions", "National Highway System", "Census districts"]
-										}
-									},
-									"required": ["authority", "authorityID", "language", "topicTag"]
-								}]
-							}
-						}
+						"type": "array",
+						"items": [{
+							"type": "object",
+							"properties": {
+								"authority": {
+									"type": "string",
+									"const": "lcsh"
+								},
+								"authorityID": {
+									"type": "string",
+									"const": "http://id.loc.gov/authorities/subjects.html"
+								},
+								"language": {
+									"type": "string",
+									"const": "eng"
+								},
+								"subjectTag": {
+									"type": "string",
+									"examples": ["Administrative and political divisions", "National Highway System", "Census districts"]
+								}
+							},
+							"required": ["authority", "authorityID", "language", "subjectTag"]
+						}]
 					},
 					"ISO19115": {
-						"type": "object",
-						"properties": {
-							"subjects": {
-								"type": "array",
-								"items": [{
-									"type": "object",
-									"properties": {
-										"authority": {
-											"type": "string",
-											"const": "ISO19115TopicCategory"
-										},
-										"authorityID": {
-											"type": "string",
-											"const": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_TopicCategoryCode"
-										},
-										"language": {
-											"type": "string",
-											"const": "eng"
-										},
-										"valueID": {
-											"type": "string",
-											"examples": ["transportation", "boundaries"]
-										},
-										"subjectTag": {
-											"type": "string",
-											"examples": ["Transportation", "Boundaries"]
-										}
-									},
-									"required": ["authority", "authorityID", "language", "valueID", "topicTag"]
-								}]
-							}
-						}
+						"type": "array",
+						"items": [{
+							"type": "object",
+							"properties": {
+								"authority": {
+									"type": "string",
+									"const": "ISO19115TopicCategory"
+								},
+								"authorityID": {
+									"type": "string",
+									"const": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_TopicCategoryCode"
+								},
+								"language": {
+									"type": "string",
+									"const": "eng"
+								},
+								"valueID": {
+									"type": "string",
+									"examples": ["transportation", "boundaries"]
+								},
+								"subjectTag": {
+									"type": "string",
+									"examples": ["Transportation", "Boundaries"]
+								}
+							},
+							"required": ["authority", "authorityID", "language", "valueID", "subjectTag"]
+						}]
 					},
 					"otherSubjectAuthorities": {
 						"description": "Place to tag subjects based on authorities not formalized in this document",
-						"type": "object",
-						"properties": {
-							"subjects": {
-								"type": "array",
-								"items": [{
-									"type": "object",
-									"properties": {
-										"authorityName": {
-											"type": "string"
-										},
-										"authorityID": {
-											"type": "string",
-											"format": "uri"
-										},
-										"language": {
-											"type": "string"
-										},
-										"subjectTag": {
-											"type": "string"
-										}
-									}
-								}]
+						"type": "array",
+						"items": [{
+							"type": "object",
+							"properties": {
+								"authorityName": {
+									"type": "string"
+								},
+								"authorityID": {
+									"type": "string",
+									"format": "uri"
+								},
+								"language": {
+									"type": "string"
+								},
+								"subjectTag": {
+									"type": "string"
+								}
 							}
-						}
+						}]
 					},
 					"freeSubjectTags": {
 						"description": "Place for subject tags that don't conform to authority",
-						"type": "object",
-						"properties": {
-							"subjects": {
-								"type": "array",
-								"items": [{
-									"type": "object",
-									"properties": {
-										"language": {
-											"type": "string"
-										},
-										"subjectTag": {
-											"type": "string"
-										}
-									},
-									"required": ["subjectTag"]
-								}]
-							}
-						}
+						"type": "array",
+						"items": [{
+							"type": "object",
+							"properties": {
+								"language": {
+									"type": "string"
+								},
+								"subjectTag": {
+									"type": "string"
+								}
+							},
+							"required": ["subjectTag"]
+						}]
 					}
 				},
 				"geographic": {
 					"geonames": {
-						"type": "object",
-						"properties": {
-							"places": {
-								"type": "array",
-								"items": [{
-									"type": "object",
-									"properties": {
-										"authority": {
-											"type": "string",
-											"const": "geonames"
-										},
-										"authorityID": {
-											"type": "string",
-											"const": "http://www.geonames.org/ontology#"
-										},
-										"language": {
-											"type": "string",
-											"const": "eng"
-										},
-										"valueID": {
-											"type": "string",
-											"examples": "http://sws.geonames.org/4931353"
-										},
-										"placeTag": {
-											"type": "string",
-											"examples": "Brighton"
-										}
-									},
-									"required": ["authority", "authorityID", "language", "valueID", "placeTag"]
-								}]
-							}
-						}
+						"type": "array",
+						"items": [{
+							"type": "object",
+							"properties": {
+								"authority": {
+									"type": "string",
+									"const": "geonames"
+								},
+								"authorityID": {
+									"type": "string",
+									"const": "http://www.geonames.org/ontology#"
+								},
+								"language": {
+									"type": "string",
+									"const": "eng"
+								},
+								"valueID": {
+									"type": "string",
+									"examples": ["http://sws.geonames.org/4931353"]
+								},
+								"placeTag": {
+									"type": "string",
+									"examples": ["Brighton"]
+								}
+							},
+							"required": ["authority", "authorityID", "language", "valueID", "placeTag"]
+						}]
 					},
 					"epsg": {
-						"type": "object",
-						"properties": {
-							"crs": {
-								"type": "array",
-								"items": [{
-									"type": "object",
-									"properties": {
-										"authority": {
-											"type": "string",
-											"const": "EPSG"
-										},
-										"authorityID": {
-											"type": "string",
-											"examples": "http://opengis.net/def/crs/EPSG/0/4326"
-										},
-										"epsgTag": {
-											"type": "string",
-											"examples": "EPSG:4326"
-										}
-									},
-									"required": ["authority", "authorityID", "epsgTag"]
-								}]
-							}
-						}
+						"type": "array",
+						"items": [{
+							"type": "object",
+							"properties": {
+								"authority": {
+									"type": "string",
+									"const": "EPSG"
+								},
+								"authorityID": {
+									"type": "string",
+									"examples": ["http://opengis.net/def/crs/EPSG/0/4326"]
+								},
+								"epsgTag": {
+									"type": "string",
+									"examples": ["EPSG:4326"]
+								}
+							},
+							"required": ["authority", "authorityID", "epsgTag"]
+						}]
 					},
 					"required": ["geonames"]
 				},
@@ -801,123 +775,103 @@
 			"properties": {
 				"suggestedEntryPoints": {
 					"description": "Reference to the most logical place for someone new to this dataset to begin to understand how to work with it",
-					"type": "object",
-					"properties": {
-						"entryPoints": {
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"type:": "string",
-										"format": "uri"
-									},
-									"title": {
-										"type": "string"
-									},
-									"notes": {
-										"type": "string"
-									}
-								},
-								"required": ["$id", "title"]
-							}]
-						}
-					}
+					"type": "array",
+					"items": [{
+						"type": "object",
+						"properties": {
+							"$id": {
+								"type:": "string",
+								"format": "uri"
+							},
+							"title": {
+								"type": "string"
+							},
+							"notes": {
+								"type": "string"
+							}
+						},
+						"required": ["$id", "title"]
+					}]
 				},
 				"codebooks": {
 					"description": "Reference to any codebooks or data dictionaries intended to aid interpretation of the data's attributes or field names",
-					"type": "object",
-					"properties": {
-						"codebooks": {
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"type:": "string",
-										"format": "uri"
-									},
-									"title": {
-										"type": "string"
-									},
-									"maintainedBy": {
-										"type": "string"
-									},
-									"notes": {
-										"type": "string"
-									}
-								},
-								"required": ["$id", "title", "maintainedBy"]
-							}]
-						}
-					}
+					"type": "array",
+					"items": [{
+						"type": "object",
+						"properties": {
+							"$id": {
+								"type:": "string",
+								"format": "uri"
+							},
+							"title": {
+								"type": "string"
+							},
+							"maintainedBy": {
+								"type": "string"
+							},
+							"notes": {
+								"type": "string"
+							}
+						},
+						"required": ["$id", "title", "maintainedBy"]
+					}]
 				},
 				"publishedWorks": {
 					"description": "Reference to related blogs, articles, books, data visualizations or other published research based on this data.",
-					"type": "object",
-					"properties": {
-						"works": {
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"type:": "string",
-										"format": "uri"
-									},
-									"title": {
-										"type": "string"
-									},
-									"author": {
-										"type": "string"
-									},
-									"publisher": {
-										"type": "string"
-									},
-									"datePublished": {
-										"type": "string",
-										"format": "date"
-									},
-									"notes": {
-										"type": "string"
-									}
-								},
-								"required": ["$id", "title"]
-							}]
-						}
-					}
+					"type": "array",
+					"items": [{
+						"type": "object",
+						"properties": {
+							"$id": {
+								"type:": "string",
+								"format": "uri"
+							},
+							"title": {
+								"type": "string"
+							},
+							"author": {
+								"type": "string"
+							},
+							"publisher": {
+								"type": "string"
+							},
+							"datePublished": {
+								"type": "string",
+								"format": "date"
+							},
+							"notes": {
+								"type": "string"
+							}
+						},
+						"required": ["$id", "title"]
+					}]
 				},
 				"tutorials": {
 					"description": "Reference to guides, tutorials, Jupyter notebooks, or any resource with people-centered instructions on how to work with, use and understand this data",
-					"type": "object",
-					"properties": {
-						"tutorials": {
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"type:": "string",
-										"format": "uri"
-									},
-									"title": {
-										"type": "string"
-									},
-									"author": {
-										"type": "string"
-									},
-									"datePublished": {
-										"type": "string",
-										"format": "date"
-									},
-									"notes": {
-										"type": "string"
-									}
-								},
-								"required": ["$id", "title"]
-							}]
-						}
-					}
+					"type": "array",
+					"items": [{
+						"type": "object",
+						"properties": {
+							"$id": {
+								"type:": "string",
+								"format": "uri"
+							},
+							"title": {
+								"type": "string"
+							},
+							"author": {
+								"type": "string"
+							},
+							"datePublished": {
+								"type": "string",
+								"format": "date"
+							},
+							"notes": {
+								"type": "string"
+							}
+						},
+						"required": ["$id", "title"]
+					}]
 				}
 			},
 			"required": ["suggestedEntryPoints"]
@@ -1049,63 +1003,45 @@
 					"description": "Used to refer to descriptions written as clearly as possible the human choices involved in processing this dataset. The goal of the style of description should be that someone who has never encountered this type of data before could replicate all of the processing steps, start to finish. Steps can be entered chronologically, and paired with audio or image supplements to provide additional clarity.",
 					"type": "object",
 					"properties": {
-						"details": {
+						"records": {
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"accessURL": {
+										"type": "string"
+									},
+									"format": {
+										"type": "string",
+										"enum": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
+									},
+									"author": {
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"actors": {
 							"type": "object",
 							"properties": {
-								"records": {
-									"type": "array",
-									"items": [{
-										"type": "object",
-										"properties": {
-											"accessURL": {
-												"type": "string"
-											},
-											"format": {
-												"type": "string",
-												"enum": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
-											},
-											"author": {
-												"type": "string"
-											},
-											"authorRelationshipToHost": {
-												"type": "string"
-											},
-											"documentRelationshipToHost":{
-												"type": "string",
-												"enum": ["Published by hosting organization", "Published by contributors"]		
-											}
-										}
-									}]
-								}
-							}
-						},
-						"actors":{
-							"type": "object",
-							"properties":{
-								"name":{
+								"name": {
 									"type": "string",
 									"description": "Name of person who processed this data"
 								},
-								"relationshipToHost":{
+								"notes": {
 									"type": "string",
-								},
-								"processDescriber": {
-									"type": "string",
-									"description": "Name of person describing the processing workflow"
-								},
-								"processDescriberRole":{
-									"type": "string",
-									"examples": ["Processor", "Archivist"]
+									"description": "Notes about the relationship of the processor to the data repository hosting the data, and information about how the records available about processing were procured."
 								},
 								"missingProcessingInformation": {
 									"description": "What is unknown about the process for cleaning, joining, analyzing, visualizing within this project that leaves meaningful gaps in understanding how to interpret or use it again",
 									"type": "string"
 								}
-							}
+							},
+							"required": ["notes", "missingProcessingInformation"]
 						},
-						"process":{
+						"process": {
 							"type": "object",
-							"properties":{
+							"properties": {
 								"shortDescription": {
 									"description": "A clear, sequential overview of all steps taken and the reasons for making changes or carrying out processing should be provided here.",
 									"type": "string"
@@ -1127,7 +1063,7 @@
 					}
 				}
 			},
-			"required": ["description", "maintenance"]
+			"required": ["description", "maintenance", "manipulation"]
 		}
 	}
 }
