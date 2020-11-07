@@ -882,7 +882,7 @@
 			"required": ["suggestedEntryPoints"]
 		},
 		"dataLifecycle": {
-			"description": "Human beings often make many changes to data during the process of trying to work with it and make sense of it. This section is aimed at painting a fuller picture of the actions other humans have performed on or about this data, to help you understand how you might want to use it. ",
+			"description": "Human beings often make changes to data during the process of trying to work with it and make sense of it. This section is aimed at painting a fuller picture of the actions other humans have performed on or about this data, to help you understand how you might want to use it. ",
 			"type": "object",
 			"properties": {
 				"acquisition": {
