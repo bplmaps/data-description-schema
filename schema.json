@@ -32,7 +32,7 @@
 					"type": "string"
 				},
 				"shortGenealogyDescription": {
-					"description": "Notes how the dataset described came to be, if it was inferred from or combined from other datasets",
+					"description": "Notes about how the dataset came to be, if it was inferred from or combined from other datasets",
 					"type": "string"
 				},
 				"includesDataTypes": {
