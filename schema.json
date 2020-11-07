@@ -5,7 +5,7 @@
 	"type": "object",
 	"properties": {
 		"coreCitation": {
-			"description": "Core citation information about the collection or dataset",
+			"description": "Basic information about the collection or dataset",
 			"type": "object",
 			"properties": {
 				"$id": {
