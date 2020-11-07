@@ -18,11 +18,12 @@
 					"type": "string"
 				},
 				"recordType": {
-					"description": "Used to distinguish between records describing collections, and records describing singular datasets",
+					"description": "Distinguishes between records describing collections, and records describing singular datasets",
 					"type": "string",
 					"enum": ["Collection", "Dataset"]
 				},
 				"hostedBy": {
+					"description": "Distinguishes between datasets hosted within the organization describing the data, or via another organization",
 					"type": "string",
 					"enum": ["Internal", "External"]
 				},
@@ -31,10 +32,11 @@
 					"type": "string"
 				},
 				"shortGenealogyDescription": {
-					"description": "Used to note how the dataset described came to be, if it was inferred from or combined from other datasets",
+					"description": "Notes how the dataset described came to be, if it was inferred from or combined from other datasets",
 					"type": "string"
 				},
 				"includesDataTypes": {
+					"description": "Optional field for denoting data types, to power interface faceting",
 					"type": "array",
 					"items": {
 						"type": "string",
@@ -43,6 +45,7 @@
 					}
 				},
 				"bboxPreview": {
+					"description": "Information about the dataset's coordinate system and geographic extent",
 					"type": "object",
 					"properties": {
 						"previewSRS": {
@@ -66,10 +69,12 @@
 					}
 				},
 				"accessCondition": {
+					"description": "Notes about access conditions, specifically relating to copyright and use restrictions",
 					"type": "string",
 					"examples": ["This item is in the public domain. There are no restrictions on use.", "Access restriction details"]
 				},
 				"collectionItems": {
+					"description": "Place to connect collection items to broader parent collection",
 					"type": "array",
 					"items": {
 						"type": "string",
