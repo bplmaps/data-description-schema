@@ -74,7 +74,7 @@
 					"examples": ["This item is in the public domain. There are no restrictions on use.", "Access restriction details"]
 				},
 				"collectionItems": {
-					"description": "Place to connect collection items to broader parent collection",
+					"description": "If the record describes a collection, this field is used to link to collection items",
 					"type": "array",
 					"items": {
 						"type": "string",
