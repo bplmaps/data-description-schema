@@ -5,11 +5,12 @@
 	"type": "object",
 	"properties": {
 		"coreCitation": {
-			"description": "Basic facts about the collection or dataset",
+			"description": "Core citation information about the collection or dataset",
 			"type": "object",
 			"properties": {
 				"$id": {
 					"type": "string",
+					"description": "Unique identifier for the collection or dataset",
 					"format": "uri"
 				},
 				"title": {
