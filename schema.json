@@ -1010,7 +1010,7 @@
 					}
 				},
 				"manipulation": {
-					"description": "Used to refer to documentation written as clearly as possible about the human choices involved in processing this dataset. Contributors of READMEs or other tutorial-based docs should be encouraged to format their descriptions in a way that someone who has never encountered this type of data before could replicate all of the processing steps, beginning to end. Step-by-step explanations can be entered chronologically, and paired with audio or image supplements to provide additional clarity and accessibility.",
+					"description": "Used to refer to documentation written as clearly as possible about the human choices involved in processing this dataset. Contributors of READMEs or other tutorial-based docs should be encouraged to format their descriptions in a way that someone who has never encountered this type of data before could replicate all of the processing steps, beginning to end. Where possible, contributors should write step-by-step explanations chronologically, and pair them with audio or image supplements to provide additional clarity and accessibility.",
 					"type": "object",
 					"properties": {
 						"records": {
