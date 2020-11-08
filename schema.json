@@ -886,7 +886,7 @@
 			"type": "object",
 			"properties": {
 				"acquisition": {
-					"description": "Used to describe where the data came from, if created from other data sources",
+					"description": "Used to describe where the data originated from, if it was derived from other from other data sources",
 					"type": "object",
 					"properties": {
 						"ingredients": {
@@ -913,83 +913,88 @@
 					}
 				},
 				"description": {
-					"language": {
-						"type": "object",
-						"properties": {
-							"authority": {
-								"type": "string",
-								"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
-							},
-							"value": {
-								"type": "string"
-							}
-						}
-					},
-					"contextProvider": {
-						"description": "Person describing this dataset or project",
-						"type": "object",
-						"properties": {
-							"name": {
-								"type": "string"
-							},
-							"relationshipToData": {
-								"type": "array",
-								"items": {
+					"description": "Information about how the dataset has been described, who described it, based on what information",
+					"type": "object",
+					"properties": {
+						"language": {
+							"type": "object",
+							"properties": {
+								"authority": {
 									"type": "string",
-									"enum": ["Collector", "Maintainer", "Archivist", "Processor/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+									"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
 								},
-								"minItems": 1
+								"value": {
+									"type": "string"
+								}
 							}
-						}
-					},
-					"contextOnBehalfOf": {
-						"description": "If the person filling out the context is different than the person responsbile for the creation or processing of the dataset or project, note that here",
-						"type": "object",
-						"properties": {
-							"name": {
-								"type": "string"
-							},
-							"relationshipToData": {
-								"type": "array",
-								"items": {
+						},
+						"contextProvider": {
+							"description": "Person describing this dataset or project",
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"relationshipToData": {
+									"type": "array",
+									"items": {
+										"type": "string",
+										"enum": ["Collector", "Maintainer", "Archivist", "Processor/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+									},
+									"minItems": 1
+								}
+							}
+						},
+						"contextOnBehalfOf": {
+							"description": "If the person filling out the context is different than the person responsbile for the creation or processing of the dataset or project, note that here",
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"relationshipToData": {
+									"type": "array",
+									"items": {
+										"type": "string",
+										"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+									},
+									"minItems": 1
+								}
+							}
+						},
+						"contextPublicationDate": {
+							"description": "Date this context was first made available",
+							"type": "string",
+							"format": "date"
+						},
+						"metadataSchema": {
+							"type": "object",
+							"properties": {
+								"name": {
 									"type": "string",
-									"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+									"const": "LMEC Data Description Schema"
 								},
-								"minItems": 1
+								"$id": {
+									"type": "string",
+									"const": "https://github.com/nblmc/Data-Context/blob/master/schema.json"
+								}
 							}
+						},
+						"missingContext": {
+							"description": "In cases where fields were left blank because the context contributor did not know the answer, this is a place for the contributor to name that, and possibly provide some information on why they think this information is not available.",
+							"type": "string"
+						},
+						"criticalContext": {
+							"description": "Array of metadata field names where the value provided in this context document should be elevated to high prominence in the discovery environment, to avoid important information being buried. Will vary dataset to dataset / project to project.",
+							"type": "array",
+							"examples": ["fundingRequirements", "audioNarrativesProvidingContext"]
 						}
-					},
-					"contextPublicationDate": {
-						"description": "Date this context was first made available",
-						"type": "string",
-						"format": "date"
-					},
-					"metadataSchema": {
-						"type": "object",
-						"properties": {
-							"name": {
-								"type": "string",
-								"const": "LMEC Data Description Schema"
-							},
-							"$id": {
-								"type": "string",
-								"const": "https://github.com/nblmc/Data-Context/blob/master/schema.json"
-							}
-						}
-					},
-					"missingContext": {
-						"description": "In cases where fields were left blank because the context contributor did not know the answer, this is a place for the contributor to name that, and possibly provide some information on why they think this information is not available.",
-						"type": "string"
-					},
-					"criticalContext": {
-						"description": "Array of metadata field names where the value provided in this context document should be elevated to high prominence in the discovery environment, to avoid important information being buried. Will vary dataset to dataset / project to project.",
-						"type": "array",
-						"examples": ["fundingRequirements", "audioNarrativesProvidingContext"]
 					},
 					"required": ["language", "contextProvider", "contextPublicationDate", "missingContext"]
 				},
 				"maintenance": {
 					"type": "object",
+					"description": "Information about who is responsible for updating and maintaining the dataset",
 					"properties": {
 						"officialMaintainer": {
 							"type": "string"
@@ -1005,7 +1010,7 @@
 					}
 				},
 				"manipulation": {
-					"description": "Used to refer to descriptions written as clearly as possible the human choices involved in processing this dataset. The goal of the style of description should be that someone who has never encountered this type of data before could replicate all of the processing steps, start to finish. Steps can be entered chronologically, and paired with audio or image supplements to provide additional clarity.",
+					"description": "Used to refer to documentation written as clearly as possible about the human choices involved in processing this dataset. Contributors of READMEs or other tutorial-based docs should be encouraged to format their descriptions in a way that someone who has never encountered this type of data before could replicate all of the processing steps, beginning to end. Step-by-step explanations can be entered chronologically, and paired with audio or image supplements to provide additional clarity and accessibility.",
 					"type": "object",
 					"properties": {
 						"records": {
