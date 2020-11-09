@@ -1105,7 +1105,7 @@
 									},
 									"notes": {
 										"type": "string",
-										"description": "Notes about the relationship of the processor to the data repository hosting the data, and information about how the records available about processing were procured."
+										"description": "Notes about the relationship of the processor to the data repository hosting the data, and information about how the records available about processing were procured"
 									},
 									"missingProcessingInformation": {
 										"description": "What is unknown about the process for cleaning, joining, analyzing, visualizing within this project that leaves meaningful gaps in understanding how to interpret or use it again",
