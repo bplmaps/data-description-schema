@@ -1026,7 +1026,7 @@
 							"type": "object",
 							"description": "Links out to full LMEC Data Description Schema",
 							"properties": {
-								"name": {
+								"schemaName": {
 									"type": "string",
 									"const": "LMEC Data Description Schema"
 								},
