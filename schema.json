@@ -776,7 +776,7 @@
 				},
 				"funding": {
 					"type": "array",
-					"description": "Place to describe or point to how this data were funded, who the funders were, what the funding requirements or stipulations were, and what the original purpose of the data was for. ",
+					"description": "Place to describe or point to how this data were funded, who the funders were, what the funding requirements or stipulations were, and what the original purpose of the data was for ",
 					"items": [{
 						"type": "object",
 						"properties": {
