@@ -203,6 +203,7 @@
 										"type": "string"
 									},
 									"subjectTag": {
+										"description": "Enter tag",
 										"type": "string"
 									}
 								}
@@ -215,9 +216,11 @@
 								"type": "object",
 								"properties": {
 									"language": {
+										"description": "Note the language",
 										"type": "string"
 									},
 									"subjectTag": {
+										"description": "Enter tag",
 										"type": "string"
 									}
 								},
