@@ -936,7 +936,7 @@
 					"type": "object",
 					"properties": {
 						"ingredients": {
-							"description": "Used to provide relational links and notes about relationship quality regarding the 'ingredient' datasets this dataset was created from.",
+							"description": "Used to provide relational links and notes about relationship quality regarding the 'ingredient' datasets this dataset was created from",
 							"type": "array",
 							"items": [{
 								"type": "object",
