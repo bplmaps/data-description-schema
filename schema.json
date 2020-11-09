@@ -264,7 +264,7 @@
 							}]
 						},
 						"epsg": {
-							"description": "EPSG Geodetic Parameter Dataset (also EPSG registry) is a public registry of geodetic datums, spatial reference systems, Earth ellipsoids, coordinate transformations and related units of measurement. Each entity is assigned an EPSG code between 1024-32767,[1]:39 [2] along with a standard machine-readable well-known text (WKT) representation. ",
+							"description": "EPSG Geodetic Parameter Dataset (also EPSG registry) is a public registry of geodetic datums, spatial reference systems, Earth ellipsoids, coordinate transformations and related units of measurement. Each entity is assigned an EPSG code between 1024-32767.",
 							"type": "array",
 							"items": [{
 								"type": "object",
