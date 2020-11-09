@@ -936,22 +936,24 @@
 					"type": "object",
 					"properties": {
 						"ingredients": {
-							"description": "Used to provide relational links and notes about relationship quality regarding the 'ingredient' datasets this dataset was created from",
+							"description": "Used to provide relational links and notes about relationship quality to the 'ingredient' datasets this dataset was created from",
 							"type": "array",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"$id": {
 										"type": "string",
-										"format": "uri"
+										"format": "uri",
+										"description": "Each item object in the array refers to a unique ingredient used to create the new dataset. This field denotes the ID for the input ingredient dataset."
 									},
 									"type": {
-										"description": "Was this ingredient alone improved upon to make the new dataset? (linearPredecessor) or was it combined with other datasets to make the new dataset? (compositeIngredient)",
+										"description": "If this ingredient alone was improved upon to create new new dataset, select 'linearPredecessor'. If it was combined with other datasets to create the new dataset, select 'compositeIngredient'. This distinction powers the way the project is presented to the user in the catalog interface.",
 										"type": "string",
 										"enum": ["linearPredecessor", "compositeIngredient"]
 									},
 									"notes": {
-										"type": "string"
+										"type": "string",
+										"description": "This field is used to qualify the data genealogy between the stated datasets, if it is not clear"
 									}
 								}
 							}]
