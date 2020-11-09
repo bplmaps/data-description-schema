@@ -315,6 +315,7 @@
 									"type": "string"
 								},
 								"startRangeValue": {
+									"description": "Use these fields if the temporal representation is best described as a range",
 									"type": "object",
 									"properties": {
 										"encoding": {
@@ -329,6 +330,7 @@
 									}
 								},
 								"endRangeValue": {
+									"description": "Use these fields if the temporal representation is best described as a range",
 									"type": "object",
 									"properties": {
 										"encoding": {
@@ -363,6 +365,7 @@
 									"type": "string"
 								},
 								"startRangeValue": {
+									"description": "Use these fields if the publication date is best described as a range",
 									"type": "object",
 									"properties": {
 										"encoding": {
@@ -377,6 +380,7 @@
 								},
 								"endRangeValue": {
 									"type": "object",
+									"description": "Use these fields if the publication date is best described as a range",
 									"properties": {
 										"encoding": {
 											"type": "string",
