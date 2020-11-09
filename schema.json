@@ -965,13 +965,16 @@
 					"type": "object",
 					"properties": {
 						"language": {
+							"description": "Observes: 'https://www.loc.gov/standards/iso639-2/php/code_list.php'",
 							"type": "object",
 							"properties": {
 								"authority": {
 									"type": "string",
+									"description": "Observes: 'https://www.loc.gov/standards/iso639-2/php/code_list.php'",
 									"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
 								},
 								"value": {
+									"description": "Language code",
 									"type": "string"
 								}
 							}
@@ -981,10 +984,12 @@
 							"type": "object",
 							"properties": {
 								"name": {
+									"description": "Person's name'",
 									"type": "string"
 								},
 								"relationshipToData": {
 									"type": "array",
+									"description": "Relationship to dataset or project",
 									"items": {
 										"type": "string",
 										"enum": ["Collector", "Maintainer", "Archivist", "Processor/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
@@ -998,9 +1003,11 @@
 							"type": "object",
 							"properties": {
 								"name": {
+									"description": "Person's name'",
 									"type": "string"
 								},
 								"relationshipToData": {
+									"description": "Relationship to dataset or project",
 									"type": "array",
 									"items": {
 										"type": "string",
@@ -1017,6 +1024,7 @@
 						},
 						"metadataSchema": {
 							"type": "object",
+							"description": "LMEC Data Description Schema",
 							"properties": {
 								"name": {
 									"type": "string",
@@ -1024,6 +1032,7 @@
 								},
 								"$id": {
 									"type": "string",
+									"description": "https://github.com/nblmc/Data-Context/blob/master/schema.json",
 									"const": "https://github.com/nblmc/Data-Context/blob/master/schema.json"
 								}
 							}
