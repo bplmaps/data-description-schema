@@ -1114,7 +1114,7 @@
 						},
 						"process": {
 							"type": "object",
-							"description":"Notes about the general contours of the process, lessons learned, reasoning, thought process and forewarnings to future data users"
+							"description":"Notes about the general contours of the process, lessons learned, reasoning, thought process and forewarnings to future data users",
 							"properties": {
 								"shortDescription": {
 									"description": "A clear, sequential overview of all steps taken and the reasons for making changes or carrying out processing should be provided here.",
