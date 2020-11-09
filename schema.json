@@ -85,6 +85,7 @@
 			"required": ["$id", "title", "recordType", "hostedBy", "shortDataDescription", "accessCondition"]
 		},
 		"dataEndpoints": {
+			"description": "Points to direct access to the dataset",
 			"type": "array",
 			"items": [{
 				"type": "object",
