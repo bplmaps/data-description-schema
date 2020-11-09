@@ -293,7 +293,7 @@
 					"description": "Used to power interface filtering by date",
 					"properties": {
 						"temporalNotes": {
-							"description": "Used to provide clarity about the temporal details of the dataset.",
+							"description": "Used to provide clarity about the temporal details of the dataset",
 							"type": "string"
 						},
 						"temporalRepresentation": {
