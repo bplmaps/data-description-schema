@@ -989,7 +989,7 @@
 								},
 								"relationshipToData": {
 									"type": "array",
-									"description": "Relationship to dataset or project",
+									"description": "Person's relationship to dataset or project",
 									"items": {
 										"type": "string",
 										"enum": ["Collector", "Maintainer", "Archivist", "Processor/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
@@ -1007,7 +1007,7 @@
 									"type": "string"
 								},
 								"relationshipToData": {
-									"description": "Relationship to dataset or project",
+									"description": "Person's relationship to dataset or project",
 									"type": "array",
 									"items": {
 										"type": "string",
