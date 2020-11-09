@@ -1024,7 +1024,7 @@
 						},
 						"metadataSchema": {
 							"type": "object",
-							"description": "LMEC Data Description Schema",
+							"description": "Links out to full LMEC Data Description Schema",
 							"properties": {
 								"name": {
 									"type": "string",
