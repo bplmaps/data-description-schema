@@ -1087,7 +1087,7 @@
 										"enum": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
 									},
 									"author": {
-										"description": "Author name",
+										"description": "Name of person who authored the process documentation",
 										"type": "string"
 									}
 								}
