@@ -1054,6 +1054,7 @@
 					"description": "Information about who is responsible for updating and maintaining the dataset",
 					"properties": {
 						"officialMaintainer": {
+							"description": "Person or organization responsible for maintaining the dataset",
 							"type": "string"
 						},
 						"maintenanceFrequency": {
