@@ -1120,11 +1120,11 @@
 							"description": "Notes about the general contours of the process, lessons learned, reasoning, thought process and forewarnings to future data users",
 							"properties": {
 								"shortProcessDescription": {
-									"description": "A clear, sequential overview of all steps taken and the reasons for making changes or carrying out processing should be provided here.",
+									"description": "A clear, sequential overview of all steps taken and the reasons for making changes or carrying out processing should be provided here",
 									"type": "string"
 								},
 								"successes": {
-									"description": "General explanation of how steps taken were beneficial to the improvement of this data for public use.",
+									"description": "General explanation of how steps taken were beneficial to the improvement of this data for public use",
 									"type": "string"
 								},
 								"challenges": {
