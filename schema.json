@@ -49,11 +49,13 @@
 					"type": "object",
 					"properties": {
 						"previewSRS": {
+							"description": "EPSG code",
 							"type": "string",
 							"const": "EPSG:4326"
 						},
 						"lowerCorner": {
 							"type": "array",
+							"description": "Lower corner coordinates",
 							"items": {
 								"type": "number",
 								"examples": [-71.181891, 42.330256]
@@ -61,6 +63,7 @@
 						},
 						"upperCorner": {
 							"type": "array",
+							"description": "Upper corner coordinates",
 							"items": {
 								"type": "number",
 								"examples": [-71.181891, 42.330256]
