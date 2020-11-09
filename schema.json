@@ -278,7 +278,7 @@
 							"description": "Used to provide clarity about the temporal details of the dataset.",
 							"type": "string"
 						},
-						"temporalRepresentaion": {
+						"temporalRepresentation": {
 							"type": "object",
 							"properties": {
 								"encoding": {
