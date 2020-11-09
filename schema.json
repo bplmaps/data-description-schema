@@ -832,13 +832,16 @@
 						"type": "object",
 						"properties": {
 							"$id": {
+								"description": "Unique identifier",
 								"type:": "string",
 								"format": "uri"
 							},
 							"title": {
+								"description": "Resource title",
 								"type": "string"
 							},
 							"notes": {
+								"description": "Notes on why this is a recommended starting place",
 								"type": "string"
 							}
 						},
@@ -852,16 +855,20 @@
 						"type": "object",
 						"properties": {
 							"$id": {
+								"description": "Unique identifier",
 								"type:": "string",
 								"format": "uri"
 							},
 							"title": {
+								"description": "Resource title",
 								"type": "string"
 							},
 							"maintainedBy": {
+								"description": "Person or organization responsible for maintaining and providing access to the codebook",
 								"type": "string"
 							},
 							"notes": {
+								"description": "Place to put helpful notes or information about finding, using or interpreting the codebook",
 								"type": "string"
 							}
 						},
@@ -875,23 +882,29 @@
 						"type": "object",
 						"properties": {
 							"$id": {
+								"description": "Unique identifier",
 								"type:": "string",
 								"format": "uri"
 							},
 							"title": {
+								"description": "Resource title",
 								"type": "string"
 							},
 							"author": {
+								"description": "Resource author",
 								"type": "string"
 							},
 							"publisher": {
+								"description": "Resource publisher",
 								"type": "string"
 							},
 							"datePublished": {
+								"description": "Resource publication date",
 								"type": "string",
 								"format": "date"
 							},
 							"notes": {
+								"description": "Place to note how this resource is relelvant",
 								"type": "string"
 							}
 						}
@@ -904,20 +917,25 @@
 						"type": "object",
 						"properties": {
 							"$id": {
+								"description": "Unique identifier",
 								"type:": "string",
 								"format": "uri"
 							},
 							"title": {
+								"description": "Resource title",
 								"type": "string"
 							},
 							"author": {
+								"description": "Resource author",
 								"type": "string"
 							},
 							"datePublished": {
+								"description": "Resource publication date",
 								"type": "string",
 								"format": "date"
 							},
 							"notes": {
+								"description": "Place to note how this resource is relelvant",
 								"type": "string"
 							}
 						},
