@@ -1042,7 +1042,7 @@
 							"type": "string"
 						},
 						"criticalContext": {
-							"description": "Array of metadata field names where the value provided in this context document should be elevated to high prominence in the discovery environment, to avoid important information being buried. Will vary dataset to dataset / project to project.",
+							"description": "Array of metadata field names where the value provided in the context document should be elevated to high prominence in the discovery environment, to avoid important information being buried. Will vary dataset to dataset / project to project.",
 							"type": "array",
 							"examples": ["fundingRequirements", "audioNarrativesProvidingContext"]
 						}
