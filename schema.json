@@ -206,7 +206,7 @@
 							}]
 						},
 						"freeSubjectTags": {
-							"description": "Place for subject tags that don't conform to an authority",
+							"description": "Place for subject tags that don't conform to a defined authority",
 							"type": "array",
 							"items": [{
 								"type": "object",
