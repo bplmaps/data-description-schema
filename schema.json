@@ -791,7 +791,7 @@
 				},
 				"potentialBenefit": {
 					"type": "array",
-					"description": "If there are people who potentially benefit from this data, or have some stake in its quality, use this space to comment on who, how, and why.",
+					"description": "If there are people who potentially benefit from this data, or have some stake in its quality, use this space to comment on who, how, and why",
 					"items": [{
 						"type": "object",
 						"properties": {
@@ -806,7 +806,7 @@
 				},
 				"potentialHarm": {
 					"type": "array",
-					"description": "If there are people who could potentially be harmed by this data, or have some stake in its quality, use this space to comment on who, how, and why.",
+					"description": "If there are people who could potentially be harmed by this data, or have some stake in its quality, use this space to comment on who, how, and why",
 					"items": [{
 						"type": "object",
 						"properties": {
