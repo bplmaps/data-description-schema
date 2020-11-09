@@ -841,7 +841,7 @@
 								"type": "string"
 							},
 							"notes": {
-								"description": "Notes on why this is a recommended starting place",
+								"description": "Place to note why this is a recommended starting place",
 								"type": "string"
 							}
 						},
