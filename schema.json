@@ -116,7 +116,7 @@
 			"type": "object",
 			"properties": {
 				"thematic": {
-					"description": "Used to power interface filtering by theme or topic",
+					"description": "Used to power interface filtering by theme",
 					"type": "object",
 					"properties":{
 						"lcsh": {
