@@ -965,7 +965,7 @@
 					"type": "object",
 					"properties": {
 						"language": {
-							"description": "Observes: 'https://www.loc.gov/standards/iso639-2/php/code_list.php'",
+							"description": "Observes ISO 639-2",
 							"type": "object",
 							"properties": {
 								"authority": {
