@@ -100,7 +100,7 @@
 						"type": "string"
 					},
 					"format": {
-						"description": "Geospatial data format",
+						"description": "Data format",
 						"type": "string",
 						"example": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles", "Web Service"]
 					},
