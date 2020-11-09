@@ -190,13 +190,16 @@
 								"type": "object",
 								"properties": {
 									"authorityName": {
+										"description": "Define the authority",
 										"type": "string"
 									},
 									"authorityID": {
+										"description": "Link to the controlled terms",
 										"type": "string",
 										"format": "uri"
 									},
 									"language": {
+										"description": "Note the language",
 										"type": "string"
 									},
 									"subjectTag": {
