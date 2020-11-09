@@ -970,7 +970,7 @@
 							"properties": {
 								"authority": {
 									"type": "string",
-									"description": "Observes: 'https://www.loc.gov/standards/iso639-2/php/code_list.php'",
+									"description": "https://www.loc.gov/standards/iso639-2/php/code_list.php",
 									"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
 								},
 								"value": {
