@@ -1078,13 +1078,16 @@
 								"type": "object",
 								"properties": {
 									"accessURL": {
+										"description": "Direct link to access the process documentation",
 										"type": "string"
 									},
 									"format": {
 										"type": "string",
+										"description": "Place to denote resource type",
 										"enum": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
 									},
 									"author": {
+										"description": "Author name",
 										"type": "string"
 									}
 								}
