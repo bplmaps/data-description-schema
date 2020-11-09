@@ -127,7 +127,8 @@
 					"description": "Used to power interface filtering by theme",
 					"type": "object",
 					"properties":{
-						"lcsh": {
+						"LCSH": {
+							"description": "Library of Congress Subject Headings",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -154,6 +155,7 @@
 						},
 						"ISO19115": {
 							"type": "array",
+							"description": "ISO9115 Topic Categories",
 							"items": [{
 								"type": "object",
 								"properties": {
@@ -182,7 +184,7 @@
 							}]
 						},
 						"otherSubjectAuthorities": {
-							"description": "Place to tag subjects based on authorities not formalized in this document",
+							"description": "Place to tag subjects based on authorities not formally encoded in this schema",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -204,7 +206,7 @@
 							}]
 						},
 						"freeSubjectTags": {
-							"description": "Place for subject tags that don't conform to authority",
+							"description": "Place for subject tags that don't conform to an authority",
 							"type": "array",
 							"items": [{
 								"type": "object",
