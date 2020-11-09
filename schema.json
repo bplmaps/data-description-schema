@@ -363,6 +363,7 @@
 			"type": "object",
 			"properties": {
 				"sampling": {
+					"description": "Used to provide context on sampling methodology for this dataset",
 					"type": "object",
 					"properties": {
 						"universe": {
@@ -441,6 +442,7 @@
 					}
 				},
 				"privacy": {
+					"description": "Used to provide notes about privacy considerations surrounding this dataset",
 					"type": "object",
 					"properties": {
 						"unitOfAggregation": {
@@ -520,6 +522,7 @@
 					}
 				},
 				"representation": {
+					"description": "Used to provide context about who is and is not represented in the dataset",
 					"type": "object",
 					"properties": {
 						"whoIncluded": {
@@ -555,6 +558,7 @@
 					}
 				},
 				"dataCollection": {
+					"description": "Used to provide context on data collection methodology",
 					"type": "object",
 					"properties": {
 						"whoCollected": {
