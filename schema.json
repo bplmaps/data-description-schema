@@ -1058,7 +1058,7 @@
 							"type": "string"
 						},
 						"maintenanceFrequency": {
-							"description": "Example answers - 'None', 'Every Monday at Midnight', 'Annually', 'Unknown'",
+							"description": "Regularity with which this dataset is updated. Example values could be 'None', 'Every Monday at Midnight', 'Annually', 'Unknown'",
 							"type": "string"
 						},
 						"typicalUpdates": {
