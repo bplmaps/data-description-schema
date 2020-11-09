@@ -1038,7 +1038,7 @@
 							}
 						},
 						"missingContext": {
-							"description": "In cases where fields were left blank because the context contributor did not know the answer, this is a place for the contributor to name that, and possibly provide some information on why they think this information is not available.",
+							"description": "In cases where fields were left blank because the context contributor did not know the answer, this is a place for the contributor to name that, and possibly provide some information on why they think this information is not available",
 							"type": "string"
 						},
 						"criticalContext": {
