@@ -974,7 +974,7 @@
 									"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
 								},
 								"value": {
-									"description": "Language code",
+									"description": "Appropriate code",
 									"type": "string"
 								}
 							}
