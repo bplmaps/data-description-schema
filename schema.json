@@ -297,10 +297,12 @@
 							"type": "string"
 						},
 						"temporalRepresentation": {
+							"description": "Place to indicate the temporal period the data represents",
 							"type": "object",
 							"properties": {
 								"encoding": {
 									"type": "string",
+									"description": "Observes: https://www.w3.org/TR/NOTE-datetime",
 									"const": "https://www.w3.org/TR/NOTE-datetime"
 								},
 								"temporalType": {
@@ -317,6 +319,7 @@
 									"properties": {
 										"encoding": {
 											"type": "string",
+											"description": "Observes: https://www.w3.org/TR/NOTE-datetime",
 											"const": "https://www.w3.org/TR/NOTE-datetime"
 										},
 										"value": {
@@ -330,6 +333,7 @@
 									"properties": {
 										"encoding": {
 											"type": "string",
+											"description": "Observes: https://www.w3.org/TR/NOTE-datetime",
 											"const": "https://www.w3.org/TR/NOTE-datetime"
 										},
 										"value": {
@@ -341,17 +345,21 @@
 							}
 						},
 						"temporalPublication": {
+							"description": "Used to indicate details about when the data was published",
 							"type": "object",
 							"properties": {
 								"encoding": {
 									"type": "string",
+									"description": "Observes: https://www.w3.org/TR/NOTE-datetime",
 									"const": "https://www.w3.org/TR/NOTE-datetime"
 								},
 								"temporalType": {
+									"description": "This field indicates whether the temporal extent of this dataset's publication date is expressed as a singular date, or as a range.",
 									"type": "string",
 									"enum": ["singularExpression", "temporalRange"]
 								},
 								"singleExpressionValue": {
+									"description": "The value entered in this field should connote information about when the data was published. Any other date-based information can be added in `temporalNotes` or `temporalRepresentation` for clarity.",
 									"type": "string"
 								},
 								"startRangeValue": {
@@ -362,6 +370,7 @@
 											"const": "https://www.w3.org/TR/NOTE-datetime"
 										},
 										"value": {
+											"description": "The value entered in this field should connote information about when the data was published. Any other date-based information can be added in `temporalNotes` or `temporalRepresentation` for clarity.",
 											"type": "string"
 										}
 									}
@@ -371,9 +380,11 @@
 									"properties": {
 										"encoding": {
 											"type": "string",
+											"description": "Observes: https://www.w3.org/TR/NOTE-datetime",
 											"const": "https://www.w3.org/TR/NOTE-datetime"
 										},
 										"value": {
+											"description": "The value entered in this field should connote information about when the data was published. Any other date-based information can be added in `temporalNotes` or `temporalRepresentation` for clarity.",
 											"type": "string"
 										}
 									}
