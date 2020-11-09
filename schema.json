@@ -358,7 +358,7 @@
 			},
 			"required": ["thematic", "geographic", "temporal"]
 		},
-		"dataBio": {
+		"dataBiography": {
 			"description": "Background information about the who, what, where, why and how the data came to be, designed to place focus on human lives. If information about these fields is not available, these prompts can be used as conversation starters about why this information wasn't previously considered.",
 			"type": "object",
 			"properties": {
