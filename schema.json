@@ -992,7 +992,7 @@
 									"description": "Person's relationship to dataset or project",
 									"items": {
 										"type": "string",
-										"enum": ["Collector", "Maintainer", "Archivist", "Processor/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+										"enum": ["Collector", "Maintainer", "Archivist", "Processor/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher"]
 									},
 									"minItems": 1
 								}
@@ -1011,7 +1011,7 @@
 									"type": "array",
 									"items": {
 										"type": "string",
-										"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher", "Owner"]
+										"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher"]
 									},
 									"minItems": 1
 								}
