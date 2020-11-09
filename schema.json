@@ -416,7 +416,7 @@
 									"notes": {
 										"type": "string"
 									},
-									"resource": {
+									"accessURL": {
 										"type": "string"
 									}
 								}
@@ -430,7 +430,7 @@
 									"notes": {
 										"type": "string"
 									},
-									"resource": {
+									"accessURL": {
 										"type": "string"
 									}
 								}
@@ -445,7 +445,7 @@
 									"notes": {
 										"type": "string"
 									},
-									"resource": {
+									"accessURL": {
 										"type": "string"
 									}
 								}
@@ -460,7 +460,7 @@
 									"notes": {
 										"type": "string"
 									},
-									"resource": {
+									"accessURL": {
 										"type": "string"
 									}
 								}
@@ -475,7 +475,7 @@
 									"notes": {
 										"type": "string"
 									},
-									"resource": {
+									"accessURL": {
 										"type": "string"
 									}
 								}
@@ -798,7 +798,7 @@
 							"notes": {
 								"type": "string"
 							},
-							"resource": {
+							"accessURL": {
 								"type": "string"
 							}
 						}
@@ -813,7 +813,7 @@
 							"notes": {
 								"type": "string"
 							},
-							"resource": {
+							"accessURL": {
 								"type": "string"
 							}
 						}
