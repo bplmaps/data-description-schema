@@ -409,6 +409,7 @@
 					"type": "object",
 					"properties": {
 						"universe": {
+							"description":"Information about the universe the dataset describes",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -423,14 +424,17 @@
 							}]
 						},
 						"sampleSize": {
+							"description":"Notes about the dataset's sample size",
 							"type": "array",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -443,9 +447,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -458,9 +464,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -473,9 +481,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -493,9 +503,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -508,9 +520,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -523,9 +537,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -538,9 +554,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -553,9 +571,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -574,9 +594,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -589,9 +611,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -605,14 +629,16 @@
 					"properties": {
 						"whoCollected": {
 							"type": "array",
-							"description": "Who was involved in collecting this data?",
+							"description": "Place for notes about who was involved in the data collection process",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -620,14 +646,16 @@
 						},
 						"startDate": {
 							"type": "array",
-							"description": "When did data collection begin?",
+							"description": "Place for notes about when data collection began",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -635,14 +663,16 @@
 						},
 						"endDate": {
 							"type": "array",
-							"description": "When did data collection wrap up?",
+							"description": "Place for notes about when data collection ended",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -650,14 +680,16 @@
 						},
 						"whoConceived": {
 							"type": "array",
-							"description": "Who is responsible for the conception of the collection project?",
+							"description": "Place for notes about who was responsible for the conception of the data collection project",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -665,29 +697,33 @@
 						},
 						"whoDesigned": {
 							"type": "array",
-							"description": "Who designed the survey or data model?",
+							"description": "Place for notes about Who designed the survey or data model",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
 							}]
 						},
-						"whoExcluded": {
+						"whoIncluded": {
 							"type": "array",
-							"description": "Who was excluded from the conception and design of the survey or data model?",
+							"description": "Place for notes about who was included in the conception and design of the survey or data model, and choices made around this topic",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -695,14 +731,16 @@
 						},
 						"representation": {
 							"type": "array",
-							"description": "Were the communities who this data about included in the conception or collection process? If yes, please describe this process. If no, please explain why.",
+							"description": "Place for notes about the degree to which the communities who this data are about were included in the conception or collection process",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -710,14 +748,16 @@
 						},
 						"collectionConditions": {
 							"type": "array",
-							"description": "Are there any known conditions surrounding the collection process which could have impacted results? For example, global pandemic, housing insecurity, documentation status, and so on.",
+							"description": "Place for notes about any known conditions surrounding the collection process which could have possibly impacted results. Examples could be global pandemic, housing insecurity, documentation status, and so on.",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -725,14 +765,16 @@
 						},
 						"collectorsLocations": {
 							"type": "array",
-							"description": "Were the data collectors from the communities in which the data is being collected about?",
+							"description": "Place for notes about the degree to which data collectors were from the same communities in which the data were being collected",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -740,14 +782,16 @@
 						},
 						"collectionMethods": {
 							"type": "array",
-							"description": "By which methods were the data collected?",
+							"description": "Place for notes about the methodology used for data collection",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
@@ -755,21 +799,23 @@
 						},
 						"miscountRisk": {
 							"type": "array",
-							"description": "If the populations included are typically undercounted or overcounted, please comment on how the data being publicly available could have an impact on them.",
+							"description": "Place for notes about historic patterns of demographic under or overcounts, as they relate to the impact of the data being described",
 							"items": [{
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
 							}]
 						},
 						"missingData": {
-							"description": "Are there any major issues with missing values in the data, and could you please comment on what and why",
+							"description": "Place for notes about any issues with missing values in the data, and possible reasons contributing to missing or null values",
 							"type": "string"
 						}
 					}
@@ -781,9 +827,11 @@
 						"type": "object",
 						"properties": {
 							"notes": {
+								"description":"Clarifying information",
 								"type": "string"
 							},
 							"accessURL": {
+								"description":"Related resource",
 								"type": "string"
 							}
 						}
@@ -796,9 +844,11 @@
 						"type": "object",
 						"properties": {
 							"notes": {
+								"description":"Clarifying information",
 								"type": "string"
 							},
 							"accessURL": {
+								"description":"Related resource",
 								"type": "string"
 							}
 						}
@@ -811,9 +861,11 @@
 						"type": "object",
 						"properties": {
 							"notes": {
+								"description":"Clarifying information",
 								"type": "string"
 							},
 							"accessURL": {
+								"description":"Related resource",
 								"type": "string"
 							}
 						}
