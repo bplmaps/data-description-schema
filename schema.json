@@ -395,7 +395,8 @@
 								}
 							}
 						}
-					}
+					},
+					"required": ["temporalRepresentation", "temporalPublication"]
 				}
 			},
 			"required": ["thematic", "geographic", "temporal"]
