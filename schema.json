@@ -1208,7 +1208,8 @@
 								}
 							}
 						}
-					}
+					},
+					"required": ["actors"]
 				}
 			},
 			"required": ["description", "maintenance", "manipulation"]
