@@ -1135,7 +1135,8 @@
 							"description": "If this data is regularly updated, describe the typical nature of the changes",
 							"type": "string"
 						}
-					}
+					},
+					"required": ["officialMaintainer", "maintenanceFrequency"]
 				},
 				"manipulation": {
 					"description": "Used to refer to documentation provided by the person who manipulated the data, about the human choices involved in processing this dataset. Contributors of READMEs or other tutorial-based docs should be encouraged to format their descriptions in a way that someone who has never encountered this data before could reproduce the process. Where possible, contributors should write step-by-step explanations in chronological order, providing audio or image supplements for additional clarity and accessibility.",
