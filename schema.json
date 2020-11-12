@@ -587,46 +587,6 @@
 						}
 					}
 				},
-				"representation": {
-					"description": "Used to provide context about who is and is not represented in the dataset",
-					"type": "object",
-					"properties": {
-						"whoIncluded": {
-							"type": "array",
-							"description": "Explanation of who was included in this dataset",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description":"Link to related resource",
-										"type": "string"
-									}
-								}
-							}]
-						},
-						"whoLeftOut": {
-							"type": "array",
-							"description": "Explanation of who was not included in this dataset",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description":"Link to related resource",
-										"type": "string"
-									}
-								}
-							}]
-						}
-					}
-				},
 				"dataCollection": {
 					"description": "Used to provide context on data collection methodology",
 					"type": "object",
@@ -719,23 +679,6 @@
 						"whoIncluded": {
 							"type": "array",
 							"description": "Place for notes about who was included in the conception and design of the survey or data model, and choices made around this topic",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description":"Link to related resource",
-										"type": "string"
-									}
-								}
-							}]
-						},
-						"representation": {
-							"type": "array",
-							"description": "Place for notes about the degree to which the communities who this data are about were included in the conception or collection process",
 							"items": [{
 								"type": "object",
 								"properties": {
