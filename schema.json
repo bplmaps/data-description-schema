@@ -416,9 +416,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
+										"description":"Clarifying information",
 										"type": "string"
 									},
 									"accessURL": {
+										"description":"Related resource",
 										"type": "string"
 									}
 								}
