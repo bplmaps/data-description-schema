@@ -416,11 +416,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -433,11 +433,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -450,11 +450,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -467,11 +467,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -484,11 +484,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -506,11 +506,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -523,11 +523,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -540,11 +540,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -557,11 +557,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -574,11 +574,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -597,11 +597,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -614,11 +614,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -637,11 +637,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -654,11 +654,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -671,11 +671,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -688,11 +688,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -705,11 +705,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -722,11 +722,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -739,11 +739,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -756,11 +756,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -773,11 +773,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -790,11 +790,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -807,11 +807,11 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Clarifying information",
+										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 										"type": "string"
 									},
 									"accessURL": {
-										"description":"Related resource",
+										"description":"Link to related resource",
 										"type": "string"
 									}
 								}
@@ -830,11 +830,11 @@
 						"type": "object",
 						"properties": {
 							"notes": {
-								"description":"Clarifying information",
+								"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 								"type": "string"
 							},
 							"accessURL": {
-								"description":"Related resource",
+								"description":"Link to related resource",
 								"type": "string"
 							}
 						}
@@ -847,11 +847,11 @@
 						"type": "object",
 						"properties": {
 							"notes": {
-								"description":"Clarifying information",
+								"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 								"type": "string"
 							},
 							"accessURL": {
-								"description":"Related resource",
+								"description":"Link to related resource",
 								"type": "string"
 							}
 						}
@@ -864,11 +864,11 @@
 						"type": "object",
 						"properties": {
 							"notes": {
-								"description":"Clarifying information",
+								"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
 								"type": "string"
 							},
 							"accessURL": {
-								"description":"Related resource",
+								"description":"Link to related resource",
 								"type": "string"
 							}
 						}
