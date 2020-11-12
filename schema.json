@@ -416,7 +416,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -433,7 +433,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -450,7 +450,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -467,7 +467,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -484,7 +484,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -506,7 +506,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -523,7 +523,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -540,7 +540,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -557,7 +557,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -574,7 +574,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -597,7 +597,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -614,7 +614,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -637,7 +637,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -654,7 +654,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -671,7 +671,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -688,7 +688,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -705,7 +705,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -722,7 +722,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -739,7 +739,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -756,7 +756,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -773,7 +773,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -790,7 +790,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -807,7 +807,7 @@
 								"type": "object",
 								"properties": {
 									"notes": {
-										"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+										"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 										"type": "string"
 									},
 									"relatedResourceURL": {
@@ -830,7 +830,7 @@
 						"type": "object",
 						"properties": {
 							"notes": {
-								"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+								"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 								"type": "string"
 							},
 							"relatedResourceURL": {
@@ -847,7 +847,7 @@
 						"type": "object",
 						"properties": {
 							"notes": {
-								"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+								"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 								"type": "string"
 							},
 							"relatedResourceURL": {
@@ -864,7 +864,7 @@
 						"type": "object",
 						"properties": {
 							"notes": {
-								"description":"Place to either speak to the topic directly or point out to useful external resources that speak to the topic",
+								"description":"Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
 								"type": "string"
 							},
 							"relatedResourceURL": {
