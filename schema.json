@@ -461,7 +461,7 @@
 							}]
 						},
 						"knownSampleSizeProblems": {
-							"description": "Place to mention known problems or considerations related to sample size and method.",
+							"description": "Place to mention known problems or considerations related to sample size and method",
 							"type": "array",
 							"items": [{
 								"type": "object",
