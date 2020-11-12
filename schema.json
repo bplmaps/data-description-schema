@@ -501,7 +501,7 @@
 					"type": "object",
 					"properties": {
 						"unitOfAggregation": {
-							"description": "If the data were aggregated to a particular geographic unit, place to make note of those considerations",
+							"description": "Place to note if the data were aggregated to a particular geographic unit",
 							"type": "array",
 							"items": [{
 								"type": "object",
