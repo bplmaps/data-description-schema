@@ -701,7 +701,7 @@
 						},
 						"whoDesigned": {
 							"type": "array",
-							"description": "Place for notes about Who designed the survey or data model",
+							"description": "Place for notes about who designed the survey or data model",
 							"items": [{
 								"type": "object",
 								"properties": {
