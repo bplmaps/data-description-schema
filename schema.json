@@ -501,6 +501,7 @@
 					"type": "object",
 					"properties": {
 						"unitOfAggregation": {
+							"description": "If the data were aggregated to a particular geographic unit, place to make note of those considerations",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -517,7 +518,7 @@
 							}]
 						},
 						"aggregationProblems": {
-							"description": "If there are known issues or considerations related to the way the data is aggregated, describe them here.",
+							"description": "If there are known issues or considerations related to the way the data is aggregated, describe them here",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -534,7 +535,7 @@
 							}]
 						},
 						"consent": {
-							"description": "Describe the degree to which the people included in this dataset knew about, agreed, and understood how their data would be used.",
+							"description": "Describe the degree to which the people included in this dataset knew about, agreed to, and understood how their data would be used",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -551,7 +552,7 @@
 							}]
 						},
 						"anonymization": {
-							"description": "If this data was masked or anonymized in any way, please describe that process here, including how measures of genuine privacy are being assured.",
+							"description": "If this data was masked or anonymized in any way, please describe that process here, including how measures of genuine privacy are being assured",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -568,7 +569,7 @@
 							}]
 						},
 						"privacyIssues": {
-							"description": "Are there any known privacy issues or considerations related to this dataset?",
+							"description": "Place to note if there are any known privacy issues or considerations related to this dataset",
 							"type": "array",
 							"items": [{
 								"type": "object",
