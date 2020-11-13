@@ -135,7 +135,7 @@
 								"properties": {
 									"authority": {
 										"type": "string",
-										"const": "lcsh"
+										"const": "LCSH"
 									},
 									"authorityID": {
 										"type": "string",
@@ -1028,7 +1028,7 @@
 									"type": "array",
 									"items": {
 										"type": "string",
-										"enum": ["Collector", "Maintainer", "Archivist", "Processer/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher"]
+										"enum": ["Collector", "Maintainer", "Archivist", "Processor/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher"]
 									},
 									"minItems": 1
 								}
