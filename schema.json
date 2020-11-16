@@ -338,7 +338,7 @@
 									"type": "string",
 									"enum": ["singularExpression", "temporalRange"]
 								},
-								"singleExpressionValue": {
+								"singularExpressionValue": {
 									"description": "Use this field if the publication date is best described by a singluar date or year",
 									"type": "string"
 								},
