@@ -316,33 +316,11 @@
 								},
 								"startRangeValue": {
 									"description": "Use these fields if the temporal representation is best described as a range",
-									"type": "object",
-									"properties": {
-										"encoding": {
-											"type": "string",
-											"description": "Observes: https://www.w3.org/TR/NOTE-datetime",
-											"const": "https://www.w3.org/TR/NOTE-datetime"
-										},
-										"value": {
-											"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the collection is comprised of data depicting the various states of the historic shoreline between 1630 and 1995, but was created and published in 2019, the value of this field should be 1630. The 'datePublished' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
-											"type": "string"
-										}
-									}
+									"type": "string"
 								},
 								"endRangeValue": {
 									"description": "Use these fields if the temporal representation is best described as a range",
-									"type": "object",
-									"properties": {
-										"encoding": {
-											"type": "string",
-											"description": "Observes: https://www.w3.org/TR/NOTE-datetime",
-											"const": "https://www.w3.org/TR/NOTE-datetime"
-										},
-										"value": {
-											"description": "The value entered in this field should indicate the conceptual temporal extent the data represents. For instance, if the collection is comprised of data depicting the various states of the historic shoreline between 1630 and 1995, but was created and published in 2019, the value of this field should be 1995. The 'datePublished' and 'temporalNotes' fields can be used together to provide any further clarification or nuance to the temporal details of the dataset.",
-											"type": "string"
-										}
-									}
+									"type": "string"
 								}
 							}
 						},
@@ -366,32 +344,11 @@
 								},
 								"startRangeValue": {
 									"description": "Use these fields if the publication date is best described as a range",
-									"type": "object",
-									"properties": {
-										"encoding": {
-											"type": "string",
-											"const": "https://www.w3.org/TR/NOTE-datetime"
-										},
-										"value": {
-											"description": "The value entered in this field should connote information about when the data was published. Any other date-based information can be added in `temporalNotes` or `temporalRepresentation` for clarity.",
-											"type": "string"
-										}
-									}
+									"type": "string"
 								},
 								"endRangeValue": {
-									"type": "object",
-									"description": "Use these fields if the publication date is best described as a range",
-									"properties": {
-										"encoding": {
-											"type": "string",
-											"description": "Observes: https://www.w3.org/TR/NOTE-datetime",
-											"const": "https://www.w3.org/TR/NOTE-datetime"
-										},
-										"value": {
-											"description": "The value entered in this field should connote information about when the data was published. Any other date-based information can be added in `temporalNotes` or `temporalRepresentation` for clarity.",
-											"type": "string"
-										}
-									}
+									"type": "string",
+									"description": "Use these fields if the publication date is best described as a range"
 								}
 							}
 						}
