@@ -896,6 +896,38 @@
 						},
 						"required": ["$id", "title"]
 					}]
+				},
+				"supplementaryFiles": {
+					"description": "Points to files that complement the data at hand",
+					"type": "array",
+					"items": [{
+						"type": "object",
+						"properties": {
+							"$id": {
+								"description": "Unique identifier",
+								"type:": "string",
+								"format": "uri"
+							},
+							"title": {
+								"description": "Resource title",
+								"type": "string"
+							},
+							"author": {
+								"description": "Resource author",
+								"type": "string"
+							},
+							"datePublished": {
+								"description": "Resource publication date",
+								"type": "string",
+								"format": "date"
+							},
+							"notes": {
+								"description": "Place to note how this resource is relelvant",
+								"type": "string"
+							}
+						},
+						"required": ["$id", "title"]
+					}]
 				}
 			},
 			"required": ["suggestedEntryPoints"]
