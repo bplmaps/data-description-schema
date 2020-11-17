@@ -912,10 +912,6 @@
 								"description": "Resource title",
 								"type": "string"
 							},
-							"author": {
-								"description": "Resource author",
-								"type": "string"
-							},
 							"datePublished": {
 								"description": "Resource publication date",
 								"type": "string",
