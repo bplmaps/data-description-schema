@@ -352,8 +352,7 @@
 								}
 							}
 						}
-					},
-					"required": ["temporalRepresentation", "temporalPublication"]
+					}
 				}
 			},
 			"required": ["thematic", "geographic", "temporal"]
@@ -1040,7 +1039,7 @@
 							"type": "string"
 						}
 					},
-					"required": ["officialMaintainer", "maintenanceFrequency"]
+					"required": ["officialMaintainer"]
 				},
 				"manipulation": {
 					"description": "Used to refer to documentation provided by the person who manipulated the data, about the human choices involved in processing this dataset. Contributors of READMEs or other tutorial-based docs should be encouraged to format their descriptions in a way that someone who has never encountered this data before could reproduce the process. Where possible, contributors should write step-by-step explanations in chronological order, providing audio or image supplements for additional clarity and accessibility.",
@@ -1116,8 +1115,8 @@
 					"required": ["actors"]
 				}
 			},
-			"required": ["description", "maintenance", "manipulation"]
+			"required": ["description", "maintenance"]
 		}
 	},
-	"required": ["coreCitation", "subjectTagging", "resourceConstellation", "dataLifecycle"]
+	"required": ["coreCitation", "subjectTagging", "dataLifecycle"]
 }
