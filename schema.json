@@ -989,13 +989,8 @@
 									"type": "string"
 								},
 								"relationshipToData": {
-									"type": "array",
-									"description": "Person's relationship to dataset or project",
-									"items": {
-										"type": "string",
-										"enum": ["Collector", "Maintainer", "Archivist", "Processor/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher"]
-									},
-									"minItems": 1
+									"type": "string",
+									"description": "Person's relationship to dataset or project"
 								}
 							}
 						},
@@ -1008,13 +1003,8 @@
 									"type": "string"
 								},
 								"relationshipToData": {
-									"description": "Person's relationship to dataset or project",
-									"type": "array",
-									"items": {
-										"type": "string",
-										"enum": ["Collector", "Maintainer", "Archivist", "Processor/Cleaner", "Analyst", "Visualizer", "Educator", "Publisher"]
-									},
-									"minItems": 1
+									"type": "string",
+									"description": "Person's relationship to dataset or project"
 								}
 							}
 						},
