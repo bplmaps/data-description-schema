@@ -1078,8 +1078,12 @@
 										"description": "Place to denote resource type",
 										"enum": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
 									},
+									"title": {
+										"description": "Name for the record",
+										"type": "string"
+									},
 									"author": {
-										"description": "Name of person who authored the process documentation",
+										"description": "Name of person who authored the record",
 										"type": "string"
 									}
 								}
