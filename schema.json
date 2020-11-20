@@ -103,7 +103,7 @@
 						"type": "string"
 					},
 					"format": {
-						"description": "Data format",
+						"description": "Data format. Examples - 'Shapefile', 'GeoPackage', 'GeoJSON', 'GeoTIFF', 'CSV', 'Web Tiles', 'Web Service'",
 						"type": "string",
 						"example": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles", "Web Service"]
 					},
