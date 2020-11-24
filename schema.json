@@ -398,23 +398,6 @@
 								}
 							}]
 						},
-						"sampleSizeReasons": {
-							"description": "Explanation for this choice of sample size",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									}
-								}
-							}]
-						},
 						"knownSampleSizeProblems": {
 							"description": "Place to mention known problems or considerations related to sample size and method",
 							"type": "array",
@@ -1101,13 +1084,8 @@
 									"notes": {
 										"type": "string",
 										"description": "Notes about the relationship of the processor to the data repository hosting the data, and information about how the records available about processing were procured"
-									},
-									"missingProcessingInformation": {
-										"description": "What is unknown about the process for cleaning, joining, analyzing, visualizing within this project that leaves meaningful gaps in understanding how to interpret or use it again",
-										"type": "string"
 									}
-								},
-								"required": ["missingProcessingInformation"]
+								}
 							}]
 						},
 						"process": {
@@ -1128,6 +1106,10 @@
 								},
 								"sandtraps": {
 									"description": "Forewarnings or words-to-the wise for someone else wanting to work with this data or project",
+									"type": "string"
+								},
+								"missingProcessingInformation": {
+									"description": "What is unknown about the process for cleaning, joining, analyzing, visualizing within this project that leaves meaningful gaps in understanding how to interpret or use it again",
 									"type": "string"
 								}
 							}
