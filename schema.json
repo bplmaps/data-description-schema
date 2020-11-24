@@ -1096,8 +1096,7 @@
 						"required": ["$id", "title"]
 					}]
 				}
-			},
-			"required": ["suggestedEntryPoints"]
+			}
 		},
 		"dataLifecycle": {
 			"description": "Human beings often make changes to data during the process of working with and making sense of it. The context in this section is aimed at painting a fuller picture of the actions taken by other humans, in order to help someone understand how they might want to use the data. ",
