@@ -114,6 +114,10 @@
 					"accessedViaURL": {
 						"description": "If the data has a record on a data portal containing additional contextual information, link to that record here",
 						"type": "string"
+					},
+					"suggestedEntryPoint": {
+						"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
+						"type": "boolean"
 					}
 				}
 			}],
@@ -377,6 +381,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -394,6 +406,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -411,6 +431,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -428,6 +456,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -451,6 +487,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -468,6 +512,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -485,6 +537,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -502,6 +562,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -519,6 +587,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -542,6 +618,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -559,6 +643,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -576,6 +668,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -593,6 +693,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -610,6 +718,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -627,6 +743,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -644,6 +768,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -661,6 +793,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -678,6 +818,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -695,6 +843,14 @@
 									"relatedResourceURL": {
 										"description": "Link to related resource",
 										"type": "string"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -718,6 +874,14 @@
 							"relatedResourceURL": {
 								"description": "Link to related resource",
 								"type": "string"
+							},
+							"contextMissing": {
+								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+								"type": "boolean"
+							},
+							"importantContext": {
+								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+								"type": "boolean"
 							}
 						}
 					}]
@@ -735,6 +899,14 @@
 							"relatedResourceURL": {
 								"description": "Link to related resource",
 								"type": "string"
+							},
+							"contextMissing": {
+								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+								"type": "boolean"
+							},
+							"importantContext": {
+								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+								"type": "boolean"
 							}
 						}
 					}]
@@ -752,6 +924,14 @@
 							"relatedResourceURL": {
 								"description": "Link to related resource",
 								"type": "string"
+							},
+							"contextMissing": {
+								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+								"type": "boolean"
+							},
+							"importantContext": {
+								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+								"type": "boolean"
 							}
 						}
 					}]
@@ -762,29 +942,6 @@
 			"description": "Datasets or data projects are often not useful on their own. Often, we need an entire constellation of supporting resources to make sense of the data we find. The information in this section can be added to as more learning materials become available. ",
 			"type": "object",
 			"properties": {
-				"suggestedEntryPoints": {
-					"description": "Reference to the most logical place for someone new to this dataset to begin to understand how to work with it",
-					"type": "array",
-					"items": [{
-						"type": "object",
-						"properties": {
-							"$id": {
-								"description": "Unique identifier",
-								"type:": "string",
-								"format": "uri"
-							},
-							"title": {
-								"description": "Resource title",
-								"type": "string"
-							},
-							"notes": {
-								"description": "Place to note why this is a recommended starting place",
-								"type": "string"
-							}
-						},
-						"required": ["$id", "title"]
-					}]
-				},
 				"codebooks": {
 					"description": "Reference to any codebooks or data dictionaries intended to aid interpretation of the data's attributes or field names",
 					"type": "array",
@@ -807,6 +964,14 @@
 							"notes": {
 								"description": "Place to put helpful notes or information about finding, using or interpreting the codebook",
 								"type": "string"
+							},
+							"suggestedEntryPoint": {
+								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
+								"type": "boolean"
+							},
+							"importantContext": {
+								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+								"type": "boolean"
 							}
 						},
 						"required": ["$id", "title", "maintainedBy"]
@@ -843,6 +1008,14 @@
 							"notes": {
 								"description": "Place to note how this resource is relelvant",
 								"type": "string"
+							},
+							"suggestedEntryPoint": {
+								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
+								"type": "boolean"
+							},
+							"importantContext": {
+								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+								"type": "boolean"
 							}
 						}
 					}]
@@ -874,6 +1047,14 @@
 							"notes": {
 								"description": "Place to note how this resource is relelvant",
 								"type": "string"
+							},
+							"suggestedEntryPoint": {
+								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
+								"type": "boolean"
+							},
+							"importantContext": {
+								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+								"type": "boolean"
 							}
 						},
 						"required": ["$id", "title"]
@@ -902,6 +1083,14 @@
 							"notes": {
 								"description": "Place to note how this resource is relelvant",
 								"type": "string"
+							},
+							"suggestedEntryPoint": {
+								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
+								"type": "boolean"
+							},
+							"importantContext": {
+								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+								"type": "boolean"
 							}
 						},
 						"required": ["$id", "title"]
@@ -937,6 +1126,10 @@
 									"notes": {
 										"type": "string",
 										"description": "This field is used to qualify the data genealogy between the stated datasets, if it is not clear"
+									},
+									"suggestedEntryPoint": {
+										"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -1009,18 +1202,9 @@
 									"const": "https://github.com/nblmc/Data-Context/blob/master/schema.json"
 								}
 							}
-						},
-						"missingContext": {
-							"description": "In cases where fields were left blank because the context contributor did not know the answer, this is a place for the contributor to name that, and possibly provide some information on why they think this information is not available",
-							"type": "string"
-						},
-						"criticalContext": {
-							"description": "Array of metadata field names where the value provided in the context document should be elevated to high prominence in the discovery environment, to avoid important information being buried. Will vary dataset to dataset / project to project.",
-							"type": "array",
-							"examples": ["fundingRequirements", "audioNarrativesProvidingContext"]
 						}
 					},
-					"required": ["language", "contextProvider", "contextPublicationDate", "missingContext"]
+					"required": ["language", "contextProvider", "contextPublicationDate"]
 				},
 				"maintenance": {
 					"type": "object",
@@ -1037,6 +1221,10 @@
 						"typicalUpdates": {
 							"description": "If this data is regularly updated, describe the typical nature of the changes",
 							"type": "string"
+						},
+						"contextMissing": {
+							"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+							"type": "boolean"
 						}
 					},
 					"required": ["officialMaintainer"]
@@ -1067,6 +1255,18 @@
 									"author": {
 										"description": "Name of person who authored the record",
 										"type": "string"
+									},
+									"suggestedEntryPoint": {
+										"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
+										"type": "boolean"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
@@ -1084,6 +1284,14 @@
 									"notes": {
 										"type": "string",
 										"description": "Notes about the relationship of the processor to the data repository hosting the data, and information about how the records available about processing were procured"
+									},
+									"contextMissing": {
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"type": "boolean"
+									},
+									"importantContext": {
+										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+										"type": "boolean"
 									}
 								}
 							}]
