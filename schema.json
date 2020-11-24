@@ -1114,8 +1114,7 @@
 								}
 							}
 						}
-					},
-					"required": ["actors"]
+					}
 				}
 			},
 			"required": ["description", "maintenance"]
