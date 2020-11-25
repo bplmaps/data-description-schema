@@ -383,7 +383,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -408,7 +408,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -433,7 +433,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -458,7 +458,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -489,7 +489,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -514,7 +514,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -539,7 +539,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -564,7 +564,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -589,7 +589,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -620,7 +620,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -645,7 +645,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -670,7 +670,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -695,7 +695,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -720,7 +720,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -745,7 +745,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -770,7 +770,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -795,7 +795,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -820,7 +820,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -845,7 +845,7 @@
 										"type": "string"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -876,7 +876,7 @@
 								"type": "string"
 							},
 							"contextMissing": {
-								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 								"type": "boolean"
 							},
 							"importantContext": {
@@ -901,7 +901,7 @@
 								"type": "string"
 							},
 							"contextMissing": {
-								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 								"type": "boolean"
 							},
 							"importantContext": {
@@ -926,7 +926,7 @@
 								"type": "string"
 							},
 							"contextMissing": {
-								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 								"type": "boolean"
 							},
 							"importantContext": {
@@ -1222,7 +1222,7 @@
 							"type": "string"
 						},
 						"contextMissing": {
-							"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+							"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 							"type": "boolean"
 						}
 					},
@@ -1260,7 +1260,7 @@
 										"type": "boolean"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
@@ -1285,7 +1285,7 @@
 										"description": "Notes about the relationship of the processor to the data repository hosting the data, and information about how the records available about processing were procured"
 									},
 									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers.",
+										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
 										"type": "boolean"
 									},
 									"importantContext": {
