@@ -1,3 +1,3 @@
 # Data-Context
- Data description schema used at LMEC. Find examples in github.com/nblmc/metadata
+ Data description schema used at LMEC. Find examples in [https://www.github.com/nblmc/metadata](github.com/nblmc/metadata)
 
