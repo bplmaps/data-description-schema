@@ -1318,6 +1318,10 @@
 								"missingProcessingInformation": {
 									"description": "What is unknown about the process for cleaning, joining, analyzing, visualizing within this project that leaves meaningful gaps in understanding how to interpret or use it again",
 									"type": "string"
+								},
+								"importantContext": {
+									"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+									"type": "boolean"
 								}
 							}
 						}
