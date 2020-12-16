@@ -1245,7 +1245,7 @@
 									"format": {
 										"type": "string",
 										"description": "Place to denote resource type",
-										"enum": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
+										"examples": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
 									},
 									"title": {
 										"description": "Name for the record",
