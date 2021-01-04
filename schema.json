@@ -27,15 +27,15 @@
 					"type": "string",
 					"enum": ["Internal", "External"]
 				},
-				"previewDescription": {
+				"briefDescription": {
 					"description": "Short description of the dataset or project",
 					"type": "string"
 				},
-				"shortGenealogyDescription": {
+				"briefGenealogy": {
 					"description": "Notes about how the dataset came to be, if it was inferred from or combined from other datasets",
 					"type": "string"
 				},
-				"detailsFull": {
+				"fullNotes": {
 					"description": "Full description of the dataset or project",
 					"type": "string"
 				},
