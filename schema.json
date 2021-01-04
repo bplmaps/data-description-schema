@@ -27,12 +27,16 @@
 					"type": "string",
 					"enum": ["Internal", "External"]
 				},
-				"shortDataDescription": {
+				"previewDescription": {
 					"description": "Short description of the dataset or project",
 					"type": "string"
 				},
 				"shortGenealogyDescription": {
 					"description": "Notes about how the dataset came to be, if it was inferred from or combined from other datasets",
+					"type": "string"
+				},
+				"detailsFull": {
+					"description": "Full description of the dataset or project",
 					"type": "string"
 				},
 				"includesDataTypes": {
@@ -113,6 +117,10 @@
 					},
 					"accessedViaURL": {
 						"description": "If the data has a record on a data portal containing additional contextual information, link to that record here",
+						"type": "string"
+					},
+					"title": {
+						"description": "Resource title",
 						"type": "string"
 					},
 					"suggestedEntryPoint": {
