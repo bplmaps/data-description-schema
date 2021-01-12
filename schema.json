@@ -373,576 +373,209 @@
 			"type": "object",
 			"properties": {
 				"sampling": {
-					"description": "Used to provide context on sampling methodology for this dataset",
-					"type": "object",
-					"properties": {
-						"universe": {
-							"description": "Information about the universe the dataset describes",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
+					"notes": {
+						"description": "",
+						"type": "string"
+					},
+					"relatedResourceURL": {
+						"description": "",
+						"type": "array",
+						"items": [{
+							"type": "object",
+							"properties": {
+								"$id": {
+									"description": "Unique resource link",
+									"type:": "string",
+									"format": "uri"
+								},
+								"title": {
+									"description": "Resource title",
+									"type": "string"
+								},
+								"publisher": {
+									"description": "Resource publisher",
+									"type": "string"
+								},
+								"datePublished": {
+									"description": "Resource publication date",
+									"type": "string",
+									"format": "date"
 								}
-							}]
-						},
-						"sampleSize": {
-							"description": "Notes about the dataset's sample size",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"knownSampleSizeProblems": {
-							"description": "Place to mention known problems or considerations related to sample size and method",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"marginOfError": {
-							"description": "Place to note considerations related to margins of error.",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						}
+							}
+						}]
+					},
+					"healthCheckScore": {
+						"description": "",
+						"type": "integer"
+					},
+					"healthCheckQualifier": {
+						"description": "",
+						"type": "string"
 					}
 				},
 				"privacy": {
-					"description": "Used to provide notes about privacy considerations surrounding this dataset",
-					"type": "object",
-					"properties": {
-						"unitOfAggregation": {
-							"description": "Place to note if the data were aggregated to a particular geographic unit",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
+					"notes": {
+						"description": "",
+						"type": "string"
+					},
+					"relatedResourceURL": {
+						"description": "",
+						"type": "array",
+						"items": [{
+							"type": "object",
+							"properties": {
+								"$id": {
+									"description": "Unique resource link",
+									"type:": "string",
+									"format": "uri"
+								},
+								"title": {
+									"description": "Resource title",
+									"type": "string"
+								},
+								"publisher": {
+									"description": "Resource publisher",
+									"type": "string"
+								},
+								"datePublished": {
+									"description": "Resource publication date",
+									"type": "string",
+									"format": "date"
 								}
-							}]
-						},
-						"aggregationProblems": {
-							"description": "If there are known issues or considerations related to the way the data is aggregated, describe them here",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"consent": {
-							"description": "Describe the degree to which the people included in this dataset knew about, agreed to, and understood how their data would be used",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"anonymization": {
-							"description": "If this data was masked or anonymized in any way, please describe that process here, including how measures of genuine privacy are being assured",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"privacyIssues": {
-							"description": "Place to note if there are any known privacy issues or considerations related to this dataset",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						}
+							}
+						}]
+					},
+					"healthCheckScore": {
+						"description": "",
+						"type": "integer"
+					},
+					"healthCheckQualifier": {
+						"description": "",
+						"type": "string"
 					}
 				},
 				"dataCollection": {
-					"description": "Used to provide context on data collection methodology",
-					"type": "object",
-					"properties": {
-						"whoCollected": {
-							"type": "array",
-							"description": "Place for notes about who was involved in the data collection process",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
+					"notes": {
+						"description": "",
+						"type": "string"
+					},
+					"relatedResourceURL": {
+						"description": "",
+						"type": "array",
+						"items": [{
+							"type": "object",
+							"properties": {
+								"$id": {
+									"description": "Unique resource link",
+									"type:": "string",
+									"format": "uri"
+								},
+								"title": {
+									"description": "Resource title",
+									"type": "string"
+								},
+								"publisher": {
+									"description": "Resource publisher",
+									"type": "string"
+								},
+								"datePublished": {
+									"description": "Resource publication date",
+									"type": "string",
+									"format": "date"
 								}
-							}]
-						},
-						"startDate": {
-							"type": "array",
-							"description": "Place for notes about when data collection began",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"endDate": {
-							"type": "array",
-							"description": "Place for notes about when data collection ended",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"whoConceived": {
-							"type": "array",
-							"description": "Place for notes about who was responsible for the conception of the data collection project",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"whoDesigned": {
-							"type": "array",
-							"description": "Place for notes about who designed the survey or data model",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"whoIncluded": {
-							"type": "array",
-							"description": "Place for notes about who was included in the conception and design of the survey or data model, and choices made around this topic",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"collectionConditions": {
-							"type": "array",
-							"description": "Place for notes about any known conditions surrounding the collection process which could have possibly impacted results. Examples could be global pandemic, housing insecurity, documentation status, and so on.",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"collectorsLocations": {
-							"type": "array",
-							"description": "Place for notes about the degree to which data collectors were from the same communities in which the data were being collected",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"collectionMethods": {
-							"type": "array",
-							"description": "Place for notes about the methodology used for data collection",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"miscountRisk": {
-							"type": "array",
-							"description": "Place for notes about historic patterns of demographic under or overcounts, as they relate to the impact of the data being described",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"notes": {
-										"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-										"type": "string"
-									},
-									"relatedResourceURL": {
-										"description": "Link to related resource",
-										"type": "string"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"missingData": {
-							"description": "Place for notes about any issues with missing values in the data, and possible reasons contributing to missing or null values",
-							"type": "string"
-						}
+							}
+						}]
+					},
+					"healthCheckScore": {
+						"description": "",
+						"type": "integer"
+					},
+					"healthCheckQualifier": {
+						"description": "",
+						"type": "string"
 					}
 				},
 				"funding": {
-					"type": "array",
-					"description": "Place to describe or point to how this data were funded, who the funders were, what the funding requirements or stipulations were, and what the original purpose of the data was for ",
-					"items": [{
-						"type": "object",
-						"properties": {
-							"notes": {
-								"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-								"type": "string"
-							},
-							"relatedResourceURL": {
-								"description": "Link to related resource",
-								"type": "string"
-							},
-							"contextMissing": {
-								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-								"type": "boolean"
-							},
-							"importantContext": {
-								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-								"type": "boolean"
+					"notes": {
+						"description": "",
+						"type": "string"
+					},
+					"relatedResourceURL": {
+						"description": "",
+						"type": "array",
+						"items": [{
+							"type": "object",
+							"properties": {
+								"$id": {
+									"description": "Unique resource link",
+									"type:": "string",
+									"format": "uri"
+								},
+								"title": {
+									"description": "Resource title",
+									"type": "string"
+								},
+								"publisher": {
+									"description": "Resource publisher",
+									"type": "string"
+								},
+								"datePublished": {
+									"description": "Resource publication date",
+									"type": "string",
+									"format": "date"
+								}
 							}
-						}
-					}]
-				},
-				"potentialBenefit": {
-					"type": "array",
-					"description": "If there are people who potentially benefit from this data, or have some stake in its quality, use this space to comment on who, how, and why",
-					"items": [{
-						"type": "object",
-						"properties": {
-							"notes": {
-								"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-								"type": "string"
-							},
-							"relatedResourceURL": {
-								"description": "Link to related resource",
-								"type": "string"
-							},
-							"contextMissing": {
-								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-								"type": "boolean"
-							},
-							"importantContext": {
-								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-								"type": "boolean"
-							}
-						}
-					}]
+						}]
+					},
+					"healthCheckScore": {
+						"description": "",
+						"type": "integer"
+					},
+					"healthCheckQualifier": {
+						"description": "",
+						"type": "string"
+					}
 				},
 				"potentialHarm": {
-					"type": "array",
-					"description": "If there are people who could potentially be harmed by this data, or have some stake in its quality, use this space to comment on who, how, and why",
-					"items": [{
-						"type": "object",
-						"properties": {
-							"notes": {
-								"description": "Place to either speak to the topic directly or point out to official, externally-hosted documentation that speaks the topic",
-								"type": "string"
-							},
-							"relatedResourceURL": {
-								"description": "Link to related resource",
-								"type": "string"
-							},
-							"contextMissing": {
-								"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-								"type": "boolean"
-							},
-							"importantContext": {
-								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-								"type": "boolean"
+					"notes": {
+						"description": "",
+						"type": "string"
+					},
+					"relatedResourceURL": {
+						"description": "",
+						"type": "array",
+						"items": [{
+							"type": "object",
+							"properties": {
+								"$id": {
+									"description": "Unique resource link",
+									"type:": "string",
+									"format": "uri"
+								},
+								"title": {
+									"description": "Resource title",
+									"type": "string"
+								},
+								"publisher": {
+									"description": "Resource publisher",
+									"type": "string"
+								},
+								"datePublished": {
+									"description": "Resource publication date",
+									"type": "string",
+									"format": "date"
+								}
 							}
-						}
-					}]
+						}]
+					},
+					"healthCheckScore": {
+						"description": "",
+						"type": "integer"
+					},
+					"healthCheckQualifier": {
+						"description": "",
+						"type": "string"
+					}
 				}
 			}
 		},
