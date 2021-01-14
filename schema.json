@@ -381,7 +381,7 @@
 							"type": "string"
 						},
 						"relatedResourceURL": {
-							"description": "",
+							"description": "Links to supporting documentation",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -408,7 +408,7 @@
 							}]
 						},
 						"healthCheckScore": {
-							"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+							"description": "Ranking of available context 1-5. Value 1 (unhealthy) - 5 (healthy)",
 							"type": "integer"
 						},
 						"healthCheckQualifier": {
@@ -426,7 +426,7 @@
 							"type": "string"
 						},
 						"relatedResourceURL": {
-							"description": "",
+							"description": "Links to supporting documentation",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -453,7 +453,7 @@
 							}]
 						},
 						"healthCheckScore": {
-							"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+							"description": "Ranking of available context 1-5. Value 1 (unhealthy) - 5 (healthy)",
 							"type": "integer"
 						},
 						"healthCheckQualifier": {
@@ -471,7 +471,7 @@
 							"type": "string"
 						},
 						"relatedResourceURL": {
-							"description": "",
+							"description": "Links to supporting documentation",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -498,7 +498,7 @@
 							}]
 						},
 						"healthCheckScore": {
-							"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+							"description": "Ranking of available context 1-5. Value 1 (unhealthy) - 5 (healthy)",
 							"type": "integer"
 						},
 						"healthCheckQualifier": {
@@ -516,7 +516,7 @@
 							"type": "string"
 						},
 						"relatedResourceURL": {
-							"description": "",
+							"description": "Links to supporting documentation",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -543,7 +543,7 @@
 							}]
 						},
 						"healthCheckScore": {
-							"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+							"description": "Ranking of available context 1-5. Value 1 (unhealthy) - 5 (healthy)",
 							"type": "integer"
 						},
 						"healthCheckQualifier": {
@@ -561,7 +561,7 @@
 							"type": "string"
 						},
 						"relatedResourceURL": {
-							"description": "",
+							"description": "Links to supporting documentation",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -588,7 +588,7 @@
 							}]
 						},
 						"healthCheckScore": {
-							"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+							"description": "Ranking of available context 1-5. Value 1 (unhealthy) - 5 (healthy)",
 							"type": "integer"
 						},
 						"healthCheckQualifier": {
