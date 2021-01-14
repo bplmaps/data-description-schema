@@ -373,205 +373,228 @@
 			"type": "object",
 			"properties": {
 				"sampling": {
-					"notes": {
-						"description": "Notes on the availability and quality of information about sampling characteristics of the dataset. This can include the dataset's universe, sample size, known sampling problems, and margin of error. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
-						"type": "string"
-					},
-					"relatedResourceURL": {
-						"description": "",
-						"type": "array",
-						"items": [{
-							"type": "object",
-							"properties": {
-								"$id": {
-									"description": "Unique resource link",
-									"type:": "string",
-									"format": "uri"
-								},
-								"title": {
-									"description": "Resource title",
-									"type": "string"
-								},
-								"publisher": {
-									"description": "Resource publisher",
-									"type": "string"
-								},
-								"datePublished": {
-									"description": "Resource publication date",
-									"type": "string",
-									"format": "date"
+					"description": "Notes on the availability and quality of information about sampling characteristics of the dataset. This can include the dataset's universe, sample size, known sampling problems, and margin of error.",
+					"type": "object",
+					"properties": {
+						"notes": {
+							"description": "Notes on the availability and quality of information about sampling characteristics of the dataset. This can include the dataset's universe, sample size, known sampling problems, and margin of error. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
+							"type": "string"
+						},
+						"relatedResourceURL": {
+							"description": "",
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"$id": {
+										"description": "Unique resource link",
+										"type:": "string",
+										"format": "uri"
+									},
+									"title": {
+										"description": "Resource title",
+										"type": "string"
+									},
+									"publisher": {
+										"description": "Resource publisher",
+										"type": "string"
+									},
+									"datePublished": {
+										"description": "Resource publication date",
+										"type": "string",
+										"format": "date"
+									}
 								}
-							}
-						}]
-					},
-					"healthCheckScore": {
-						"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
-						"type": "integer"
-					},
-					"healthCheckQualifier": {
-						"description": "Notes describing the reason for the given health check score",
-						"type": "string"
+							}]
+						},
+						"healthCheckScore": {
+							"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+							"type": "integer"
+						},
+						"healthCheckQualifier": {
+							"description": "Notes describing the reason for the given health check score",
+							"type": "string"
+						}
 					}
 				},
 				"privacy": {
-					"notes": {
-						"description": "Notes on the availability and quality of information about privacy characteristics. This can include notes about the dataset's unit of aggregation, known issues with aggregation methods, the degree to which participants consented to the data being collected about them, the degree to which the data was anonymized, and any known privacy issues. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
-						"type": "string"
-					},
-					"relatedResourceURL": {
-						"description": "",
-						"type": "array",
-						"items": [{
-							"type": "object",
-							"properties": {
-								"$id": {
-									"description": "Unique resource link",
-									"type:": "string",
-									"format": "uri"
-								},
-								"title": {
-									"description": "Resource title",
-									"type": "string"
-								},
-								"publisher": {
-									"description": "Resource publisher",
-									"type": "string"
-								},
-								"datePublished": {
-									"description": "Resource publication date",
-									"type": "string",
-									"format": "date"
+					"description": "Notes on the availability and quality of information about privacy characteristics. This can include notes about the dataset's unit of aggregation, known issues with aggregation methods, the degree to which participants consented to the data being collected about them, the degree to which the data was anonymized, and any known privacy issues.",
+					"type": "object",
+					"properties": {
+						"notes": {
+							"description": "Notes on the availability and quality of information about privacy characteristics. This can include notes about the dataset's unit of aggregation, known issues with aggregation methods, the degree to which participants consented to the data being collected about them, the degree to which the data was anonymized, and any known privacy issues. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
+							"type": "string"
+						},
+						"relatedResourceURL": {
+							"description": "",
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"$id": {
+										"description": "Unique resource link",
+										"type:": "string",
+										"format": "uri"
+									},
+									"title": {
+										"description": "Resource title",
+										"type": "string"
+									},
+									"publisher": {
+										"description": "Resource publisher",
+										"type": "string"
+									},
+									"datePublished": {
+										"description": "Resource publication date",
+										"type": "string",
+										"format": "date"
+									}
 								}
-							}
-						}]
-					},
-					"healthCheckScore": {
-						"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
-						"type": "integer"
-					},
-					"healthCheckQualifier": {
-						"description": "Notes describing the reason for the given health check score",
-						"type": "string"
+							}]
+						},
+						"healthCheckScore": {
+							"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+							"type": "integer"
+						},
+						"healthCheckQualifier": {
+							"description": "Notes describing the reason for the given health check score",
+							"type": "string"
+						}
 					}
 				},
 				"dataCollection": {
-					"notes": {
-						"description": " Notes on the availability and quality of information about data collection characteristics. This can include notes about data collection start and end dates, those involved in conception, design and planning of the data structuring and collection, who was included in the planning and collecting processes, who were the data collectors, were those who the data is about involved in collecting the data and conceiving of the dataset structure, design and implementation? What collection methods were used, were there any extenuating circumstances around collection that may have impacted the quality of the results? Are there any risks for miscounts? Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
-						"type": "string"
-					},
-					"relatedResourceURL": {
-						"description": "",
-						"type": "array",
-						"items": [{
-							"type": "object",
-							"properties": {
-								"$id": {
-									"description": "Unique resource link",
-									"type:": "string",
-									"format": "uri"
-								},
-								"title": {
-									"description": "Resource title",
-									"type": "string"
-								},
-								"publisher": {
-									"description": "Resource publisher",
-									"type": "string"
-								},
-								"datePublished": {
-									"description": "Resource publication date",
-									"type": "string",
-									"format": "date"
+					"description": "Notes on the availability and quality of information about data collection characteristics. This can include notes about data collection start and end dates, those involved in conception, design and planning of the data structuring and collection, who was included in the planning and collecting processes, who were the data collectors, were those who the data is about involved in collecting the data and conceiving of the dataset structure, design and implementation? What collection methods were used, were there any extenuating circumstances around collection that may have impacted the quality of the results? Are there any risks for miscounts?",
+					"type": "object",
+					"properties": {
+						"notes": {
+							"description": "Notes on the availability and quality of information about data collection characteristics. This can include notes about data collection start and end dates, those involved in conception, design and planning of the data structuring and collection, who was included in the planning and collecting processes, who were the data collectors, were those who the data is about involved in collecting the data and conceiving of the dataset structure, design and implementation? What collection methods were used, were there any extenuating circumstances around collection that may have impacted the quality of the results? Are there any risks for miscounts? Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
+							"type": "string"
+						},
+						"relatedResourceURL": {
+							"description": "",
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"$id": {
+										"description": "Unique resource link",
+										"type:": "string",
+										"format": "uri"
+									},
+									"title": {
+										"description": "Resource title",
+										"type": "string"
+									},
+									"publisher": {
+										"description": "Resource publisher",
+										"type": "string"
+									},
+									"datePublished": {
+										"description": "Resource publication date",
+										"type": "string",
+										"format": "date"
+									}
 								}
-							}
-						}]
-					},
-					"healthCheckScore": {
-						"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",						"type": "integer"
-					},
-					"healthCheckQualifier": {
-						"description": "Notes describing the reason for the given health check score",
-						"type": "string"
+							}]
+						},
+						"healthCheckScore": {
+							"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+							"type": "integer"
+						},
+						"healthCheckQualifier": {
+							"description": "Notes describing the reason for the given health check score",
+							"type": "string"
+						}
 					}
 				},
 				"funding": {
-					"notes": {
-						"description": "Notes on the availability and quality of information about funding characteristics. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
-						"type": "string"
-					},
-					"relatedResourceURL": {
-						"description": "",
-						"type": "array",
-						"items": [{
-							"type": "object",
-							"properties": {
-								"$id": {
-									"description": "Unique resource link",
-									"type:": "string",
-									"format": "uri"
-								},
-								"title": {
-									"description": "Resource title",
-									"type": "string"
-								},
-								"publisher": {
-									"description": "Resource publisher",
-									"type": "string"
-								},
-								"datePublished": {
-									"description": "Resource publication date",
-									"type": "string",
-									"format": "date"
+					"description": "Notes on the availability and quality of information about funding characteristics.",
+					"type": "object",
+					"properties": {
+						"notes": {
+							"description": "Notes on the availability and quality of information about funding characteristics. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
+							"type": "string"
+						},
+						"relatedResourceURL": {
+							"description": "",
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"$id": {
+										"description": "Unique resource link",
+										"type:": "string",
+										"format": "uri"
+									},
+									"title": {
+										"description": "Resource title",
+										"type": "string"
+									},
+									"publisher": {
+										"description": "Resource publisher",
+										"type": "string"
+									},
+									"datePublished": {
+										"description": "Resource publication date",
+										"type": "string",
+										"format": "date"
+									}
 								}
-							}
-						}]
-					},
-					"healthCheckScore": {
-						"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",						"type": "integer"
-					},
-					"healthCheckQualifier": {
-						"description": "",
-						"type": "string"
+							}]
+						},
+						"healthCheckScore": {
+							"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+							"type": "integer"
+						},
+						"healthCheckQualifier": {
+							"description": "Notes describing the reason for the given health check score",
+							"type": "string"
+						}
 					}
 				},
 				"potentialHarm": {
-					"notes": {
-						"description": "Notes related to the availability and quality of information about potential harm risk, or those who may have a stake in the data's quality. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
-						"type": "string"
-					},
-					"relatedResourceURL": {
-						"description": "",
-						"type": "array",
-						"items": [{
-							"type": "object",
-							"properties": {
-								"$id": {
-									"description": "Unique resource link",
-									"type:": "string",
-									"format": "uri"
-								},
-								"title": {
-									"description": "Resource title",
-									"type": "string"
-								},
-								"publisher": {
-									"description": "Resource publisher",
-									"type": "string"
-								},
-								"datePublished": {
-									"description": "Resource publication date",
-									"type": "string",
-									"format": "date"
+					"description": "Notes related to the availability and quality of information about potential harm risk, or those who may have a stake in the data's quality.",
+					"type": "object",
+					"properties": {
+						"notes": {
+							"description": "Notes related to the availability and quality of information about potential harm risk, or those who may have a stake in the data's quality. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
+							"type": "string"
+						},
+						"relatedResourceURL": {
+							"description": "",
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"$id": {
+										"description": "Unique resource link",
+										"type:": "string",
+										"format": "uri"
+									},
+									"title": {
+										"description": "Resource title",
+										"type": "string"
+									},
+									"publisher": {
+										"description": "Resource publisher",
+										"type": "string"
+									},
+									"datePublished": {
+										"description": "Resource publication date",
+										"type": "string",
+										"format": "date"
+									}
 								}
-							}
-						}]
-					},
-					"healthCheckScore": {
-						"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",						"type": "integer"
-					},
-					"healthCheckQualifier": {
-						"description": "Notes describing the reason for the given health check score",
-						"type": "string"
+							}]
+						},
+						"healthCheckScore": {
+							"description": "Ranking of avaialble context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+							"type": "integer"
+						},
+						"healthCheckQualifier": {
+							"description": "Notes describing the reason for the given health check score",
+							"type": "string"
+						}
 					}
 				}
 			}
