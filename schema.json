@@ -552,8 +552,8 @@
 						}
 					}
 				},
-				"potentialHarm": {
-					"description": "Notes related to the availability and quality of information about potential harm risk, or those who may have a stake in the data's quality.",
+				"potentialImpact": {
+					"description": "Notes related to the availability and quality of information available about the potential positive or negative impacts of the dataset on those who are represented in the dataset",
 					"type": "object",
 					"properties": {
 						"notes": {
