@@ -48,6 +48,13 @@
 						"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
 					}
 				},
+				"importantAttributes": {
+					"description": "List of important attributes to preview dataset contents prior to download",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
 				"bboxPreview": {
 					"description": "Information about the dataset's coordinate system and geographic extent",
 					"type": "object",
