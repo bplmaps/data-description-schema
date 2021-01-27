@@ -96,7 +96,7 @@
 					}
 				}
 			},
-			"required": ["$id", "title", "recordType", "hostedBy", "shortDataDescription", "accessCondition"]
+			"required": ["$id", "title", "recordType", "hostedBy", "briefDescription", "accessCondition"]
 		},
 		"dataEndpoints": {
 			"description": "Points to direct access to the dataset",
@@ -900,7 +900,7 @@
 					"description": "Used to refer to documentation provided by the person who manipulated the data, about the human choices involved in processing this dataset. Contributors of READMEs or other tutorial-based docs should be encouraged to format their descriptions in a way that someone who has never encountered this data before could reproduce the process. Where possible, contributors should write step-by-step explanations in chronological order, providing audio or image supplements for additional clarity and accessibility.",
 					"type": "object",
 					"properties": {
-						"records": {
+						"choices": {
 							"description": "Links out to READMEs, tutorials or other documentation contributed by the data processor",
 							"type": "array",
 							"items": [{
@@ -938,19 +938,31 @@
 								}
 							}]
 						},
-						"actors": {
-							"description": "Place to note information about the humans involved in processing this dataset",
+						"tools": {
+							"description": "Links out to scripts or other tools created by the processor to aid in the data processing",
 							"type": "array",
 							"items": [{
 								"type": "object",
 								"properties": {
-									"name": {
-										"type": "string",
-										"description": "Name of person who processed this data"
+									"relatedResourceURL": {
+										"type": "string"
 									},
-									"notes": {
+									"format": {
 										"type": "string",
-										"description": "Notes about the relationship of the processor to the data repository hosting the data, and information about how the records available about processing were procured"
+										"description": "Place to denote resource type",
+										"examples": ["Python Script"]
+									},
+									"title": {
+										"description": "Name for the record",
+										"type": "string"
+									},
+									"author": {
+										"description": "Name of person who authored the record",
+										"type": "string"
+									},
+									"suggestedEntryPoint": {
+										"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
+										"type": "boolean"
 									},
 									"contextMissing": {
 										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
@@ -963,36 +975,10 @@
 								}
 							}]
 						},
-						"process": {
-							"type": "object",
-							"description": "Notes about the general contours of the process, lessons learned, reasoning, thought process and forewarnings to future data users",
-							"properties": {
-								"shortProcessDescription": {
-									"description": "A clear, sequential overview of all steps taken and the reasons for making changes or carrying out processing should be provided here",
-									"type": "string"
-								},
-								"successes": {
-									"description": "General explanation of how steps taken were beneficial to the improvement of this data for public use",
-									"type": "string"
-								},
-								"challenges": {
-									"description": "What was difficult about this project, known hangups, missing information, assumptions made, guesses, practical but questionable steps taken",
-									"type": "string"
-								},
-								"sandtraps": {
-									"description": "Forewarnings or words-to-the wise for someone else wanting to work with this data or project",
-									"type": "string"
-								},
-								"missingProcessingInformation": {
-									"description": "What is unknown about the process for cleaning, joining, analyzing, visualizing within this project that leaves meaningful gaps in understanding how to interpret or use it again",
-									"type": "string"
-								},
-								"importantContext": {
-									"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-									"type": "boolean"
-								}
-							}
-						}
+						"unknown": {
+							"description": "Mark true if processing was performed but details about the process are unknown.",
+							"type": "boolean"
+						}	
 					}
 				}
 			},
