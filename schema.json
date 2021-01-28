@@ -645,6 +645,41 @@
 						"required": ["$id", "title", "maintainedBy"]
 					}]
 				},
+				"officialDocumentation": {
+					"description": "Reference to official documentation sources",
+					"type": "array",
+					"items": [{
+						"type": "object",
+						"properties": {
+							"$id": {
+								"description": "Unique identifier",
+								"type:": "string",
+								"format": "uri"
+							},
+							"title": {
+								"description": "Resource title",
+								"type": "string"
+							},
+							"maintainedBy": {
+								"description": "Person or organization responsible for maintaining and providing access to the codebook",
+								"type": "string"
+							},
+							"notes": {
+								"description": "Place to put helpful notes or information about finding, using or interpreting the codebook",
+								"type": "string"
+							},
+							"suggestedEntryPoint": {
+								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
+								"type": "boolean"
+							},
+							"importantContext": {
+								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
+								"type": "boolean"
+							}
+						},
+						"required": ["$id", "title", "maintainedBy"]
+					}]
+				},
 				"publishedWorks": {
 					"description": "Reference to related blogs, articles, books, data visualizations or other published research based on this data.",
 					"type": "array",
@@ -896,7 +931,7 @@
 					},
 					"required": ["officialMaintainer"]
 				},
-				"manipulation": {
+				"processing": {
 					"description": "Used to refer to documentation provided by the person who manipulated the data, about the human choices involved in processing this dataset. Contributors of READMEs or other tutorial-based docs should be encouraged to format their descriptions in a way that someone who has never encountered this data before could reproduce the process. Where possible, contributors should write step-by-step explanations in chronological order, providing audio or image supplements for additional clarity and accessibility.",
 					"type": "object",
 					"properties": {
