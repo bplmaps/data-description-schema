@@ -294,11 +294,11 @@
 			"type": "object",
 			"properties": {
 				"acquisition": {
-					"description": "Used to describe where the data originated from, if it was derived from other from other data sources",
+					"description": "Used to point to a dataset's originating sources, if the data improves upon, derives from, or combines other data sources. This context powers the 'data genealogy' section of the portal interface",
 					"type": "object",
 					"properties": {
 						"ingredients": {
-							"description": "Used to provide relational links and notes about relationship quality to the 'ingredient' datasets this dataset was created from",
+							"description": "A link back to the URI of each source dataset",
 							"type": "array",
 							"items": [{
 								"type": "object",
@@ -306,20 +306,11 @@
 									"$id": {
 										"type": "string",
 										"format": "uri",
-										"description": "Each item object in the array refers to a unique ingredient used to create the new dataset. This field denotes the ID for the input ingredient dataset."
-									},
-									"type": {
-										"description": "If this ingredient alone was improved upon to create new new dataset, select 'linearPredecessor'. If it was combined with other datasets to create the new dataset, select 'compositeIngredient'. This distinction powers the way the project is presented to the user in the catalog interface.",
-										"type": "string",
-										"enum": ["linearPredecessor", "compositeIngredient"]
+										"description": "The unique ID of the source dataset"
 									},
 									"notes": {
 										"type": "string",
-										"description": "This field is used to qualify the data genealogy between the stated datasets, if it is not clear"
-									},
-									"suggestedEntryPoint": {
-										"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-										"type": "boolean"
+										"description": "Qualifies the relationship between the source dataset and the new dataset, if that relationship is not clear"
 									}
 								}
 							}]
