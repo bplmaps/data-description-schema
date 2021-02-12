@@ -5,16 +5,16 @@
 	"type": "object",
 	"properties": {
 		"citation": {
-			"description": "Basic information about the collection or dataset",
+			"description": "General information about the dataset or collection ",
 			"type": "object",
 			"properties": {
 				"$id": {
 					"type": "string",
-					"description": "Unique identifier for the collection or dataset",
+					"description": "The dataset or collection's unique identifier",
 					"format": "uri"
 				},
 				"title": {
-					"description": "Full name of the dataset or project",
+					"description": "Dataset's full title",
 					"type": "string"
 				},
 				"recordType": {
@@ -22,33 +22,36 @@
 					"type": "string",
 					"enum": ["Collection", "Dataset"]
 				},
-				"hostedBy": {
-					"description": "Distinguishes between datasets hosted within the organization describing the data, or via another organization",
-					"type": "string",
-					"enum": ["Internal", "External"]
+				"collectionItems": {
+					"description": "If the record describes a collection, this field is used to link to collection items",
+					"type": "array",
+					"items": {
+						"type": "string",
+						"format": "uri"
+					}
 				},
 				"previewDescription": {
-					"description": "Short description of the dataset or project",
+					"description": "Description of the dataset used for search results preview. Format this as theme; geographic coverage; temporal coverage",
 					"type": "string"
 				},
 				"fullDescription": {
-					"description": "Full description of the dataset or project",
+					"description": "The full description gives an overview of the dataset. This includes topic, geographic coverage, temporal coverage, reason for including the dataset as a public resource, and any important actors",
 					"type": "string"
 				},
-				"includesDataTypes": {
+				"keyAttributes": {
+					"description": "List of important attributes to preview dataset contents prior to download",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"dataTypes": {
 					"description": "Optional field for denoting data types, to power interface faceting",
 					"type": "array",
 					"items": {
 						"type": "string",
 						"minItems": 1,
 						"enum": ["Polygon", "Raster", "Line", "Point", "MultiPolygon", "MultiLineString", "MultiPoint", "Undetermined"]
-					}
-				},
-				"importantAttributes": {
-					"description": "List of important attributes to preview dataset contents prior to download",
-					"type": "array",
-					"items": {
-						"type": "string"
 					}
 				},
 				"bboxPreview": {
@@ -82,14 +85,6 @@
 					"description": "Notes about access conditions, specifically relating to copyright and use restrictions",
 					"type": "string",
 					"examples": ["This item is in the public domain. There are no restrictions on use.", "Access restriction details"]
-				},
-				"collectionItems": {
-					"description": "If the record describes a collection, this field is used to link to collection items",
-					"type": "array",
-					"items": {
-						"type": "string",
-						"format": "uri"
-					}
 				}
 			},
 			"required": ["$id", "title", "recordType", "hostedBy", "previewDescription", "accessCondition"]
@@ -822,10 +817,6 @@
 							"suggestedEntryPoint": {
 								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
 								"type": "boolean"
-							},
-							"importantContext": {
-								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-								"type": "boolean"
 							}
 						},
 						"required": ["$id", "title", "maintainedBy"]
@@ -856,10 +847,6 @@
 							},
 							"suggestedEntryPoint": {
 								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-								"type": "boolean"
-							},
-							"importantContext": {
-								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
 								"type": "boolean"
 							}
 						},
@@ -901,10 +888,6 @@
 							"suggestedEntryPoint": {
 								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
 								"type": "boolean"
-							},
-							"importantContext": {
-								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-								"type": "boolean"
 							}
 						}
 					}]
@@ -940,10 +923,6 @@
 							"suggestedEntryPoint": {
 								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
 								"type": "boolean"
-							},
-							"importantContext": {
-								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-								"type": "boolean"
 							}
 						},
 						"required": ["$id", "title"]
@@ -975,10 +954,6 @@
 							},
 							"suggestedEntryPoint": {
 								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-								"type": "boolean"
-							},
-							"importantContext": {
-								"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
 								"type": "boolean"
 							}
 						},
