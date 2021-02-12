@@ -30,7 +30,7 @@
 						"format": "uri"
 					}
 				},
-				"previewDescription": {
+				"shortDescription": {
 					"description": "Description of the dataset used for search results preview. Format this as theme; geographic coverage; temporal coverage",
 					"type": "string"
 				},
@@ -87,7 +87,7 @@
 					"examples": ["This item is in the public domain. There are no restrictions on use.", "Access restriction details"]
 				}
 			},
-			"required": ["$id", "title", "recordType", "hostedBy", "previewDescription", "accessCondition"]
+			"required": ["$id", "title", "recordType", "shortDescription", "fullDescription", "accessCondition"]
 		},
 		"endpoints": {
 			"description": "Points to direct access to the dataset",
@@ -100,8 +100,16 @@
 						"type": "string",
 						"format": "uri"
 					},
-					"relatedResourceURL": {
+					"accessURL": {
 						"description": "Direct data access endpoint",
+						"type": "string"
+					},
+					"title": {
+						"description": "Resource title",
+						"type": "string"
+					},
+					"source": {
+						"description": "Data source",
 						"type": "string"
 					},
 					"format": {
@@ -109,25 +117,13 @@
 						"type": "string",
 						"example": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles", "Web Service"]
 					},
-					"source": {
-						"description": "Data source",
-						"type": "string"
-					},
-					"accessedViaURL": {
-						"description": "If the data has a record on a data portal containing additional contextual information, link to that record here",
-						"type": "string"
-					},
-					"title": {
-						"description": "Resource title",
-						"type": "string"
-					},
-					"suggestedEntryPoint": {
+					"suggested": {
 						"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
 						"type": "boolean"
 					}
 				}
 			}],
-			"required": ["$id", "relatedResourceURL", "format", "source"]
+			"required": ["$id", "accessURL", "title", "source", "format"]
 		},
 		"filterTagging": {
 			"description": "Topic tags to facilitate search and filtering",
