@@ -318,24 +318,9 @@
 					}
 				},
 				"description": {
-					"description": "Information about how the dataset has been described, who described it, based on what information",
+					"description": "Information about who wrote metadata describing the dataset",
 					"type": "object",
 					"properties": {
-						"language": {
-							"description": "Observes ISO 639-2",
-							"type": "object",
-							"properties": {
-								"authority": {
-									"type": "string",
-									"description": "https://www.loc.gov/standards/iso639-2/php/code_list.php",
-									"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
-								},
-								"value": {
-									"description": "Appropriate code",
-									"type": "string"
-								}
-							}
-						},
 						"contextProvider": {
 							"description": "Person describing this dataset or project",
 							"type": "object",
@@ -420,8 +405,12 @@
 							"items": [{
 								"type": "object",
 								"properties": {
-									"relatedResourceURL": {
-										"description": "Direct link to access the process documentation",
+									"title": {
+										"description": "Name for the record",
+										"type": "string"
+									},
+									"author": {
+										"description": "Name of person who authored the record",
 										"type": "string"
 									},
 									"format": {
@@ -429,12 +418,8 @@
 										"description": "Place to denote resource type",
 										"examples": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
 									},
-									"title": {
-										"description": "Name for the record",
-										"type": "string"
-									},
-									"author": {
-										"description": "Name of person who authored the record",
+									"relatedResourceURL": {
+										"description": "Direct link to access the process documentation",
 										"type": "string"
 									}
 								}
@@ -446,7 +431,12 @@
 							"items": [{
 								"type": "object",
 								"properties": {
-									"relatedResourceURL": {
+									"title": {
+										"description": "Name for the record",
+										"type": "string"
+									},
+									"author": {
+										"description": "Name of person who authored the record",
 										"type": "string"
 									},
 									"format": {
@@ -454,12 +444,7 @@
 										"description": "Place to denote resource type",
 										"examples": ["Python Script"]
 									},
-									"title": {
-										"description": "Name for the record",
-										"type": "string"
-									},
-									"author": {
-										"description": "Name of person who authored the record",
+									"relatedResourceURL": {
 										"type": "string"
 									}
 								}
@@ -471,230 +456,75 @@
 			"required": ["description", "maintenance"]
 		},
 		"documentationHealth": {
-			"description": "Background information about the who, what, where, why and how the data came to be, designed to place focus on human lives. If information about these fields is not available, these prompts can be used as conversation starters about why this information wasn't previously considered.",
+			"description": "A place to evaluate whether existing documentation provides useful context. Evaluation categories focus on centering people and society's relationship with data. ",
 			"type": "object",
 			"properties": {
-				"sampling": {
-					"description": "Notes on the availability and quality of information about sampling characteristics of the dataset. This can include the dataset's universe, sample size, known sampling problems, and margin of error.",
+				"representation":{
+					"description": "Did the data creators consider the voices of those who the dataset is most likely to affect?",
 					"type": "object",
-					"properties": {
-						"notes": {
-							"description": "Notes on the availability and quality of information about sampling characteristics of the dataset. This can include the dataset's universe, sample size, known sampling problems, and margin of error. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
-							"type": "string"
-						},
-						"relatedResourceURL": {
-							"description": "Links to supporting documentation",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"description": "Unique resource link",
-										"type:": "string",
-										"format": "uri"
-									},
-									"title": {
-										"description": "Resource title",
-										"type": "string"
-									},
-									"publisher": {
-										"description": "Resource publisher",
-										"type": "string"
-									},
-									"datePublished": {
-										"description": "Resource publication date",
-										"type": "string",
-										"format": "date"
-									}
-								}
-							}]
-						},
-						"healthCheckScore": {
-							"description": "Ranking of available context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+					"properties":{
+						"healthScore":{
+							"description": "A number 0-5 which ranks the dataset's official documentation and published materials in terms of how well they address the context category",
 							"type": "integer"
 						},
-						"healthCheckQualifier": {
-							"description": "Notes describing the reason for the given health check score",
+						"healthEvaluation":{
+							"description": "A written explanation of which aspects of the context category the documentation does and does not address",
 							"type": "string"
 						}
 					}
 				},
-				"privacy": {
-					"description": "Notes on the availability and quality of information about privacy characteristics. This can include notes about the dataset's unit of aggregation, known issues with aggregation methods, the degree to which participants consented to the data being collected about them, the degree to which the data was anonymized, and any known privacy issues.",
+				"publicTrust":{
+					"description": "Are the data publishers committed to relationships of trust with the public, and if so, how?",
 					"type": "object",
-					"properties": {
-						"notes": {
-							"description": "Notes on the availability and quality of information about privacy characteristics. This can include notes about the dataset's unit of aggregation, known issues with aggregation methods, the degree to which participants consented to the data being collected about them, the degree to which the data was anonymized, and any known privacy issues. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
-							"type": "string"
-						},
-						"relatedResourceURL": {
-							"description": "Links to supporting documentation",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"description": "Unique resource link",
-										"type:": "string",
-										"format": "uri"
-									},
-									"title": {
-										"description": "Resource title",
-										"type": "string"
-									},
-									"publisher": {
-										"description": "Resource publisher",
-										"type": "string"
-									},
-									"datePublished": {
-										"description": "Resource publication date",
-										"type": "string",
-										"format": "date"
-									}
-								}
-							}]
-						},
-						"healthCheckScore": {
-							"description": "Ranking of available context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+					"properties":{
+						"healthScore":{
+							"description": "A number 0-5 which ranks the dataset's official documentation and published materials in terms of how well they address the context category",
 							"type": "integer"
 						},
-						"healthCheckQualifier": {
-							"description": "Notes describing the reason for the given health check score",
+						"healthEvaluation":{
+							"description": "A written explanation of which aspects of the context category the documentation does and does not address",
 							"type": "string"
 						}
 					}
 				},
-				"dataCollection": {
-					"description": "Notes on the availability and quality of information about data collection characteristics. This can include notes about data collection start and end dates, those involved in conception, design and planning of the data structuring and collection, who was included in the planning and collecting processes, who were the data collectors, were those who the data is about involved in collecting the data and conceiving of the dataset structure, design and implementation? What collection methods were used, were there any extenuating circumstances around collection that may have impacted the quality of the results? Are there any risks for miscounts?",
+				"systemicInjustice":{
+					"description": "What actions have the data creators taken to avoid the perpetuation of systemic injustice or the repeat of past harms?",
 					"type": "object",
-					"properties": {
-						"notes": {
-							"description": "Notes on the availability and quality of information about data collection characteristics. This can include notes about data collection start and end dates, those involved in conception, design and planning of the data structuring and collection, who was included in the planning and collecting processes, who were the data collectors, were those who the data is about involved in collecting the data and conceiving of the dataset structure, design and implementation? What collection methods were used, were there any extenuating circumstances around collection that may have impacted the quality of the results? Are there any risks for miscounts? Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
-							"type": "string"
-						},
-						"relatedResourceURL": {
-							"description": "Links to supporting documentation",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"description": "Unique resource link",
-										"type:": "string",
-										"format": "uri"
-									},
-									"title": {
-										"description": "Resource title",
-										"type": "string"
-									},
-									"publisher": {
-										"description": "Resource publisher",
-										"type": "string"
-									},
-									"datePublished": {
-										"description": "Resource publication date",
-										"type": "string",
-										"format": "date"
-									}
-								}
-							}]
-						},
-						"healthCheckScore": {
-							"description": "Ranking of available context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+					"properties":{
+						"healthScore":{
+							"description": "A number 0-5 which ranks the dataset's official documentation and published materials in terms of how well they address the context category",
 							"type": "integer"
 						},
-						"healthCheckQualifier": {
-							"description": "Notes describing the reason for the given health check score",
+						"healthEvaluation":{
+							"description": "A written explanation of which aspects of the context category the documentation does and does not address",
 							"type": "string"
 						}
 					}
 				},
-				"funding": {
-					"description": "Notes on the availability and quality of information about funding characteristics.",
+				"origins":{
+					"description": "Can we understand who funded, collected and analyzed the data, and how?",
 					"type": "object",
-					"properties": {
-						"notes": {
-							"description": "Notes on the availability and quality of information about funding characteristics. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
-							"type": "string"
-						},
-						"relatedResourceURL": {
-							"description": "Links to supporting documentation",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"description": "Unique resource link",
-										"type:": "string",
-										"format": "uri"
-									},
-									"title": {
-										"description": "Resource title",
-										"type": "string"
-									},
-									"publisher": {
-										"description": "Resource publisher",
-										"type": "string"
-									},
-									"datePublished": {
-										"description": "Resource publication date",
-										"type": "string",
-										"format": "date"
-									}
-								}
-							}]
-						},
-						"healthCheckScore": {
-							"description": "Ranking of available context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+					"properties":{
+						"healthScore":{
+							"description": "A number 0-5 which ranks the dataset's official documentation and published materials in terms of how well they address the context category",
 							"type": "integer"
 						},
-						"healthCheckQualifier": {
-							"description": "Notes describing the reason for the given health check score",
+						"healthEvaluation":{
+							"description": "A written explanation of which aspects of the context category the documentation does and does not address",
 							"type": "string"
 						}
 					}
 				},
-				"potentialImpact": {
-					"description": "Notes related to the availability and quality of information available about the potential positive or negative impacts of the dataset on those who are represented in the dataset",
+				"futureUse":{
+					"description": "Can we understand the potential future impact of this dataset, including what someone should and should not use it for?",
 					"type": "object",
-					"properties": {
-						"notes": {
-							"description": "Notes related to the availability and quality of information about potential harm risk, or those who may have a stake in the data's quality. Notes should describe the extent of usefulness of the linked documentation in 'relatedResourceURL'.",
-							"type": "string"
-						},
-						"relatedResourceURL": {
-							"description": "Links to supporting documentation",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"description": "Unique resource link",
-										"type:": "string",
-										"format": "uri"
-									},
-									"title": {
-										"description": "Resource title",
-										"type": "string"
-									},
-									"publisher": {
-										"description": "Resource publisher",
-										"type": "string"
-									},
-									"datePublished": {
-										"description": "Resource publication date",
-										"type": "string",
-										"format": "date"
-									}
-								}
-							}]
-						},
-						"healthCheckScore": {
-							"description": "Ranking of available context 1-5. Value 1 (unhealthy) - 5 (healthy)",
+					"properties":{
+						"healthScore":{
+							"description": "A number 0-5 which ranks the dataset's official documentation and published materials in terms of how well they address the context category",
 							"type": "integer"
 						},
-						"healthCheckQualifier": {
-							"description": "Notes describing the reason for the given health check score",
+						"healthEvaluation":{
+							"description": "A written explanation of which aspects of the context category the documentation does and does not address",
 							"type": "string"
 						}
 					}
