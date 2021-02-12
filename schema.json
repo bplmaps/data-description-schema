@@ -4,7 +4,7 @@
 	"title": "LMEC Data Description Schema",
 	"type": "object",
 	"properties": {
-		"coreCitation": {
+		"citation": {
 			"description": "Basic information about the collection or dataset",
 			"type": "object",
 			"properties": {
@@ -27,15 +27,11 @@
 					"type": "string",
 					"enum": ["Internal", "External"]
 				},
-				"briefDescription": {
+				"previewDescription": {
 					"description": "Short description of the dataset or project",
 					"type": "string"
 				},
-				"briefGenealogy": {
-					"description": "Notes about how the dataset came to be, if it was inferred from or combined from other datasets",
-					"type": "string"
-				},
-				"fullNotes": {
+				"fullDescription": {
 					"description": "Full description of the dataset or project",
 					"type": "string"
 				},
@@ -96,9 +92,9 @@
 					}
 				}
 			},
-			"required": ["$id", "title", "recordType", "hostedBy", "briefDescription", "accessCondition"]
+			"required": ["$id", "title", "recordType", "hostedBy", "previewDescription", "accessCondition"]
 		},
-		"dataEndpoints": {
+		"endpoints": {
 			"description": "Points to direct access to the dataset",
 			"type": "array",
 			"items": [{
@@ -138,7 +134,7 @@
 			}],
 			"required": ["$id", "relatedResourceURL", "format", "source"]
 		},
-		"subjectTagging": {
+		"filterTagging": {
 			"description": "Topic tags to facilitate search and filtering",
 			"type": "object",
 			"properties": {
@@ -375,7 +371,197 @@
 				}
 			}
 		},
-		"dataBiography": {
+		"peopleLifecycle": {
+			"description": "Human beings often make changes to data during the process of working with and making sense of it. The context in this section is aimed at painting a fuller picture of the actions taken by other humans, in order to help someone understand how they might want to use the data. ",
+			"type": "object",
+			"properties": {
+				"acquisition": {
+					"description": "Used to describe where the data originated from, if it was derived from other from other data sources",
+					"type": "object",
+					"properties": {
+						"ingredients": {
+							"description": "Used to provide relational links and notes about relationship quality to the 'ingredient' datasets this dataset was created from",
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"$id": {
+										"type": "string",
+										"format": "uri",
+										"description": "Each item object in the array refers to a unique ingredient used to create the new dataset. This field denotes the ID for the input ingredient dataset."
+									},
+									"type": {
+										"description": "If this ingredient alone was improved upon to create new new dataset, select 'linearPredecessor'. If it was combined with other datasets to create the new dataset, select 'compositeIngredient'. This distinction powers the way the project is presented to the user in the catalog interface.",
+										"type": "string",
+										"enum": ["linearPredecessor", "compositeIngredient"]
+									},
+									"notes": {
+										"type": "string",
+										"description": "This field is used to qualify the data genealogy between the stated datasets, if it is not clear"
+									},
+									"suggestedEntryPoint": {
+										"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
+										"type": "boolean"
+									}
+								}
+							}]
+						}
+					}
+				},
+				"description": {
+					"description": "Information about how the dataset has been described, who described it, based on what information",
+					"type": "object",
+					"properties": {
+						"language": {
+							"description": "Observes ISO 639-2",
+							"type": "object",
+							"properties": {
+								"authority": {
+									"type": "string",
+									"description": "https://www.loc.gov/standards/iso639-2/php/code_list.php",
+									"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
+								},
+								"value": {
+									"description": "Appropriate code",
+									"type": "string"
+								}
+							}
+						},
+						"contextProvider": {
+							"description": "Person describing this dataset or project",
+							"type": "object",
+							"properties": {
+								"name": {
+									"description": "Person's name",
+									"type": "string"
+								},
+								"relationshipToData": {
+									"type": "string",
+									"description": "Person's relationship to dataset or project"
+								}
+							}
+						},
+						"contextOnBehalfOf": {
+							"description": "If the person filling out the context is different than the person responsbile for the creation or processing of the dataset or project, note that here",
+							"type": "object",
+							"properties": {
+								"name": {
+									"description": "Person's name",
+									"type": "string"
+								},
+								"relationshipToData": {
+									"type": "string",
+									"description": "Person's relationship to dataset or project"
+								}
+							}
+						},
+						"contextPublicationDate": {
+							"description": "Date this context was first made available",
+							"type": "string",
+							"format": "date"
+						},
+						"metadataSchema": {
+							"type": "object",
+							"description": "Links out to full LMEC Data Description Schema",
+							"properties": {
+								"schemaName": {
+									"type": "string",
+									"const": "LMEC Data Description Schema"
+								},
+								"$id": {
+									"type": "string",
+									"description": "https://github.com/nblmc/Data-Context/blob/master/schema.json",
+									"const": "https://github.com/nblmc/Data-Context/blob/master/schema.json"
+								}
+							}
+						}
+					},
+					"required": ["language", "contextProvider", "contextPublicationDate"]
+				},
+				"maintenance": {
+					"type": "object",
+					"description": "Information about who is responsible for updating and maintaining the dataset",
+					"properties": {
+						"officialMaintainer": {
+							"description": "Person or organization responsible for maintaining the dataset",
+							"type": "string"
+						},
+						"maintenanceFrequency": {
+							"description": "Regularity with which this dataset is updated. Example values could be 'None', 'Every Monday at Midnight', 'Annually', 'Unknown'",
+							"type": "string"
+						},
+						"typicalUpdates": {
+							"description": "If this data is regularly updated, describe the typical nature of the changes",
+							"type": "string"
+						}
+					},
+					"required": ["officialMaintainer"]
+				},
+				"processing": {
+					"description": "Used to refer to documentation provided by the person who manipulated the data, about the human choices involved in processing this dataset. Contributors of READMEs or other tutorial-based docs should be encouraged to format their descriptions in a way that someone who has never encountered this data before could reproduce the process. Where possible, contributors should write step-by-step explanations in chronological order, providing audio or image supplements for additional clarity and accessibility.",
+					"type": "object",
+					"properties": {
+						"steps": {
+							"description": "Notes about how the dataset came to be, if it was inferred from or combined from other datasets",
+							"type": "string"
+						},
+						"choices": {
+							"description": "Links out to READMEs, tutorials or other documentation contributed by the data processor",
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"relatedResourceURL": {
+										"description": "Direct link to access the process documentation",
+										"type": "string"
+									},
+									"format": {
+										"type": "string",
+										"description": "Place to denote resource type",
+										"examples": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
+									},
+									"title": {
+										"description": "Name for the record",
+										"type": "string"
+									},
+									"author": {
+										"description": "Name of person who authored the record",
+										"type": "string"
+									}
+								}
+							}]
+						},
+						"tools": {
+							"description": "Links out to scripts or other tools created by the processor to aid in the data processing",
+							"type": "array",
+							"items": [{
+								"type": "object",
+								"properties": {
+									"relatedResourceURL": {
+										"type": "string"
+									},
+									"format": {
+										"type": "string",
+										"description": "Place to denote resource type",
+										"examples": ["Python Script"]
+									},
+									"title": {
+										"description": "Name for the record",
+										"type": "string"
+									},
+									"author": {
+										"description": "Name of person who authored the record",
+										"type": "string"
+									}
+								}
+							}]
+						}	
+					}
+				}
+			},
+			"required": ["description", "maintenance"]
+		},
+		"documentationHealth": {
 			"description": "Background information about the who, what, where, why and how the data came to be, designed to place focus on human lives. If information about these fields is not available, these prompts can be used as conversation starters about why this information wasn't previously considered.",
 			"type": "object",
 			"properties": {
@@ -606,7 +792,7 @@
 				}
 			}
 		},
-		"resourceConstellation": {
+		"relatedResources": {
 			"description": "Datasets or data projects are often not useful on their own. Often, we need an entire constellation of supporting resources to make sense of the data we find. The information in this section can be added to as more learning materials become available. ",
 			"type": "object",
 			"properties": {
@@ -800,225 +986,7 @@
 					}]
 				}
 			}
-		},
-		"dataLifecycle": {
-			"description": "Human beings often make changes to data during the process of working with and making sense of it. The context in this section is aimed at painting a fuller picture of the actions taken by other humans, in order to help someone understand how they might want to use the data. ",
-			"type": "object",
-			"properties": {
-				"acquisition": {
-					"description": "Used to describe where the data originated from, if it was derived from other from other data sources",
-					"type": "object",
-					"properties": {
-						"ingredients": {
-							"description": "Used to provide relational links and notes about relationship quality to the 'ingredient' datasets this dataset was created from",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"$id": {
-										"type": "string",
-										"format": "uri",
-										"description": "Each item object in the array refers to a unique ingredient used to create the new dataset. This field denotes the ID for the input ingredient dataset."
-									},
-									"type": {
-										"description": "If this ingredient alone was improved upon to create new new dataset, select 'linearPredecessor'. If it was combined with other datasets to create the new dataset, select 'compositeIngredient'. This distinction powers the way the project is presented to the user in the catalog interface.",
-										"type": "string",
-										"enum": ["linearPredecessor", "compositeIngredient"]
-									},
-									"notes": {
-										"type": "string",
-										"description": "This field is used to qualify the data genealogy between the stated datasets, if it is not clear"
-									},
-									"suggestedEntryPoint": {
-										"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-										"type": "boolean"
-									}
-								}
-							}]
-						}
-					}
-				},
-				"description": {
-					"description": "Information about how the dataset has been described, who described it, based on what information",
-					"type": "object",
-					"properties": {
-						"language": {
-							"description": "Observes ISO 639-2",
-							"type": "object",
-							"properties": {
-								"authority": {
-									"type": "string",
-									"description": "https://www.loc.gov/standards/iso639-2/php/code_list.php",
-									"const": "https://www.loc.gov/standards/iso639-2/php/code_list.php"
-								},
-								"value": {
-									"description": "Appropriate code",
-									"type": "string"
-								}
-							}
-						},
-						"contextProvider": {
-							"description": "Person describing this dataset or project",
-							"type": "object",
-							"properties": {
-								"name": {
-									"description": "Person's name",
-									"type": "string"
-								},
-								"relationshipToData": {
-									"type": "string",
-									"description": "Person's relationship to dataset or project"
-								}
-							}
-						},
-						"contextOnBehalfOf": {
-							"description": "If the person filling out the context is different than the person responsbile for the creation or processing of the dataset or project, note that here",
-							"type": "object",
-							"properties": {
-								"name": {
-									"description": "Person's name",
-									"type": "string"
-								},
-								"relationshipToData": {
-									"type": "string",
-									"description": "Person's relationship to dataset or project"
-								}
-							}
-						},
-						"contextPublicationDate": {
-							"description": "Date this context was first made available",
-							"type": "string",
-							"format": "date"
-						},
-						"metadataSchema": {
-							"type": "object",
-							"description": "Links out to full LMEC Data Description Schema",
-							"properties": {
-								"schemaName": {
-									"type": "string",
-									"const": "LMEC Data Description Schema"
-								},
-								"$id": {
-									"type": "string",
-									"description": "https://github.com/nblmc/Data-Context/blob/master/schema.json",
-									"const": "https://github.com/nblmc/Data-Context/blob/master/schema.json"
-								}
-							}
-						}
-					},
-					"required": ["language", "contextProvider", "contextPublicationDate"]
-				},
-				"maintenance": {
-					"type": "object",
-					"description": "Information about who is responsible for updating and maintaining the dataset",
-					"properties": {
-						"officialMaintainer": {
-							"description": "Person or organization responsible for maintaining the dataset",
-							"type": "string"
-						},
-						"maintenanceFrequency": {
-							"description": "Regularity with which this dataset is updated. Example values could be 'None', 'Every Monday at Midnight', 'Annually', 'Unknown'",
-							"type": "string"
-						},
-						"typicalUpdates": {
-							"description": "If this data is regularly updated, describe the typical nature of the changes",
-							"type": "string"
-						},
-						"contextMissing": {
-							"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-							"type": "boolean"
-						}
-					},
-					"required": ["officialMaintainer"]
-				},
-				"processing": {
-					"description": "Used to refer to documentation provided by the person who manipulated the data, about the human choices involved in processing this dataset. Contributors of READMEs or other tutorial-based docs should be encouraged to format their descriptions in a way that someone who has never encountered this data before could reproduce the process. Where possible, contributors should write step-by-step explanations in chronological order, providing audio or image supplements for additional clarity and accessibility.",
-					"type": "object",
-					"properties": {
-						"choices": {
-							"description": "Links out to READMEs, tutorials or other documentation contributed by the data processor",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"relatedResourceURL": {
-										"description": "Direct link to access the process documentation",
-										"type": "string"
-									},
-									"format": {
-										"type": "string",
-										"description": "Place to denote resource type",
-										"examples": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
-									},
-									"title": {
-										"description": "Name for the record",
-										"type": "string"
-									},
-									"author": {
-										"description": "Name of person who authored the record",
-										"type": "string"
-									},
-									"suggestedEntryPoint": {
-										"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-										"type": "boolean"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"tools": {
-							"description": "Links out to scripts or other tools created by the processor to aid in the data processing",
-							"type": "array",
-							"items": [{
-								"type": "object",
-								"properties": {
-									"relatedResourceURL": {
-										"type": "string"
-									},
-									"format": {
-										"type": "string",
-										"description": "Place to denote resource type",
-										"examples": ["Python Script"]
-									},
-									"title": {
-										"description": "Name for the record",
-										"type": "string"
-									},
-									"author": {
-										"description": "Name of person who authored the record",
-										"type": "string"
-									},
-									"suggestedEntryPoint": {
-										"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-										"type": "boolean"
-									},
-									"contextMissing": {
-										"description": "Optional front-end flag to indicate context fields for which the metadata writer believes context would have been helpful, but no information is available or easily discoverable via original data providers",
-										"type": "boolean"
-									},
-									"importantContext": {
-										"description": "Optional front-end flag to indicate context fields to elevate to high prominence in a discovery environment",
-										"type": "boolean"
-									}
-								}
-							}]
-						},
-						"unknown": {
-							"description": "Mark true if processing was performed but details about the process are unknown.",
-							"type": "boolean"
-						}	
-					}
-				}
-			},
-			"required": ["description", "maintenance"]
 		}
 	},
-	"required": ["coreCitation", "subjectTagging", "dataLifecycle"]
+	"required": ["citation", "endpoints", "filterTagging", "peopleLifecycle"]
 }
