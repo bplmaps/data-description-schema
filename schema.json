@@ -223,7 +223,7 @@
 				},
 				"temporal": {
 					"type": "object",
-					"description": "Used to power interface filtering by date",
+					"description": "Information to contextualize the temporal extent of the dataset, including time coverage and publication date",
 					"properties": {
 						"temporalNotes": {
 							"description": "Used to provide clarity about the temporal details of the dataset",
@@ -238,20 +238,20 @@
 									"description": "Observes: https://www.w3.org/TR/NOTE-datetime",
 									"const": "https://www.w3.org/TR/NOTE-datetime"
 								},
-								"temporalType": {
+								"valueType": {
 									"description": "This field indicates whether the temporal extent of this dataset is expressed as a singular date, or as a range.",
 									"type": "string",
 									"enum": ["singularExpression", "temporalRange"]
 								},
-								"singularExpressionValue": {
+								"singleDate": {
 									"description": "Use this field if the temporal representation is best described as a singular date or year",
 									"type": "string"
 								},
-								"startRangeValue": {
+								"rangeStart": {
 									"description": "Use these fields if the temporal representation is best described as a range",
 									"type": "string"
 								},
-								"endRangeValue": {
+								"rangeEnd": {
 									"description": "Use these fields if the temporal representation is best described as a range",
 									"type": "string"
 								}
@@ -266,20 +266,20 @@
 									"description": "Observes: https://www.w3.org/TR/NOTE-datetime",
 									"const": "https://www.w3.org/TR/NOTE-datetime"
 								},
-								"temporalType": {
+								"valueType": {
 									"description": "This field indicates whether the temporal extent of this dataset's publication date is expressed as a singular date, or as a range.",
 									"type": "string",
 									"enum": ["singularExpression", "temporalRange"]
 								},
-								"singularExpressionValue": {
+								"singleDate": {
 									"description": "Use this field if the publication date is best described by a singluar date or year",
 									"type": "string"
 								},
-								"startRangeValue": {
+								"rangeStart": {
 									"description": "Use these fields if the publication date is best described as a range",
 									"type": "string"
 								},
-								"endRangeValue": {
+								"rangeEnd": {
 									"type": "string",
 									"description": "Use these fields if the publication date is best described as a range"
 								}
