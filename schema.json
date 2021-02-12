@@ -535,8 +535,8 @@
 			"description": "Datasets or data projects are often not useful on their own. Often, we need an entire constellation of supporting resources to make sense of the data we find. The information in this section can be added to as more learning materials become available. ",
 			"type": "object",
 			"properties": {
-				"codebooks": {
-					"description": "Reference to any codebooks or data dictionaries intended to aid interpretation of the data's attributes or field names",
+				"documentation": {
+					"description": "Reference to official documentation sources",
 					"type": "array",
 					"items": [{
 						"type": "object",
@@ -566,8 +566,8 @@
 						"required": ["$id", "title", "maintainedBy"]
 					}]
 				},
-				"officialDocumentation": {
-					"description": "Reference to official documentation sources",
+				"codebooks": {
+					"description": "Reference to any codebooks or data dictionaries intended to aid interpretation of the data's attributes or field names",
 					"type": "array",
 					"items": [{
 						"type": "object",
@@ -653,38 +653,6 @@
 							},
 							"author": {
 								"description": "Resource author",
-								"type": "string"
-							},
-							"datePublished": {
-								"description": "Resource publication date",
-								"type": "string",
-								"format": "date"
-							},
-							"notes": {
-								"description": "Place to note how this resource is relelvant",
-								"type": "string"
-							},
-							"suggestedEntryPoint": {
-								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-								"type": "boolean"
-							}
-						},
-						"required": ["$id", "title"]
-					}]
-				},
-				"supplementaryFiles": {
-					"description": "Points to files that complement the data at hand",
-					"type": "array",
-					"items": [{
-						"type": "object",
-						"properties": {
-							"$id": {
-								"description": "Unique identifier",
-								"type:": "string",
-								"format": "uri"
-							},
-							"title": {
-								"description": "Resource title",
 								"type": "string"
 							},
 							"datePublished": {
