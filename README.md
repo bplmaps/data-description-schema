@@ -1,4 +1,4 @@
-# Data-Context
+# data-description-schema
 Metadata description schema for hosting open, humanistically-contextualized datasets. 
 
 You can find use examples in [nblmc/metadata](https://www.github.com/nblmc/metadata).
