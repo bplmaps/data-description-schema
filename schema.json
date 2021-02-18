@@ -179,6 +179,7 @@
 						},
 						"freeSubjectTags": {
 							"type": "array",
+							"description": "Place to add any tags for filtering, regardless of whether they belong to a standard vocabulary",
 							"items": [{
 								"type": "object",
 								"properties": {
