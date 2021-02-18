@@ -394,7 +394,7 @@
 					"required": ["officialMaintainer"]
 				},
 				"processing": {
-					"description": "Place to link out to and describe documentation provided by the data processor. You can encourage data contributors to submit processing context as a README or step-by-step tutorial. You can use a [contributor README guide](https://geoservices.leventhalmap.org/cartinal/guides/readme-instructions.html) to support contributors. ",
+					"description": "Place to link out to and describe documentation provided by the data processor. You can encourage data contributors to submit processing context as a README or step-by-step tutorial. ",
 					"type": "object",
 					"properties": {
 						"steps": {
