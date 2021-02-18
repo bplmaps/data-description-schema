@@ -394,7 +394,7 @@
 					"required": ["officialMaintainer"]
 				},
 				"processing": {
-					"description": "Used to refer to documentation provided by the person who manipulated the data, about the human choices involved in processing this dataset. Contributors of READMEs or other tutorial-based docs should be encouraged to format their descriptions in a way that someone who has never encountered this data before could reproduce the process. Where possible, contributors should write step-by-step explanations in chronological order, providing audio or image supplements for additional clarity and accessibility.",
+					"description": "Place to link out to and describe documentation provided by the data processor. You can encourage data contributors to submit processing context as a README or step-by-step tutorial. You can use a [contributor README guide](https://geoservices.leventhalmap.org/cartinal/guides/readme-instructions.html) to support contributors. ",
 					"type": "object",
 					"properties": {
 						"steps": {
