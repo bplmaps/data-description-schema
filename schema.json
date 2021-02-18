@@ -287,7 +287,8 @@
 						}
 					}
 				}
-			}
+			},
+			"required": ["thematic"]
 		},
 		"peopleLifecycle": {
 			"description": "Provides context on how people have managed the data during different aspects of the data information lifecycle ",
