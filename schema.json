@@ -559,10 +559,6 @@
 							"notes": {
 								"description": "Place to put helpful notes or information about finding, using or interpreting the documentation",
 								"type": "string"
-							},
-							"suggestedEntryPoint": {
-								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-								"type": "boolean"
 							}
 						},
 						"required": ["$id", "title", "maintainedBy"]
@@ -590,10 +586,6 @@
 							"notes": {
 								"description": "Place to put helpful notes or information about finding, using or interpreting the codebook",
 								"type": "string"
-							},
-							"suggestedEntryPoint": {
-								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-								"type": "boolean"
 							}
 						},
 						"required": ["$id", "title", "maintainedBy"]
@@ -630,10 +622,6 @@
 							"notes": {
 								"description": "Place to note how this resource is relelvant",
 								"type": "string"
-							},
-							"suggestedEntryPoint": {
-								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-								"type": "boolean"
 							}
 						}
 					}]
@@ -665,10 +653,6 @@
 							"notes": {
 								"description": "Place to note how this resource is relelvant",
 								"type": "string"
-							},
-							"suggestedEntryPoint": {
-								"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-								"type": "boolean"
 							}
 						},
 						"required": ["$id", "title"]
