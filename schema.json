@@ -553,7 +553,7 @@
 								"type": "string"
 							},
 							"maintainedBy": {
-								"description": "Person or organization responsible for maintaining and providing access to the codebook",
+								"description": "Person or organization responsible for maintaining and providing access to the documentation",
 								"type": "string"
 							},
 							"notes": {
