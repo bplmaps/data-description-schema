@@ -242,7 +242,7 @@
 								"valueType": {
 									"description": "This field indicates whether the temporal extent of this dataset is expressed as a singular date, or as a range.",
 									"type": "string",
-									"enum": ["singularExpression", "temporalRange"]
+									"enum": ["singleDate", "range"]
 								},
 								"singleDate": {
 									"description": "Use this field if the temporal representation is best described as a singular date or year",
@@ -270,7 +270,7 @@
 								"valueType": {
 									"description": "This field indicates whether the temporal extent of this dataset's publication date is expressed as a singular date, or as a range.",
 									"type": "string",
-									"enum": ["singularExpression", "temporalRange"]
+									"enum": ["singleDate", "range"]
 								},
 								"singleDate": {
 									"description": "Use this field if the publication date is best described by a singluar date or year",
