@@ -557,7 +557,7 @@
 								"type": "string"
 							},
 							"notes": {
-								"description": "Place to put helpful notes or information about finding, using or interpreting the codebook",
+								"description": "Place to put helpful notes or information about finding, using or interpreting the documentation",
 								"type": "string"
 							},
 							"suggestedEntryPoint": {
