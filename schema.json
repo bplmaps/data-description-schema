@@ -420,7 +420,7 @@
 										"description": "Place to denote resource type",
 										"examples": ["Blog", "Article", "Guide", "Tutorial", "Jupyter Notebook", "Plain-text README"]
 									},
-									"relatedResourceURL": {
+									"accessURL": {
 										"description": "Direct link to access the process documentation",
 										"type": "string"
 									}
@@ -446,7 +446,7 @@
 										"description": "Place to denote resource type",
 										"examples": ["Python Script"]
 									},
-									"relatedResourceURL": {
+									"accessURL": {
 										"type": "string"
 									}
 								}
