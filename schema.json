@@ -4,7 +4,7 @@
 	"title": "LMEC Data Description Schema",
 	"type": "object",
 	"properties": {
-		"citation": {
+		"description": {
 			"description": "General information about the dataset or collection ",
 			"type": "object",
 			"properties": {
@@ -89,7 +89,7 @@
 			},
 			"required": ["$id", "title", "recordType", "shortDescription", "fullDescription", "accessCondition"]
 		},
-		"endpoints": {
+		"access": {
 			"description": "Points to direct access to the dataset",
 			"type": "array",
 			"items": [{
@@ -125,7 +125,7 @@
 			}],
 			"required": ["$id", "accessURL", "title", "source", "format"]
 		},
-		"filterTagging": {
+		"tags": {
 			"description": "Theme, geography and time tags to ease search and filter ",
 			"type": "object",
 			"properties": {
@@ -291,7 +291,7 @@
 			},
 			"required": ["thematic"]
 		},
-		"peopleLifecycle": {
+		"lifecycle": {
 			"description": "Provides context on how people have managed the data during different aspects of the data information lifecycle ",
 			"type": "object",
 			"properties": {
@@ -457,83 +457,55 @@
 			},
 			"required": ["description", "maintenance"]
 		},
-		"documentationHealth": {
+		"considerations": {
 			"description": "A place to evaluate whether existing documentation provides useful context. Evaluation categories focus on centering people and society's relationship with data. ",
 			"type": "object",
 			"properties": {
-				"representation":{
-					"description": "Did the data creators consider the voices of those who the dataset is most likely to affect?",
+				"machineReadability":{
+					"description": "Place to provide considerations on the machine readability of the dataset. ",
 					"type": "object",
 					"properties":{
-						"healthScore":{
-							"description": "A number 0-5 which ranks the dataset's official documentation and published materials in terms of how well they address the context category",
+						"value":{
+							"description": "Place for the data describer to provide data users a sense of how well-formatted or contextualized the dataset is. 0 means the data describer has identified potential sandtraps that should give a data user pause when working with the dataset. It also can mean that not enough contextual information is available for the data describer to be able to assign a score.  1 means the data describer believes the data provider has formatted or contextualized the data in a way that allows the data user to proceed with reasonable confidence. 2 means the data describer believes the dataset to be well formatted or described. ",
 							"type": "integer"
 						},
-						"healthEvaluation":{
-							"description": "A written explanation of which aspects of the context category the documentation does and does not address",
+						"notes":{
+							"description": "A place to add qualifying information about the value provided. ",
 							"type": "string"
 						}
 					}
 				},
-				"publicTrust":{
-					"description": "Are the data publishers committed to relationships of trust with the public, and if so, how?",
+				"humanReadability":{
+					"description": "Place to provide considerations on the machine readability of the dataset. ",
 					"type": "object",
 					"properties":{
-						"healthScore":{
-							"description": "A number 0-5 which ranks the dataset's official documentation and published materials in terms of how well they address the context category",
+						"value":{
+							"description": "Place for the data describer to provide data users a sense of how well-formatted or contextualized the dataset is. 0 means the data describer has identified potential sandtraps that should give a data user pause when working with the dataset. It also can mean that not enough contextual information is available for the data describer to be able to assign a score.  1 means the data describer believes the data provider has formatted or contextualized the data in a way that allows the data user to proceed with reasonable confidence. 2 means the data describer believes the dataset to be well formatted or described. ",
 							"type": "integer"
 						},
-						"healthEvaluation":{
-							"description": "A written explanation of which aspects of the context category the documentation does and does not address",
+						"notes":{
+							"description": "A place to add qualifying information about the value provided. ",
 							"type": "string"
 						}
 					}
 				},
-				"systemicInjustice":{
-					"description": "What actions have the data creators taken to avoid the perpetuation of systemic injustice or the repeat of past harms?",
+				"socialEmbeddedness":{
+					"description": "Place to provide considerations on the machine readability of the dataset. ",
 					"type": "object",
 					"properties":{
-						"healthScore":{
-							"description": "A number 0-5 which ranks the dataset's official documentation and published materials in terms of how well they address the context category",
+						"value":{
+							"description": "Place for the data describer to provide data users a sense of how well-formatted or contextualized the dataset is. 0 means the data describer has identified potential sandtraps that should give a data user pause when working with the dataset. It also can mean that not enough contextual information is available for the data describer to be able to assign a score.  1 means the data describer believes the data provider has formatted or contextualized the data in a way that allows the data user to proceed with reasonable confidence. 2 means the data describer believes the dataset to be well formatted or described. ",
 							"type": "integer"
 						},
-						"healthEvaluation":{
-							"description": "A written explanation of which aspects of the context category the documentation does and does not address",
-							"type": "string"
-						}
-					}
-				},
-				"origins":{
-					"description": "Can we understand who funded, collected and analyzed the data, and how?",
-					"type": "object",
-					"properties":{
-						"healthScore":{
-							"description": "A number 0-5 which ranks the dataset's official documentation and published materials in terms of how well they address the context category",
-							"type": "integer"
-						},
-						"healthEvaluation":{
-							"description": "A written explanation of which aspects of the context category the documentation does and does not address",
-							"type": "string"
-						}
-					}
-				},
-				"futureUse":{
-					"description": "Can we understand the potential future impact of this dataset, including what someone should and should not use it for?",
-					"type": "object",
-					"properties":{
-						"healthScore":{
-							"description": "A number 0-5 which ranks the dataset's official documentation and published materials in terms of how well they address the context category",
-							"type": "integer"
-						},
-						"healthEvaluation":{
-							"description": "A written explanation of which aspects of the context category the documentation does and does not address",
+						"notes":{
+							"description": "A place to add qualifying information about the value provided. ",
 							"type": "string"
 						}
 					}
 				}
 			}
 		},
-		"relatedResources": {
+		"resources": {
 			"description": "Datasets or data projects are often not useful on their own. Often, we need an entire constellation of supporting resources to make sense of the data we find. The information in this section can be added to as more learning materials become available. ",
 			"type": "object",
 			"properties": {
@@ -661,5 +633,5 @@
 			}
 		}
 	},
-	"required": ["citation", "endpoints", "filterTagging", "peopleLifecycle"]
+	"required": ["description", "tags", "lifecycle", "considerations"]
 }
