@@ -108,14 +108,14 @@
 						"description": "Resource title",
 						"type": "string"
 					},
-					"source": {
-						"description": "Data source",
-						"type": "string"
-					},
 					"format": {
 						"description": "Data format. Examples - 'Shapefile', 'GeoPackage', 'GeoJSON', 'GeoTIFF', 'CSV', 'Web Tiles', 'Web Service'",
 						"type": "string",
 						"example": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles", "Web Service"]
+					},
+					"source": {
+						"description": "Data source",
+						"type": "string"
 					}
 				}
 			}],
