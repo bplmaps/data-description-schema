@@ -116,10 +116,6 @@
 						"description": "Data format. Examples - 'Shapefile', 'GeoPackage', 'GeoJSON', 'GeoTIFF', 'CSV', 'Web Tiles', 'Web Service'",
 						"type": "string",
 						"example": ["Shapefile", "GeoPackage", "GeoJSON", "GeoTIFF", "CSV", "Web Tiles", "Web Service"]
-					},
-					"suggested": {
-						"description": "Optional front-end flag to indicate resources with which someone just entering the data should get started",
-						"type": "boolean"
 					}
 				}
 			}],
