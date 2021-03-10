@@ -590,6 +590,11 @@
 							"notes": {
 								"description": "Place to note how this resource is relelvant",
 								"type": "string"
+							},
+							"format": {
+								"description": "Published works medium",
+								"type": "string",
+								"example": ["Map", "Article", "Book"]
 							}
 						}
 					}]
