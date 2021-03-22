@@ -22,6 +22,10 @@
 					"type": "string",
 					"enum": ["Collection", "Dataset"]
 				},
+				"excludeIndex": {
+					"description": "Optional flag to keep the record from showing up in search results",
+					"type": "boolean"
+				},
 				"collectionItems": {
 					"description": "If the record describes a collection, this field is used to link to collection items",
 					"type": "array",
