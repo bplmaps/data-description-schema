@@ -458,7 +458,7 @@
 			"required": ["description", "maintenance"]
 		},
 		"considerations": {
-			"description": "A place to evaluate whether existing documentation provides useful context. Evaluation categories focus on centering people and society's relationship with data. ",
+			"description": "A place to note how useful the dataset is. ",
 			"type": "object",
 			"properties": {
 				"machineReadability":{
