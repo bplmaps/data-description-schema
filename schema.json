@@ -458,7 +458,7 @@
 			"required": ["description", "maintenance"]
 		},
 		"considerations": {
-			"description": "A place to note how useful the dataset is. ",
+			"description": "A place to note the usefulness of the dataset and supporting materials. ",
 			"type": "object",
 			"properties": {
 				"machineReadability":{
