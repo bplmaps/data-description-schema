@@ -366,13 +366,13 @@
 								},
 								"$id": {
 									"type": "string",
-									"description": "https://github.com/nblmc/Data-Context/blob/master/schema.json",
-									"const": "https://github.com/nblmc/Data-Context/blob/master/schema.json"
+									"description": "https://github.com/bplmaps/data-description-schema/blob/master/schema.json",
+									"const": "https://github.com/bplmaps/data-description-schema/blob/master/schema.json"
 								}
 							}
 						}
 					},
-					"required": ["language", "contextProvider", "contextPublicationDate"]
+					"required": ["contextProvider", "contextPublicationDate"]
 				},
 				"maintenance": {
 					"type": "object",
@@ -455,7 +455,7 @@
 					}
 				}
 			},
-			"required": ["description", "maintenance"]
+			"required": ["maintenance"]
 		},
 		"considerations": {
 			"description": "A place to note the usefulness of the dataset and supporting materials. ",
@@ -638,5 +638,5 @@
 			}
 		}
 	},
-	"required": ["description", "tags", "lifecycle", "considerations"]
+	"required": ["core", "tags", "lifecycle", "considerations"]
 }
